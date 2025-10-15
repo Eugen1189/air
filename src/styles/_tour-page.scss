@@ -1,0 +1,204 @@
+// ============================================
+// СТИЛІ ДЛЯ СТОРІНКИ ТУРУ
+// ============================================
+
+// SCSS/SASS
+
+// --- Загальна розмітка сторінки туру ---
+.tour-page-layout {
+  display: grid;
+  grid-template-columns: 1fr; // Одна колонка на мобільних
+  gap: 30px;
+  padding: 40px 0;
+
+  // Дві колонки для десктопів
+  @media (min-width: $breakpoint-desktop) {
+    grid-template-columns: 2fr 1fr; // Основний контент ширший
+  }
+}
+
+// --- Заголовок з фото (Емоції) ---
+.tour-header {
+  margin-bottom: 30px;
+
+  &__title {
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
+  
+  &__subtitle {
+    font-size: 1.2rem;
+    color: #6c757d;
+  }
+  
+  &__gallery {
+    // Тут можуть бути стилі для фотогалереї
+    img {
+      width: 100%;
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+  }
+}
+
+// --- Основний контент: опис, маршрут (Прагматизм + Емоції) ---
+.tour-content {
+  h3 { // Підзаголовки секцій (напр., "Маршрут", "Що включено")
+    font-size: 1.8rem;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+  }
+  
+  p {
+    line-height: 1.7; // Покращуємо читабельність тексту
+  }
+}
+
+.itinerary-day {
+  margin-bottom: 30px;
+  
+  &__title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: $primary-color;
+    margin-bottom: 10px;
+  }
+}
+
+
+// --- Сайдбар з блоком бронювання (Чистий Прагматизм) ---
+.tour-sidebar {
+  // Налаштування для "липкого" блоку
+  @media (min-width: $breakpoint-desktop) {
+    position: sticky;
+    top: 20px; // Відступ зверху при прокрутці
+    align-self: start; // Вирівнюємо по верху гріда
+  }
+
+  // Динамічні стилі, коли блок стає "липким"
+  &.is-sticky {
+    .booking-widget {
+      box-shadow: 0 12px 40px rgba($primary-color, 0.15);
+      transition: box-shadow 0.3s ease;
+    }
+  }
+}
+
+.booking-widget {
+  background-color: $white-color;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba($primary-color, 0.1);
+  
+  &__price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: $primary-color;
+    margin-bottom: 5px;
+
+    span { // Для тексту типу "/ за особу"
+      font-size: 1rem;
+      font-weight: 400;
+      color: #6c757d;
+    }
+  }
+  
+  .form-group {
+    margin-top: 20px;
+  }
+  
+  .form-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 700;
+  }
+  
+  .form-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box; // Щоб padding не впливав на ширину
+  }
+  
+  &__button {
+    @extend .btn;
+    @extend .btn--accent;
+    width: 100%;
+    margin-top: 20px;
+    padding: 15px; // Робимо кнопку великою та помітною
+    font-size: 18px;
+  }
+}
+
+// --- Акордеон з анімацією ---
+.accordion {
+  margin-top: 30px;
+}
+
+.accordion-item {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
+.accordion-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #e9ecef;
+  }
+
+  &__day {
+    font-weight: 700;
+    color: $primary-color;
+    min-width: 80px;
+  }
+
+  &__title {
+    flex: 1;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  &__icon {
+    font-size: 24px;
+    font-weight: 300;
+    color: $primary-color;
+    transition: transform 0.4s ease;
+  }
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+  padding: 0 15px; // Горизонтальні відступи, коли блок закритий
+  background-color: $white-color;
+}
+
+// Стилі для відкритого стану
+.accordion-item.is-open {
+  .accordion-content {
+    max-height: 500px; // Просто велике значення, щоб вміст помістився
+    padding: 20px 15px; // Повертаємо вертикальні відступи
+  }
+
+  .accordion-header__icon {
+    transform: rotate(45deg);
+  }
+}
+

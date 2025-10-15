@@ -1,0 +1,130 @@
+.showcase {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: #fff;
+  overflow: hidden;
+}
+
+// Контейнер для фонових зображень
+.showcase__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+
+  // Ефект затемнення
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.05));
+  }
+}
+
+.showcase__bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  transform: scale(1); // Без зуму, показуємо зображення повністю
+}
+
+.showcase__bg-image.is-active {
+  opacity: 1;
+}
+
+// Основний контент (заголовки)
+.showcase__content {
+  position: relative;
+  z-index: 2;
+  padding: 0 5vw 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.showcase__title-block {
+  margin-bottom: 30px;
+}
+
+.showcase__location {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin: 0 0 10px 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+}
+.showcase__title {
+  font-size: 3.5rem;
+  margin: 0;
+  line-height: 1.1;
+  font-weight: 700;
+  
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+  }
+}
+
+// Індикатори слайдів
+.showcase__indicators {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.showcase__dot {
+  position: relative;
+  width: 40px;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  padding: 0;
+  
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    transform: scaleY(1.2);
+  }
+  
+  &.is-active {
+    width: 60px;
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+}
+
+.showcase__dot-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 1);
+  transform: scaleX(0);
+  transform-origin: left;
+  display: none;
+}
+
+.showcase__dot.is-active .showcase__dot-progress {
+  display: block;
+  animation-name: progress-animation;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes progress-animation {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+

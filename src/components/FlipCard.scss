@@ -1,0 +1,103 @@
+// src/components/FlipCard.scss
+
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  aspect-ratio: 3 / 4; // Робимо картки вищими
+  perspective: 1000px; // Створює 3D-простір для дочірніх елементів
+  display: block;
+  color: white;
+  text-decoration: none;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); // Трансформація з ефектом "пружини"
+  transform-style: preserve-3d; // Зберігає 3D-позиціонування дочірніх елементів
+}
+
+// При наведенні на .flip-card, перевертаємо .flip-card-inner
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+// Спільні стилі для передньої та задньої сторін
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; // Для Safari
+  backface-visibility: hidden; // Ховає "зворотну" сторону елемента під час анімації
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+// Стилі для передньої сторони
+.flip-card-front {
+  background-color: #bbb;
+  color: white;
+  display: flex;
+  justify-content: flex-end; // Розміщуємо заголовок внизу
+
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  }
+
+  h3 {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    font-size: 1.8rem;
+    margin: 0;
+  }
+}
+
+// Стилі для задньої сторони
+.flip-card-back {
+  background-color: #D9795D; // Ваш акцентний колір
+  color: white;
+  transform: rotateY(180deg); // Попередньо перевертаємо задню сторону
+  padding: 20px;
+
+  h3 {
+    font-size: 1.8rem;
+    margin: 0 0 15px 0;
+  }
+
+  .flip-card-description {
+    font-size: 1rem;
+    line-height: 1.4;
+    flex-grow: 1; // Займає вільне місце, щоб притиснути кнопку донизу
+    display: flex;
+    align-items: center;
+    margin: 0;
+    text-align: center;
+  }
+
+  .flip-card-action {
+    font-size: 1rem;
+    border: 1px solid white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    margin-top: 15px;
+    display: inline-block;
+  }
+}
+

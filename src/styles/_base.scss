@@ -1,0 +1,40 @@
+// ============================================
+// БАЗОВІ СТИЛІ
+// ============================================
+
+// Плавна прокрутка для всього сайту
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; // Відступ для sticky header
+}
+
+// SCSS/SASS
+body {
+  font-family: $font-family-body;
+  color: $text-color;
+  background-color: $background-color;
+  margin: 0;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: $font-family-headings;
+  font-weight: 600; // Робимо заголовки трохи жирнішими
+  color: $primary-color;
+}
+
+a {
+  color: $accent-color;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}

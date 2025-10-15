@@ -1,0 +1,67 @@
+// ============================================
+// ЗМІННІ ПРОЄКТУ
+// ============================================
+
+// -------- Кольори (з нашої палітри) --------
+$primary-color: #0A2342;           // Глибокий синій
+$background-color: #F8F9FA;        // Світло-сірий
+$accent-color: #D9795D;            // Теракота
+$text-color: #212529;              // Темно-сірий
+$white-color: #FFFFFF;             // Білий
+
+// Додаткові відтінки для hover та інтерактивності
+$color-primary-dark: darken($primary-color, 10%);      // Темніший синій для hover
+$color-accent-dark: darken($accent-color, 10%);        // Темніша теракота для hover
+
+$color-text-secondary: lighten($text-color, 30%);     // Вторинний текст
+$color-text-light: lighten($text-color, 50%);         // Світлий текст
+
+$color-border: #e5e7eb;                                // Бордери
+$color-overlay: rgba(0, 0, 0, 0.4);                    // Темна накладка на зображення
+
+// -------- Типографіка (наші шрифти) --------
+$font-family-headings: 'Cormorant Garamond', serif;
+$font-family-body: 'Inter', sans-serif;
+
+$font-size-base: 16px;
+$font-size-small: 14px;
+$font-size-large: 18px;
+
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// -------- Відступи --------
+$spacing-xs: 8px;
+$spacing-sm: 12px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+$spacing-2xl: 48px;
+$spacing-3xl: 64px;
+
+// -------- Радіуси --------
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 12px;
+$border-radius-xl: 16px;
+
+// -------- Тіні --------
+$shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+$shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+$shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+
+// -------- Адаптивність (Breakpoints) --------
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+
+// -------- Контейнер --------
+$container-max-width: 1200px;
+$container-padding: $spacing-lg;
+
+// -------- Переходи --------
+$transition-base: all 0.3s ease;
+$transition-fast: all 0.15s ease;
+

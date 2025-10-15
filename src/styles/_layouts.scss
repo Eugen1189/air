@@ -1,0 +1,80 @@
+// src/styles/_layouts.scss
+
+// Секція з тематичними колекціями
+.themed-collections-section {
+  padding: 60px 20px; // Додаємо повітря навколо секції
+}
+
+.collections-grid {
+  display: grid;
+  // Створюємо адаптивну сітку: колонки будуть автоматично
+  // підлаштовуватися під ширину екрану.
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+// Зменшуємо розмір карток колекцій
+.collection-card {
+  height: 250px; // Компактна висота
+  overflow: hidden;
+  
+  &__background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+// Секція "Про нас"
+.about-us-section {
+  padding: 60px 20px; // Додаємо повітря навколо секції
+  background-color: #FFFFFF;
+}
+
+.about-us-container {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+
+  // На екранах менше 768px блоки стануть один під одним
+  @media (max-width: $breakpoint-tablet) {
+    flex-direction: column;
+  }
+}
+
+.about-us-column {
+  flex: 1; // Кожна колонка займає рівну частину простору
+}
+
+// Зменшуємо зображення в секції "Про нас"
+.about-us__image {
+  width: 100%;
+  max-width: 450px; // Обмежуємо максимальний розмір
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+// --- Стилі для Swiper слайдера ---
+.swiper {
+  padding-bottom: 50px !important; // Місце для pagination
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: $primary-color !important;
+  
+  &:after {
+    font-size: 30px !important;
+  }
+}
+
+.swiper-pagination-bullet {
+  background: $primary-color !important;
+  
+  &-active {
+    background: $accent-color !important;
+  }
+}
+

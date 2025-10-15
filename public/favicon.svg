@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Фон -->
+  <circle cx="50" cy="50" r="50" fill="#0A2342"/>
+  
+  <!-- Літак (стилізований) -->
+  <path d="M50 30 L70 55 L55 55 L55 65 L60 70 L50 70 L40 70 L45 65 L45 55 L30 55 Z" 
+        fill="#F4B942" 
+        stroke="#FFFFFF" 
+        stroke-width="2"/>
+  
+  <!-- Хмарка -->
+  <ellipse cx="25" cy="25" rx="8" ry="5" fill="#FFFFFF" opacity="0.7"/>
+  <ellipse cx="30" cy="23" rx="6" ry="4" fill="#FFFFFF" opacity="0.7"/>
+</svg>
+

@@ -1,0 +1,145 @@
+// ============================================
+// СТИЛІ ДЛЯ HEADER ТА НАВІГАЦІЇ
+// ============================================
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: $white-color;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logo a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+// --- Десктопна навігація ---
+.desktop-nav {
+  display: none;
+  gap: 30px;
+
+  @media (min-width: $breakpoint-tablet) {
+    display: flex;
+  }
+
+  a {
+    text-decoration: none;
+    color: $primary-color;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      color: $accent-color;
+    }
+
+    &.active {
+      color: $accent-color;
+      font-weight: 600;
+    }
+  }
+}
+
+// --- Мобільна навігація ---
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 80%;
+  max-width: 300px;
+  height: 100vh;
+  background-color: $primary-color;
+  padding-top: 80px;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  // Ховаємо меню за замовчуванням
+  transform: translateX(-100%);
+  transition: transform 0.4s ease-in-out;
+  z-index: 99;
+
+  @media (min-width: $breakpoint-tablet) {
+    display: none;
+  }
+
+  a {
+    color: $white-color;
+    font-size: 24px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &.active {
+      color: $accent-color;
+      opacity: 1;
+    }
+  }
+
+  // Стан, коли меню відкрите
+  &.is-open {
+    transform: translateX(0);
+  }
+}
+
+// --- Бургер кнопка ---
+.burger-button {
+  display: block;
+  position: relative;
+  z-index: 100;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  
+  @media (min-width: $breakpoint-tablet) {
+    display: none;
+  }
+
+  span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: $primary-color;
+    margin: 5px 0;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+
+  // Анімація іконки в "хрестик"
+  &.is-active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  
+  &.is-active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  &.is-active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
+
