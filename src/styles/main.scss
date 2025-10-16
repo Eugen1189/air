@@ -1,16 +1,17 @@
 // ============================================
-// ГОЛОВНИЙ ФАЙЛ СТИЛІВ
+// MAIN STYLES FILE
 // ============================================
 
 // SCSS/SASS
-// --- Імпортуємо базові файли ---
+// --- Import base files ---
 @import 'variables';
 @import 'base';
 @import 'components';
-@import 'search-page'; // Сторінка результатів пошуку
-@import 'tour-page';   // Сторінка окремого туру
+@import 'search-page'; // Search results page
+@import 'tour-page';   // Individual tour page
+@import 'mobile';      // Mobile responsive styles
 
-// --- Стилі для секції "Hero" (перший екран) ---
+// --- Styles for "Hero" section (first screen) ---
 .hero {
   display: flex;
   flex-direction: column;
@@ -20,11 +21,11 @@
   text-align: center;
   color: $white-color;
   
-  // Уявімо, що у вас є фонове відео або фото
+  // Imagine you have background video or photo
   background: linear-gradient(rgba(10, 35, 66, 0.7), rgba(10, 35, 66, 0.7)), url('/path/to/hero-image.jpg') no-repeat center center/cover;
   
   &__title {
-    font-size: 2.5rem; // Мобільний розмір
+    font-size: 2.5rem; // Mobile size
     margin-bottom: 1rem;
     font-weight: 700;
   }
@@ -37,9 +38,9 @@
   }
 }
 
-// Адаптація для великих екранів
+// Adaptation for large screens
 @media (min-width: $breakpoint-tablet) {
   .hero__title {
-    font-size: 4rem; // Десктопний розмір
+    font-size: 4rem; // Desktop size
   }
 }

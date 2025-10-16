@@ -1,5 +1,5 @@
 // ============================================
-// КОМПОНЕНТИ
+// COMPONENTS
 // ============================================
 
 // SCSS/SASS
@@ -15,7 +15,7 @@
   border: none;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 
-  // Модифікатор для нашої акцентної кнопки
+  // Modifier for our accent button
   &--accent {
     background-color: $accent-color;
     color: $white-color;

@@ -1,0 +1,342 @@
+// ============================================
+// MOBILE RESPONSIVE STYLES
+// ============================================
+
+// ============================================
+// GLOBAL MOBILE OPTIMIZATIONS
+// ============================================
+
+// Prevent text size adjust on mobile
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+// Smooth touch scrolling
+body {
+  -webkit-overflow-scrolling: touch;
+}
+
+// ============================================
+// CONTAINER & LAYOUT
+// ============================================
+
+.container,
+.header-container {
+  @media (max-width: 768px) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  @media (max-width: 480px) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+// ============================================
+// TYPOGRAPHY
+// ============================================
+
+h1, .section-title {
+  @media (max-width: 768px) {
+    font-size: 2rem !important;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 1.75rem !important;
+  }
+}
+
+h2 {
+  @media (max-width: 768px) {
+    font-size: 1.75rem;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 1.5rem;
+  }
+}
+
+h3 {
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 1.25rem;
+  }
+}
+
+p, .section-subtitle {
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 0.95rem;
+  }
+}
+
+// ============================================
+// GRID LAYOUTS
+// ============================================
+
+// Tour cards grid
+.tours-grid,
+.results-grid {
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+  }
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr !important;
+    gap: 25px !important;
+  }
+}
+
+// Blog cards grid
+.articles-grid {
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+// Collections grid
+.collection-grid {
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+}
+
+// ============================================
+// BUTTONS
+// ============================================
+
+button,
+.btn,
+a.btn {
+  @media (max-width: 768px) {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+  }
+}
+
+// Touch-friendly buttons (minimum 44x44px)
+.btn,
+button {
+  @media (max-width: 768px) {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+// ============================================
+// FORMS
+// ============================================
+
+input,
+select,
+textarea {
+  @media (max-width: 768px) {
+    font-size: 16px !important; // Prevents iOS zoom
+    padding: 14px !important;
+    border-radius: 8px;
+  }
+}
+
+label {
+  @media (max-width: 768px) {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+  }
+}
+
+// ============================================
+// SECTIONS SPACING
+// ============================================
+
+section,
+.section {
+  @media (max-width: 768px) {
+    padding: 50px 20px;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 40px 15px;
+  }
+}
+
+// ============================================
+// IMAGES
+// ============================================
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+// ============================================
+// MODAL & OVERLAY
+// ============================================
+
+.modal,
+.lightbox {
+  @media (max-width: 768px) {
+    padding: 15px;
+  }
+}
+
+// ============================================
+// STICKY ELEMENTS
+// ============================================
+
+.sticky-sidebar,
+.booking-sidebar {
+  @media (max-width: 1024px) {
+    position: relative !important;
+    top: 0 !important;
+  }
+}
+
+// ============================================
+// TOUR PAGE LAYOUT
+// ============================================
+
+.tour-page-layout {
+  @media (max-width: 1024px) {
+    display: block !important;
+    
+    .tour-main-content {
+      width: 100% !important;
+      padding-right: 0 !important;
+    }
+    
+    .tour-sidebar {
+      width: 100% !important;
+      margin-top: 30px;
+    }
+  }
+}
+
+// ============================================
+// SEARCH PAGE LAYOUT
+// ============================================
+
+.search-layout {
+  @media (max-width: 1024px) {
+    display: block !important;
+    
+    .search-sidebar {
+      width: 100% !important;
+      margin-bottom: 30px;
+    }
+    
+    .search-main {
+      width: 100% !important;
+    }
+  }
+}
+
+// Tours List Page Layout
+div[style*="gridTemplateColumns: '300px 1fr'"] {
+  @media (max-width: 1024px) {
+    display: block !important;
+    grid-template-columns: 1fr !important;
+  }
+}
+
+// ============================================
+// FOOTER
+// ============================================
+
+footer,
+.site-footer {
+  @media (max-width: 768px) {
+    .footer-grid {
+      grid-template-columns: 1fr !important;
+      gap: 30px !important;
+      text-align: center;
+    }
+    
+    .footer-column {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+// ============================================
+// HIDE/SHOW ON MOBILE
+// ============================================
+
+.hide-mobile {
+  @media (max-width: 768px) {
+    display: none !important;
+  }
+}
+
+.show-mobile {
+  display: none !important;
+  
+  @media (max-width: 768px) {
+    display: block !important;
+  }
+}
+
+// ============================================
+// SPACING UTILITIES
+// ============================================
+
+.mobile-mt-0 {
+  @media (max-width: 768px) {
+    margin-top: 0 !important;
+  }
+}
+
+.mobile-mb-20 {
+  @media (max-width: 768px) {
+    margin-bottom: 20px !important;
+  }
+}
+
+.mobile-p-15 {
+  @media (max-width: 768px) {
+    padding: 15px !important;
+  }
+}
+
+// ============================================
+// TEXT ALIGNMENT
+// ============================================
+
+.mobile-text-center {
+  @media (max-width: 768px) {
+    text-align: center !important;
+  }
+}
+
+.mobile-text-left {
+  @media (max-width: 768px) {
+    text-align: left !important;
+  }
+}
+

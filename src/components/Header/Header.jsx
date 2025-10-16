@@ -32,7 +32,7 @@ const Header = () => {
         <button 
           className={`burger-button ${isMenuOpen ? 'is-active' : ''}`} 
           onClick={toggleMenu}
-          aria-label="Відкрити меню"
+          aria-label="Apri menu"
         >
           <span></span>
           <span></span>
@@ -40,19 +40,19 @@ const Header = () => {
         </button>
 
         <nav className={`mobile-nav ${isMenuOpen ? 'is-open' : ''}`}>
-          <a href="#hit-tours" onClick={() => setIsMenuOpen(false)}>Популярні тури</a>
-          <a href="#collections" onClick={() => setIsMenuOpen(false)}>Колекції</a>
-          <a href="#about" onClick={() => setIsMenuOpen(false)}>Про нас</a>
-          <a href="/blog" onClick={() => setIsMenuOpen(false)}>Блог</a>
-          <a href="/contacts" onClick={() => setIsMenuOpen(false)}>Контакти</a>
+          <a href="#hit-tours" onClick={() => setIsMenuOpen(false)}>Tour Popolari</a>
+          <a href="#collections" onClick={() => setIsMenuOpen(false)}>Collezioni</a>
+          <a href="#about" onClick={() => setIsMenuOpen(false)}>Chi Siamo</a>
+          <a href="/blog" onClick={() => setIsMenuOpen(false)}>Blog</a>
+          <a href="/contacts" onClick={() => setIsMenuOpen(false)}>Contatti</a>
         </nav>
 
         <nav className="desktop-nav">
-          <a href="#hit-tours">Популярні тури</a>
-          <a href="#collections">Колекції</a>
-          <a href="#about">Про нас</a>
-          <a href="/blog">Блог</a>
-          <a href="/contacts">Контакти</a>
+          <a href="#hit-tours">Tour Popolari</a>
+          <a href="#collections">Collezioni</a>
+          <a href="#about">Chi Siamo</a>
+          <a href="/blog">Blog</a>
+          <a href="/contacts">Contatti</a>
         </nav>
       </div>
     </header>

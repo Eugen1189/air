@@ -2,11 +2,11 @@
 import { z } from 'zod';
 
 export const bookingSchema = z.object({
-  name: z.string().min(2, "Ім'я занадто коротке"),
-  email: z.string().email("Введіть коректний email"),
+  name: z.string().min(2, "Il nome è troppo corto"),
+  email: z.string().email("Inserisci un'email valida"),
   date: z.string().refine((date) => new Date(date) > new Date(), {
-      message: "Дата має бути в майбутньому"
+      message: "La data deve essere nel futuro"
   }),
-  guests: z.coerce.number().min(1, "Має бути хоча б 1 гість"),
+  guests: z.coerce.number().min(1, "Deve esserci almeno 1 ospite"),
 });
 

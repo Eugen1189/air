@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
 const Accordion = ({ items }) => {
-  const [openIndex, setOpenIndex] = useState(0); // Перший елемент відкритий за замовчуванням
+  const [openIndex, setOpenIndex] = useState(0); // First item open by default
 
   const toggleItem = (index) => {
-    // Якщо клікнули на вже відкритий - закриваємо, інакше - відкриваємо новий
+    // If clicked on already open - close it, otherwise - open new one
     setOpenIndex(openIndex === index ? null : index);
   };
 

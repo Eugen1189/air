@@ -3,11 +3,17 @@
 .flip-card {
   background-color: transparent;
   width: 100%;
-  aspect-ratio: 3 / 4; // Робимо картки вищими
-  perspective: 1000px; // Створює 3D-простір для дочірніх елементів
+  aspect-ratio: 3 / 4; // Make cards taller
+  perspective: 1000px; // Creates 3D space for child elements
   display: block;
   color: white;
   text-decoration: none;
+  padding: 15px; // Increase internal spacing around card
+  position: relative; // For proper z-index work
+  
+  &:hover {
+    z-index: 10; // Raise card above others on hover
+  }
 }
 
 .flip-card-inner {
@@ -15,37 +21,44 @@
   width: 100%;
   height: 100%;
   text-align: center;
-  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); // Трансформація з ефектом "пружини"
-  transform-style: preserve-3d; // Зберігає 3D-позиціонування дочірніх елементів
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); // Transformation with "spring" effect
+  transform-style: preserve-3d; // Preserves 3D positioning of child elements
 }
 
-// При наведенні на .flip-card, перевертаємо .flip-card-inner
+// On hover over .flip-card, flip .flip-card-inner
 .flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
+  transform: rotateY(180deg) scale(0.92); // Reduce on flip for spacing
 }
 
-// Спільні стилі для передньої та задньої сторін
+// Common styles for front and back sides
 .flip-card-front,
 .flip-card-back {
   position: absolute;
   width: 100%;
   height: 100%;
-  -webkit-backface-visibility: hidden; // Для Safari
-  backface-visibility: hidden; // Ховає "зворотну" сторону елемента під час анімації
+  -webkit-backface-visibility: hidden; // For Safari
+  backface-visibility: hidden; // Hides "back" side of element during animation
   border-radius: 12px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease;
 }
 
-// Стилі для передньої сторони
+.flip-card:hover .flip-card-front,
+.flip-card:hover .flip-card-back {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); // Larger shadow on hover
+}
+
+// Styles for front side
 .flip-card-front {
   background-color: #bbb;
   color: white;
   display: flex;
-  justify-content: flex-end; // Розміщуємо заголовок внизу
+  justify-content: flex-end; // Place title at bottom
 
   img {
     position: absolute;
@@ -69,11 +82,11 @@
   }
 }
 
-// Стилі для задньої сторони
+// Styles for back side
 .flip-card-back {
-  background-color: #D9795D; // Ваш акцентний колір
+  background-color: #D9795D; // Accent color
   color: white;
-  transform: rotateY(180deg); // Попередньо перевертаємо задню сторону
+  transform: rotateY(180deg); // Pre-flip back side
   padding: 20px;
 
   h3 {
@@ -84,7 +97,7 @@
   .flip-card-description {
     font-size: 1rem;
     line-height: 1.4;
-    flex-grow: 1; // Займає вільне місце, щоб притиснути кнопку донизу
+    flex-grow: 1; // Takes free space to push button to bottom
     display: flex;
     align-items: center;
     margin: 0;
@@ -98,6 +111,82 @@
     border-radius: 20px;
     margin-top: 15px;
     display: inline-block;
+  }
+
+  .flip-card-button {
+    font-size: 1rem;
+    background: white;
+    color: #D9795D;
+    border: 2px solid white;
+    padding: 12px 24px;
+    border-radius: 25px;
+    margin-top: 15px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background: transparent;
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+    
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}
+
+// Mobile styles - enable flip on click
+@media (max-width: 767px) {
+  .flip-card {
+    cursor: pointer;
+    touch-action: manipulation; // Better touch handling
+    
+    // Remove hover effect on mobile
+    &:hover .flip-card-inner {
+      transform: none;
+    }
+    
+    &:hover .flip-card-front,
+    &:hover .flip-card-back {
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+  }
+  
+  // Add flip effect when is-flipped class is present
+  .flip-card.is-flipped .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card-back {
+    .flip-card-description {
+      font-size: 0.95rem;
+      padding: 10px 0;
+    }
+    
+    h3 {
+      font-size: 1.5rem;
+    }
+    
+    .flip-card-button {
+      font-size: 0.9rem;
+      padding: 10px 20px;
+    }
+  }
+}
+
+// Tablet and smaller desktops
+@media (min-width: 768px) and (max-width: 1024px) {
+  .flip-card-back {
+    .flip-card-description {
+      font-size: 0.95rem;
+    }
+    
+    h3 {
+      font-size: 1.6rem;
+    }
   }
 }
 

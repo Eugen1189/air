@@ -7,18 +7,18 @@ export const useSticky = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // entry.isIntersecting буде true, коли "дозорний" елемент на екрані
-        // Ми хочемо, щоб isSticky було true, коли "дозорний" НЕ на екрані
+        // entry.isIntersecting will be true when "sentinel" element is on screen
+        // We want isSticky to be true when "sentinel" is NOT on screen
         setSticky(!entry.isIntersecting);
       },
-      // rootMargin: '-1px' гарантує, що isIntersecting стане false як тільки
-      // дозорний елемент повністю зникне вгорі екрану.
+      // rootMargin: '-1px' ensures that isIntersecting becomes false as soon as
+      // sentinel element completely disappears at the top of the screen
       { rootMargin: '-1px 0px 0px 0px', threshold: 1 }
     );
 
-    // Створюємо "дозорний" елемент і ставимо його перед нашим sticky-блоком
+    // Create "sentinel" element and place it before our sticky block
     const sentinel = document.createElement('div');
-    sentinel.style.height = '1px'; // Робимо його невидимим
+    sentinel.style.height = '1px'; // Make it invisible
 
     const currentElement = elementRef.current;
     if (currentElement) {
@@ -29,7 +29,7 @@ export const useSticky = () => {
     return () => {
       if (sentinel && observer) {
         observer.unobserve(sentinel);
-        // Прибираємо дозорний елемент, якщо компонент розмонтовується
+        // Remove sentinel element if component unmounts
         sentinel.remove();
       }
     };

@@ -1,22 +1,22 @@
 import React from 'react';
 
-// Імпортуємо компоненти Swiper
+// Import Swiper components
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 
-// Імпортуємо стилі Swiper
+// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-// Компонент картки туру
+// Tour card component
 import TourCard from '../TourCard';
 
 const HitToursSlider = ({ tours }) => {
   return (
     <div className="tours-slider-container">
       <Swiper
-        // Підключаємо модулі
+        // Connect modules
         modules={[Navigation, Pagination, Autoplay]}
         spaceBetween={30}
         slidesPerView={1}
@@ -42,6 +42,7 @@ const HitToursSlider = ({ tours }) => {
               details={tour.details}
               price={tour.price}
               link={tour.link}
+              tourId={tour.id}
             />
           </SwiperSlide>
         ))}

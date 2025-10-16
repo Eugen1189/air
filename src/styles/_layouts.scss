@@ -1,22 +1,27 @@
 // src/styles/_layouts.scss
 
-// Секція з тематичними колекціями
+// Themed collections section
 .themed-collections-section {
-  padding: 60px 20px; // Додаємо повітря навколо секції
+  padding: 80px 30px; // Add more spacing around section
 }
 
 .collections-grid {
   display: grid;
-  // Створюємо адаптивну сітку: колонки будуть автоматично
-  // підлаштовуватися під ширину екрану.
+  // Create adaptive grid: columns will automatically
+  // adjust to screen width
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  margin-top: 30px;
+  gap: 30px; // Increase gap for more space
+  margin-top: 40px;
+  position: relative; // For proper z-index work
+  
+  @media (max-width: $breakpoint-tablet) {
+    gap: 20px; // Smaller spacing on mobile
+  }
 }
 
-// Зменшуємо розмір карток колекцій
+// Reduce collection cards size
 .collection-card {
-  height: 250px; // Компактна висота
+  height: 250px; // Compact height
   overflow: hidden;
   
   &__background {
@@ -26,9 +31,9 @@
   }
 }
 
-// Секція "Про нас"
+// "About us" section
 .about-us-section {
-  padding: 60px 20px; // Додаємо повітря навколо секції
+  padding: 60px 20px; // Add spacing around section
   background-color: #FFFFFF;
 }
 
@@ -37,28 +42,28 @@
   align-items: center;
   gap: 50px;
 
-  // На екранах менше 768px блоки стануть один під одним
+  // On screens less than 768px blocks will stack vertically
   @media (max-width: $breakpoint-tablet) {
     flex-direction: column;
   }
 }
 
 .about-us-column {
-  flex: 1; // Кожна колонка займає рівну частину простору
+  flex: 1; // Each column takes equal space
 }
 
-// Зменшуємо зображення в секції "Про нас"
+// Reduce image size in "About us" section
 .about-us__image {
   width: 100%;
-  max-width: 450px; // Обмежуємо максимальний розмір
+  max-width: 450px; // Limit maximum size
   height: auto;
   border-radius: 12px;
   object-fit: cover;
 }
 
-// --- Стилі для Swiper слайдера ---
+// --- Styles for Swiper slider ---
 .swiper {
-  padding-bottom: 50px !important; // Місце для pagination
+  padding-bottom: 50px !important; // Space for pagination
 }
 
 .swiper-button-prev,

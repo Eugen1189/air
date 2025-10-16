@@ -23,7 +23,7 @@ const TourGallery = ({ images = defaultImages }) => {
       <div className="tour-gallery__main-image" onClick={() => openLightbox(0)}>
         <img 
           src={images[0].src} 
-          alt="Головне фото туру" 
+          alt="Tour main photo" 
           style={{ 
             cursor: 'pointer', 
             width: '100%', 
@@ -45,7 +45,7 @@ const TourGallery = ({ images = defaultImages }) => {
             <img 
               key={index} 
               src={image.src} 
-              alt={`Фото ${index + 2}`}
+              alt={`Photo ${index + 2}`}
               onClick={() => openLightbox(index + 1)}
               style={{ 
                 cursor: 'pointer', 

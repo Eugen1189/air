@@ -1,0 +1,246 @@
+// Tours List Page - Professional Mobile Filters
+
+// ============================================
+// MOBILE FILTER TOGGLE BUTTON
+// ============================================
+
+.filters-toggle-button {
+  display: none; // Hidden on desktop
+  
+  @media (max-width: 1024px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto 30px;
+    padding: 18px 24px;
+    background-color: #0A2342;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(10, 35, 66, 0.3);
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background-color: #0d2d5c;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(10, 35, 66, 0.4);
+    }
+    
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}
+
+// ============================================
+// MOBILE FILTERS FULLSCREEN OVERLAY
+// ============================================
+
+.filters-mobile-wrapper {
+  display: none; // Hidden on desktop
+  
+  @media (max-width: 1024px) {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh; // Dynamic viewport height for mobile
+    background-color: #ffffff;
+    z-index: 9999;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden;
+    
+    &.is-open {
+      transform: translateX(0);
+    }
+  }
+}
+
+// Filters Header (Title + Close Button)
+.filters-mobile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #e0e0e0;
+  background-color: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  
+  h2 {
+    font-size: 1.5rem;
+    margin: 0;
+    color: #0A2342;
+    font-weight: 700;
+  }
+}
+
+// Close Button
+.filters-close-button {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #0A2342;
+  cursor: pointer;
+  padding: 8px;
+  line-height: 1;
+  transition: transform 0.2s ease;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  
+  &:hover {
+    background-color: #f0f0f0;
+  }
+  
+  &:active {
+    transform: scale(0.9);
+  }
+}
+
+// Filters Content (Scrollable)
+.filters-mobile-content {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 20px;
+  
+  // Make FilterSidebar transparent in mobile overlay
+  .filter-sidebar {
+    position: relative !important;
+    top: 0 !important;
+    padding: 0 !important;
+    background-color: transparent !important;
+  }
+  
+  // Hide desktop header from FilterSidebar
+  .filters-header {
+    display: none;
+  }
+}
+
+// Filters Footer (Apply Button)
+.filters-mobile-footer {
+  padding: 20px;
+  border-top: 1px solid #e0e0e0;
+  background-color: #ffffff;
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+}
+
+// Apply Button
+.filters-apply-button {
+  width: 100%;
+  padding: 18px 24px;
+  background-color: #D9795D;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(217, 121, 93, 0.3);
+  
+  &:hover {
+    background-color: #c4684d;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(217, 121, 93, 0.4);
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// ============================================
+// DESKTOP FILTERS
+// ============================================
+
+.desktop-filters {
+  display: none; // Hidden by default on mobile
+  
+  @media (min-width: 1025px) {
+    display: block; // Show on desktop screens >= 1025px
+  }
+}
+
+// ============================================
+// TOURS LAYOUT
+// ============================================
+
+.tours-layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 40px;
+  align-items: start;
+  
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr !important; // Single column on mobile
+  }
+}
+
+// Search layout adaptation (if used elsewhere)
+.search-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 30px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr; // Single column on mobile
+  }
+}
+
+// ============================================
+// PAGE RESPONSIVE
+// ============================================
+
+.tours-list-page {
+  @media (max-width: 768px) {
+    padding: 80px 15px 40px !important;
+    
+    h1 {
+      font-size: 2rem !important;
+    }
+    
+    p {
+      font-size: 1rem !important;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    padding: 70px 10px 30px !important;
+    
+    h1 {
+      font-size: 1.75rem !important;
+    }
+  }
+}
+
+// ============================================
+// PREVENT BODY SCROLL WHEN FILTERS OPEN
+// ============================================
+
+body.filters-open {
+  overflow: hidden;
+  
+  @media (min-width: 1025px) {
+    overflow: auto; // Only on mobile
+  }
+}
+

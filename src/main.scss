@@ -1,14 +1,14 @@
 // ============================================
-// ГОЛОВНИЙ ФАЙЛ СТИЛІВ
+// MAIN STYLES FILE
 // ============================================
 
-// --- Імпортуємо базові файли ---
+// --- Import base files ---
 @import 'styles/variables';
 @import 'styles/base';
 @import 'styles/components';
-@import 'styles/layouts';     // Стилі розмітки (сітки, колонки)
-@import 'styles/header';      // Хедер та навігація
-@import 'styles/footer';      // Футер
-@import 'styles/search-page'; // Сторінка результатів пошуку
-@import 'styles/tour-page';   // Сторінка окремого туру
+@import 'styles/layouts';     // Layout styles (grids, columns)
+@import 'styles/header';      // Header and navigation
+@import 'styles/footer';      // Footer
+@import 'styles/search-page'; // Search results page
+@import 'styles/tour-page';   // Individual tour page
 

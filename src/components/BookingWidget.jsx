@@ -2,9 +2,11 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { useTranslation } from 'react-i18next';
 import { bookingSchema } from '../schemas/bookingSchema';
 
 const BookingWidget = () => {
+  const { t } = useTranslation();
   const [serverMessage, setServerMessage] = useState({ type: '', text: '' });
 
   const {
@@ -18,7 +20,7 @@ const BookingWidget = () => {
   const onSubmit = async (data) => {
     setServerMessage({ type: '', text: '' });
     try {
-      // !!! ВАЖЛИВО: Замініть URL на вашу реальну API-адресу !!!
+      // !!! IMPORTANT: Replace URL with your actual API address !!!
       const response = await fetch('https://api.example.com/book-tour', {
         method: 'POST',
         headers: {
@@ -28,49 +30,49 @@ const BookingWidget = () => {
       });
 
       if (!response.ok) {
-        throw new Error('Помилка мережі або сервера.');
+        throw new Error('Errore di rete o del server.');
       }
 
       const result = await response.json();
-      setServerMessage({ type: 'success', text: 'Ваша заявка успішно відправлена!' });
+      setServerMessage({ type: 'success', text: t('Common.success') });
 
     } catch (error) {
-      setServerMessage({ type: 'error', text: 'Виникла помилка. Спробуйте ще раз.' });
+      setServerMessage({ type: 'error', text: t('Common.error') });
     }
   };
 
   return (
     <div className="booking-widget">
       <div className="booking-widget__price">
-        1200€ <span>/ за особу</span>
+        1200€ <span>/ {t('BookingWidget.pricePerPerson')}</span>
       </div>
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
         <div className="form-group">
-          <label htmlFor="name" className="form-label">Ім'я</label>
+          <label htmlFor="name" className="form-label">{t('Contacts.name')}</label>
           <input id="name" {...register('name')} className="form-input" />
           {errors.name && <p className="form-error">{errors.name.message}</p>}
         </div>
 
         <div className="form-group">
-          <label htmlFor="email" className="form-label">Email</label>
+          <label htmlFor="email" className="form-label">{t('Contacts.email')}</label>
           <input id="email" type="email" {...register('email')} className="form-input" />
           {errors.email && <p className="form-error">{errors.email.message}</p>}
         </div>
 
         <div className="form-group">
-          <label htmlFor="date" className="form-label">Дата</label>
+          <label htmlFor="date" className="form-label">{t('BookingWidget.dateFrom')}</label>
           <input id="date" type="date" {...register('date')} className="form-input" />
           {errors.date && <p className="form-error">{errors.date.message}</p>}
         </div>
         
         <div className="form-group">
-          <label htmlFor="guests" className="form-label">Кількість гостей</label>
+          <label htmlFor="guests" className="form-label">{t('BookingWidget.guests')}</label>
           <input id="guests" type="number" defaultValue="1" {...register('guests')} className="form-input" />
           {errors.guests && <p className="form-error">{errors.guests.message}</p>}
         </div>
 
         <button type="submit" className="booking-widget__button" disabled={isSubmitting}>
-          {isSubmitting ? 'Відправка...' : 'Забронювати'}
+          {isSubmitting ? t('Common.loading') : t('Buttons.book')}
         </button>
 
         {serverMessage.text && (

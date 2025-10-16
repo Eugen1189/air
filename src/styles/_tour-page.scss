@@ -1,23 +1,23 @@
 // ============================================
-// СТИЛІ ДЛЯ СТОРІНКИ ТУРУ
+// STYLES FOR TOUR PAGE
 // ============================================
 
 // SCSS/SASS
 
-// --- Загальна розмітка сторінки туру ---
+// --- General tour page layout ---
 .tour-page-layout {
   display: grid;
-  grid-template-columns: 1fr; // Одна колонка на мобільних
+  grid-template-columns: 1fr; // One column on mobile
   gap: 30px;
   padding: 40px 0;
 
-  // Дві колонки для десктопів
+  // Two columns for desktop
   @media (min-width: $breakpoint-desktop) {
-    grid-template-columns: 2fr 1fr; // Основний контент ширший
+    grid-template-columns: 2fr 1fr; // Main content wider
   }
 }
 
-// --- Заголовок з фото (Емоції) ---
+// --- Header with photo (Emotion) ---
 .tour-header {
   margin-bottom: 30px;
 
@@ -32,7 +32,7 @@
   }
   
   &__gallery {
-    // Тут можуть бути стилі для фотогалереї
+    // Photo gallery styles can be here
     img {
       width: 100%;
       border-radius: 12px;
@@ -41,9 +41,9 @@
   }
 }
 
-// --- Основний контент: опис, маршрут (Прагматизм + Емоції) ---
+// --- Main content: description, itinerary (Pragmatism + Emotion) ---
 .tour-content {
-  h3 { // Підзаголовки секцій (напр., "Маршрут", "Що включено")
+  h3 { // Section subheadings (e.g., "Itinerary", "What's included")
     font-size: 1.8rem;
     margin-top: 40px;
     margin-bottom: 20px;
@@ -52,7 +52,7 @@
   }
   
   p {
-    line-height: 1.7; // Покращуємо читабельність тексту
+    line-height: 1.7; // Improve text readability
   }
 }
 
@@ -68,16 +68,16 @@
 }
 
 
-// --- Сайдбар з блоком бронювання (Чистий Прагматизм) ---
+// --- Sidebar with booking block (Pure Pragmatism) ---
 .tour-sidebar {
-  // Налаштування для "липкого" блоку
+  // Settings for "sticky" block
   @media (min-width: $breakpoint-desktop) {
     position: sticky;
-    top: 20px; // Відступ зверху при прокрутці
-    align-self: start; // Вирівнюємо по верху гріда
+    top: 20px; // Top offset when scrolling
+    align-self: start; // Align to top of grid
   }
 
-  // Динамічні стилі, коли блок стає "липким"
+  // Dynamic styles when block becomes "sticky"
   &.is-sticky {
     .booking-widget {
       box-shadow: 0 12px 40px rgba($primary-color, 0.15);
@@ -98,7 +98,7 @@
     color: $primary-color;
     margin-bottom: 5px;
 
-    span { // Для тексту типу "/ за особу"
+    span { // For text like "/ per person"
       font-size: 1rem;
       font-weight: 400;
       color: #6c757d;
@@ -120,7 +120,7 @@
     padding: 12px;
     border: 1px solid #ddd;
     border-radius: 8px;
-    box-sizing: border-box; // Щоб padding не впливав на ширину
+    box-sizing: border-box; // So padding doesn't affect width
   }
   
   &__button {
@@ -128,12 +128,12 @@
     @extend .btn--accent;
     width: 100%;
     margin-top: 20px;
-    padding: 15px; // Робимо кнопку великою та помітною
+    padding: 15px; // Make button large and noticeable
     font-size: 18px;
   }
 }
 
-// --- Акордеон з анімацією ---
+// --- Accordion with animation ---
 .accordion {
   margin-top: 30px;
 }
@@ -186,15 +186,15 @@
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.4s ease-out, padding 0.4s ease-out;
-  padding: 0 15px; // Горизонтальні відступи, коли блок закритий
+  padding: 0 15px; // Horizontal padding when block is closed
   background-color: $white-color;
 }
 
-// Стилі для відкритого стану
+// Styles for open state
 .accordion-item.is-open {
   .accordion-content {
-    max-height: 500px; // Просто велике значення, щоб вміст помістився
-    padding: 20px 15px; // Повертаємо вертикальні відступи
+    max-height: 500px; // Just a large value so content fits
+    padding: 20px 15px; // Return vertical padding
   }
 
   .accordion-header__icon {

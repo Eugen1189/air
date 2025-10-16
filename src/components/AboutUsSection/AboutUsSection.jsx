@@ -1,7 +1,10 @@
 import React from 'react';
 import { Element } from 'react-scroll';
+import { useTranslation } from 'react-i18next';
 
 const AboutUsSection = () => {
+  const { t } = useTranslation();
+  
   return (
     <Element name="about">
       <section className="about-us-section">
@@ -9,19 +12,31 @@ const AboutUsSection = () => {
         <div className="about-us-column">
           <img 
             src="https://images.unsplash.com/photo-1523908511403-7fc7b25592f4?q=80&w=1994" 
-            alt="Команда туристичної компанії"
+            alt={t('AboutUs.title')}
             className="about-us__image"
           />
         </div>
         <div className="about-us-column">
-          <h2 className="section-title">Ми не продаємо тури. Ми створюємо враження.</h2>
-          <p>
-            Наша філософія проста: кожна подорож — це унікальна історія. 
-            Ми не просто відправляємо вас у відомі місця, а допомагаємо відкрити їх по-новому. 
-            Наша команда особисто розробляє кожен маршрут, а персональний консьєрж-сервіс гарантує, 
-            що ваш відпочинок буде бездоганним від початку до кінця.
-          </p>
-          <a href="#" className="button">Дізнатися більше про нас</a>
+          <h3 className="about-us__subtitle">{t('AboutUs.subtitle')}</h3>
+          <h2 className="section-title">{t('AboutUs.title')}</h2>
+          <p>{t('AboutUs.description')}</p>
+          
+          <div className="about-us__features">
+            <div className="feature">
+              <h4>{t('AboutUs.experience')}</h4>
+              <p>{t('AboutUs.experienceText')}</p>
+            </div>
+            <div className="feature">
+              <h4>{t('AboutUs.quality')}</h4>
+              <p>{t('AboutUs.qualityText')}</p>
+            </div>
+            <div className="feature">
+              <h4>{t('AboutUs.support')}</h4>
+              <p>{t('AboutUs.supportText')}</p>
+            </div>
+          </div>
+          
+          <a href="#" className="button">{t('Buttons.learnMore')}</a>
         </div>
       </div>
     </section>

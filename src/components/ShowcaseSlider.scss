@@ -7,9 +7,19 @@
   justify-content: flex-end;
   color: #fff;
   overflow: hidden;
+  
+  @media (max-width: 768px) {
+    height: 60vh; // Shorter on tablets
+    min-height: 500px;
+  }
+  
+  @media (max-width: 480px) {
+    height: 50vh; // Even shorter on mobile
+    min-height: 400px;
+  }
 }
 
-// Контейнер для фонових зображень
+// Container for background images
 .showcase__background {
   position: absolute;
   top: 0;
@@ -18,12 +28,12 @@
   height: 100%;
   z-index: 1;
 
-  // Ефект затемнення
+  // Darken effect
   &::after {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.05));
+    background: linear-gradient(to top, rgba(0,0,0,0.75), rgba(0,0,0,0.2), rgba(0,0,0,0.05));
   }
 }
 
@@ -35,47 +45,118 @@
   position: absolute;
   opacity: 0;
   transition: opacity 0.8s ease-in-out;
-  transform: scale(1); // Без зуму, показуємо зображення повністю
+  transform: scale(1); // No zoom, show full image
 }
 
 .showcase__bg-image.is-active {
   opacity: 1;
 }
 
-// Основний контент (заголовки)
+// Main content (headings)
 .showcase__content {
   position: relative;
   z-index: 2;
-  padding: 0 5vw 40px;
+  padding: 0 5vw 50px;
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
+  
+  @media (max-width: 768px) {
+    padding: 0 4vw 40px;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 0 20px 30px;
+  }
 }
 
 .showcase__title-block {
-  margin-bottom: 30px;
+  margin-bottom: 35px;
 }
 
 .showcase__location {
-  font-size: 1.1rem;
-  opacity: 0.9;
-  margin: 0 0 10px 0;
+  font-size: 1.5rem;
+  margin: 0 0 15px 0;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: 500;
+  letter-spacing: 4px;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 
+    2px 2px 8px rgba(0, 0, 0, 0.9),
+    0 0 20px rgba(0, 0, 0, 0.7),
+    0 0 30px rgba(0, 0, 0, 0.5);
+    
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    margin: 0 0 12px 0;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 1rem;
+    letter-spacing: 2px;
+    margin: 0 0 10px 0;
+  }
 }
 .showcase__title {
-  font-size: 3.5rem;
-  margin: 0;
+  font-size: 5rem;
+  margin: 0 0 35px 0;
   line-height: 1.1;
-  font-weight: 700;
+  font-weight: 900;
+  color: #ffffff;
+  text-shadow: 
+    3px 3px 10px rgba(0, 0, 0, 1),
+    0 0 30px rgba(0, 0, 0, 0.8),
+    0 0 40px rgba(0, 0, 0, 0.6);
   
   @media (max-width: 768px) {
+    font-size: 3.5rem;
+  }
+  
+  @media (max-width: 480px) {
     font-size: 2.5rem;
   }
 }
 
-// Індикатори слайдів
+.showcase__button {
+  display: inline-block;
+  padding: 20px 55px;
+  background-color: #D9795D;
+  color: #ffffff;
+  font-size: 1.4rem;
+  font-weight: 800;
+  text-decoration: none;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  border: 3px solid #D9795D;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 
+    0 6px 20px rgba(217, 121, 93, 0.6),
+    0 0 40px rgba(217, 121, 93, 0.3);
+  
+  &:hover {
+    background-color: #ffffff;
+    border-color: #ffffff;
+    color: #D9795D;
+    transform: translateY(-4px) scale(1.08);
+    box-shadow: 
+      0 15px 35px rgba(255, 255, 255, 0.4),
+      0 0 50px rgba(255, 255, 255, 0.3);
+    text-shadow: none;
+  }
+  
+  @media (max-width: 768px) {
+    padding: 16px 40px;
+    font-size: 1.2rem;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 14px 35px;
+    font-size: 1.1rem;
+  }
+}
+
+// Slide indicators
 .showcase__indicators {
   display: flex;
   gap: 12px;

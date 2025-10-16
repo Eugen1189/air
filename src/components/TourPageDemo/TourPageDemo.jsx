@@ -1,68 +1,105 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import BookingSidebar from '../BookingSidebar/BookingSidebar';
+import ImportantInfo from '../ImportantInfo';
+import TourGallery from '../TourGallery/TourGallery';
+import Accordion from '../Accordion/Accordion';
+import ReviewsSection from '../ReviewsSection';
+import { tourDetails } from '../../data/toursData';
+import { useTranslatedTourDetails } from '../../hooks/useTranslatedContent';
 
 const TourPageDemo = () => {
+  const { t } = useTranslation();
+  const { id } = useParams();
+  const tour = tourDetails[id] || tourDetails[1]; // Fallback to tour 1 if not found
+  
+  // Get translated tour details if available
+  const translatedDetails = useTranslatedTourDetails(parseInt(id) || 1);
+  
+  // Use translated content if available, otherwise fallback to original
+  const displayTitle = translatedDetails?.title || tour.title;
+  const displaySubtitle = translatedDetails?.subtitle || tour.subtitle;
+  const displayDescription = translatedDetails?.description || tour.description;
+  const displayIncluded = translatedDetails?.included || tour.included;
+  const displayItinerary = translatedDetails?.itinerary || tour.itinerary;
+  const displayFullDescription = translatedDetails?.fullDescription || tour.fullDescription;
+
   return (
     <div className="tour-page-layout" style={{ padding: '60px 20px' }}>
-      {/* Основний контент */}
+      {/* Main content */}
       <div className="tour-content">
         <h1 className="tour-header__title" style={{ marginBottom: '20px' }}>
-          Смарагдове узбережжя Італії
+          {displayTitle}
         </h1>
         
         <p className="tour-header__subtitle" style={{ marginBottom: '30px', color: '#6c757d' }}>
-          8 днів незабутньої подорожі італійським узбережжям
+          {displaySubtitle}
         </p>
 
-        <h3>Про тур</h3>
+        <h3>{t('TourPage.tourInfo')}</h3>
         <p>
-          Пориньте в атмосферу розкоші та краси на узбережжі Амальфі. 
-          Цей тур ідеально поєднує пляжний відпочинок, вишукану кухню та дослідження стародавніх містечок.
+          {displayDescription}
         </p>
 
-        <h3>Що включено</h3>
+        {/* Tour details block */}
+        <div className="tour-details-section">
+          <div className="detail-item">
+            <p className="detail-item__title">{t('TourPage.duration')}</p>
+            <p className="detail-item__value">{tour.duration}</p>
+          </div>
+          <div className="detail-item">
+            <p className="detail-item__title">{t('TourPage.groupSize')}</p>
+            <p className="detail-item__value">{tour.groupSize}</p>
+          </div>
+          <div className="detail-item">
+            <p className="detail-item__title">{t('TourPage.difficulty')}</p>
+            <p className="detail-item__value">{tour.difficulty}</p>
+          </div>
+          <div className="detail-item">
+            <p className="detail-item__title">{t('TourPage.meals')}</p>
+            <p className="detail-item__value">{tour.meals}</p>
+          </div>
+        </div>
+
+        <h3>{t('TourPage.included')}</h3>
         <ul style={{ lineHeight: '2' }}>
-          <li>✈️ Авіапереліт туди-назад</li>
-          <li>🏨 Проживання в готелі 4* (7 ночей)</li>
-          <li>🥐 Сніданки щодня</li>
-          <li>🚐 Трансфери аеропорт-готель</li>
-          <li>👨‍🏫 Супровід україномовного гіда</li>
+          {displayIncluded.map((item, index) => (
+            <li key={index}>✈️ {item}</li>
+          ))}
         </ul>
 
-        <h3>Маршрут</h3>
-        <p>
-          День 1-2: Неаполь - знайомство з містом<br/>
-          День 3-4: Острів Капрі та Блакитний грот<br/>
-          День 5-6: Позітано та Амальфі<br/>
-          День 7-8: Вільний час та відліт
-        </p>
+        <h3>{t('Common.details')}</h3>
+        {displayFullDescription.map((paragraph, index) => (
+          <p key={index}>
+            {paragraph}
+          </p>
+        ))}
 
-        <h3>Деталі</h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-          Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
-        </p>
-        <p>
-          Duis aute irure dolor in reprehenderit in voluptate velit esse 
-          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
-          cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
+        {/* Important information section */}
+        <ImportantInfo />
 
-        <h3>Важлива інформація</h3>
-        <p>
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium 
-          doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore 
-          veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-        </p>
-        <p>
-          Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, 
-          sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
-        </p>
+        {/* Tour gallery section */}
+        <section style={{ padding: '60px 0' }}>
+          <h2 className="section-title">{t('TourPage.gallery')}</h2>
+          <p style={{ textAlign: 'center', marginBottom: '30px', color: '#6c757d' }}>
+            Click on photo to view full size
+          </p>
+          <TourGallery images={tour.gallery} />
+        </section>
+
+        {/* Tour itinerary section */}
+        <section className="itinerary-section" style={{ padding: '60px 0' }}>
+          <h2 className="section-title">{t('TourPage.itinerary')}</h2>
+          <Accordion items={displayItinerary} />
+        </section>
+
+        {/* Reviews Section */}
+        <ReviewsSection tourId={id} />
       </div>
 
-      {/* Sticky Sidebar з формою бронювання */}
-      <BookingSidebar price="950" />
+      {/* Sticky Sidebar with booking form */}
+      <BookingSidebar price={tour.price} />
     </div>
   );
 };

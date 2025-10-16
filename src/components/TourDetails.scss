@@ -1,0 +1,34 @@
+// src/components/TourDetails.scss
+.tour-details-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  background-color: #F8F9FA; // Light gray background
+  padding: 30px;
+  border-radius: 12px;
+  margin: 40px 0; // Top and bottom margins
+}
+
+.detail-item {
+  text-align: center;
+  
+  &__icon {
+    font-size: 2.5rem;
+    color: #D9795D; // Accent color
+    margin-bottom: 10px;
+  }
+  
+  &__title {
+    font-weight: 600;
+    color: #6c757d; // Secondary text color
+    margin: 0;
+  }
+  
+  &__value {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #0A2342; // Primary color
+    margin: 5px 0 0;
+  }
+}
+

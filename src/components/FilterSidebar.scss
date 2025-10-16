@@ -1,0 +1,96 @@
+// Filter Sidebar Styles - Simple & Clean
+
+.filter-sidebar {
+  background-color: #f8f9fa;
+  padding: 30px;
+  border-radius: 16px;
+  position: sticky;
+  top: 100px;
+  
+  @media (max-width: 1024px) {
+    position: relative;
+    top: 0;
+    padding: 20px;
+    margin-bottom: 30px;
+  }
+}
+
+// Filters Header
+.filters-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  
+  h3 {
+    font-size: 1.5rem;
+    margin: 0;
+    color: #0A2342;
+    
+    @media (max-width: 768px) {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+.clear-button {
+  background: none;
+  border: none;
+  color: #D9795D;
+  cursor: pointer;
+  fontSize: 0.9rem;
+  font-weight: 600;
+  text-decoration: underline;
+  padding: 4px 8px;
+  transition: opacity 0.3s ease;
+  
+  &:hover {
+    opacity: 0.8;
+  }
+  
+  @media (max-width: 1024px) {
+    font-size: 1rem;
+    padding: 8px 12px;
+  }
+}
+
+// Results Count
+.results-count {
+  margin-top: 30px;
+  padding: 15px;
+  background-color: #D9795D;
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1rem;
+  
+  @media (max-width: 1024px) {
+    margin-top: 20px;
+    font-size: 0.95rem;
+    padding: 12px;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+}
+
+// Filter inputs styling (mobile optimizations)
+.filter-sidebar {
+  input,
+  select {
+    @media (max-width: 768px) {
+      font-size: 16px; // Prevents zoom on iOS
+      padding: 14px;
+    }
+  }
+  
+  label {
+    @media (max-width: 768px) {
+      font-size: 0.9rem;
+    }
+  }
+}
+

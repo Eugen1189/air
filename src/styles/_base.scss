@@ -1,11 +1,11 @@
 // ============================================
-// БАЗОВІ СТИЛІ
+// BASE STYLES
 // ============================================
 
-// Плавна прокрутка для всього сайту
+// Smooth scroll for entire site
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px; // Відступ для sticky header
+  scroll-padding-top: 80px; // Offset for sticky header
 }
 
 // SCSS/SASS
@@ -19,7 +19,7 @@ body {
 
 h1, h2, h3 {
   font-family: $font-family-headings;
-  font-weight: 600; // Робимо заголовки трохи жирнішими
+  font-weight: 600; // Make headings slightly bolder
   color: $primary-color;
 }
 
@@ -37,4 +37,24 @@ a {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+}
+
+// Smooth page transitions
+.page-container,
+.tour-page-layout,
+.themed-collections-section,
+.about-us-section,
+.search-page {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

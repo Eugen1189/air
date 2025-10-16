@@ -1,0 +1,5 @@
+# Redirects for Single Page Application (React Router)
+# All routes should serve index.html to allow client-side routing
+
+/*    /index.html   200
+

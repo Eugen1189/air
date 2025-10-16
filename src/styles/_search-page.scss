@@ -1,27 +1,27 @@
 // ============================================
-// СТИЛІ ДЛЯ СТОРІНКИ РЕЗУЛЬТАТІВ ПОШУКУ
+// STYLES FOR SEARCH RESULTS PAGE
 // ============================================
 
 // SCSS/SASS
 
-// --- Загальна розмітка сторінки пошуку ---
+// --- General search page layout ---
 .search-page {
-  padding: 40px 0; // Відступи зверху та знизу
+  padding: 40px 0; // Top and bottom padding
 }
 
 .search-layout {
   display: grid;
-  grid-template-columns: 1fr; // Одна колонка для мобільних
+  grid-template-columns: 1fr; // One column for mobile
   gap: 30px;
 
-  // Дві колонки для планшетів та десктопів
+  // Two columns for tablets and desktops
   @media (min-width: $breakpoint-tablet) {
-    grid-template-columns: 280px 1fr; // Фіксована колонка для фільтрів
+    grid-template-columns: 280px 1fr; // Fixed column for filters
   }
 }
 
 
-// --- Стилі для блоку фільтрів (Прагматизм) ---
+// --- Styles for filters block (Pragmatism) ---
 .filters {
   background-color: $white-color;
   padding: 20px;
@@ -56,17 +56,17 @@
 }
 
 
-// --- Стилі для карток турів (Емоції + Прагматизм) ---
+// --- Styles for tour cards (Emotion + Pragmatism) ---
 .results-grid {
   display: grid;
-  grid-template-columns: 1fr; // Одна картка в ряд на мобільних
+  grid-template-columns: 1fr; // One card per row on mobile
   gap: 25px;
 
-  // Дві колонки на планшетах
+  // Two columns on tablets
   @media (min-width: 700px) {
     grid-template-columns: repeat(2, 1fr);
   }
-  // Три колонки на десктопах
+  // Three columns on desktops
   @media (min-width: $breakpoint-desktop) {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -75,7 +75,7 @@
 .tour-card {
   background-color: $white-color;
   border-radius: 12px;
-  overflow: hidden; // Щоб зображення не виходило за межі
+  overflow: hidden; // So image doesn't go beyond borders
   box-shadow: 0 4px 20px rgba($primary-color, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
@@ -89,14 +89,14 @@
   &__image {
     width: 100%;
     height: 200px;
-    object-fit: cover; // Гарантує, що фото заповнить простір
+    object-fit: cover; // Ensures photo fills the space
   }
 
   &__content {
     padding: 20px;
     display: flex;
     flex-direction: column;
-    flex-grow: 1; // Дозволяє контенту зайняти весь доступний простір
+    flex-grow: 1; // Allows content to take all available space
   }
 
   &__title {
@@ -107,14 +107,14 @@
   &__details {
     color: #6c757d;
     margin-bottom: 15px;
-    // Тут можна додати іконки (напр., через FontAwesome)
+    // Icons can be added here (e.g., via FontAwesome)
   }
 
   &__footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: auto; // Притискує футер до низу картки
+    margin-top: auto; // Pushes footer to bottom of card
   }
 
   &__price {
@@ -123,7 +123,7 @@
     color: $primary-color;
   }
   
-  // Використовуємо наш .btn, але робимо його трохи меншим
+  // Use our .btn, but make it slightly smaller
   &__button {
     @extend .btn;
     @extend .btn--accent;

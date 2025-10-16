@@ -1,8 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-scroll';
+import { Link as ScrollLink } from 'react-scroll';
+import { Link as RouterLink, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import Logo from '../Logo/Logo';
+import LanguageDropdown from '../LanguageDropdown';
+import LanguageSwitcher from '../LanguageSwitcher';
 
 const HeaderWithScroll = () => {
+  const { t } = useTranslation();
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -25,87 +32,108 @@ const HeaderWithScroll = () => {
     };
   }, [isMenuOpen]);
 
-  // Налаштування для react-scroll
+  // Configuration for react-scroll
   const scrollConfig = {
-    spy: true,           // Підсвічує активне посилання
-    smooth: true,        // Плавна прокрутка
-    offset: -70,         // Відступ від header (70px)
-    duration: 800,       // Тривалість анімації (800ms)
+    spy: true,           // Highlights active link
+    smooth: true,        // Smooth scrolling
+    offset: -70,         // Offset from header (70px)
+    duration: 800,       // Animation duration (800ms)
   };
 
   return (
     <header className="site-header">
       <div className="header-container">
         <div className="logo">
-          <Link to="hit-tours" {...scrollConfig} duration={500}>
+          <RouterLink to="/">
             <Logo />
-          </Link>
+          </RouterLink>
         </div>
 
         <button 
           className={`burger-button ${isMenuOpen ? 'is-active' : ''}`} 
           onClick={toggleMenu}
-          aria-label="Відкрити меню"
+          aria-label="Apri menu"
         >
           <span></span>
           <span></span>
           <span></span>
         </button>
 
+        {/* Mobile Menu Overlay */}
+        {isMenuOpen && (
+          <div className="mobile-overlay" onClick={closeMenu}></div>
+        )}
+
+        {/* Mobile Navigation */}
         <nav className={`mobile-nav ${isMenuOpen ? 'is-open' : ''}`}>
-          <Link 
-            to="hit-tours" 
-            {...scrollConfig}
-            onClick={closeMenu}
-            activeClass="active"
-          >
-            Популярні тури
-          </Link>
-          <Link 
-            to="collections" 
-            {...scrollConfig}
-            onClick={closeMenu}
-            activeClass="active"
-          >
-            Колекції
-          </Link>
-          <Link 
-            to="about" 
-            {...scrollConfig}
-            onClick={closeMenu}
-            activeClass="active"
-          >
-            Про нас
-          </Link>
-          <a href="/blog" onClick={closeMenu}>Блог</a>
-          <a href="/contacts" onClick={closeMenu}>Контакти</a>
+          {isHomePage ? (
+            <>
+              <ScrollLink 
+                to="collections" 
+                {...scrollConfig}
+                onClick={closeMenu}
+                activeClass="active"
+              >
+                {t('Navigation.collections')}
+              </ScrollLink>
+              <ScrollLink 
+                to="about" 
+                {...scrollConfig}
+                onClick={closeMenu}
+                activeClass="active"
+              >
+                {t('Navigation.aboutUs')}
+              </ScrollLink>
+            </>
+          ) : (
+            <>
+              <RouterLink to="/#collections" onClick={closeMenu}>{t('Navigation.collections')}</RouterLink>
+              <RouterLink to="/#about" onClick={closeMenu}>{t('Navigation.aboutUs')}</RouterLink>
+            </>
+          )}
+          <RouterLink to="/tours" onClick={closeMenu}>{t('Navigation.tours')}</RouterLink>
+          <RouterLink to="/blog" onClick={closeMenu}>{t('Navigation.blog')}</RouterLink>
+          <RouterLink to="/contacts" onClick={closeMenu}>{t('Navigation.contacts')}</RouterLink>
+          
+          {/* Language Switcher in Mobile Menu */}
+          <div className="mobile-lang-switcher">
+            <LanguageSwitcher variant="mobile" />
+          </div>
         </nav>
 
         <nav className="desktop-nav">
-          <Link 
-            to="hit-tours" 
-            {...scrollConfig}
-            activeClass="active"
-          >
-            Популярні тури
-          </Link>
-          <Link 
-            to="collections" 
-            {...scrollConfig}
-            activeClass="active"
-          >
-            Колекції
-          </Link>
-          <Link 
-            to="about" 
-            {...scrollConfig}
-            activeClass="active"
-          >
-            Про нас
-          </Link>
-          <a href="/blog">Блог</a>
-          <a href="/contacts">Контакти</a>
+          {isHomePage ? (
+            <>
+              <ScrollLink 
+                to="collections" 
+                {...scrollConfig}
+                activeClass="active"
+              >
+                {t('Navigation.collections')}
+              </ScrollLink>
+              <ScrollLink 
+                to="about" 
+                {...scrollConfig}
+                activeClass="active"
+              >
+                {t('Navigation.aboutUs')}
+              </ScrollLink>
+            </>
+          ) : (
+            <>
+              <RouterLink to="/#collections">{t('Navigation.collections')}</RouterLink>
+              <RouterLink to="/#about">{t('Navigation.aboutUs')}</RouterLink>
+            </>
+          )}
+          <RouterLink to="/tours">{t('Navigation.tours')}</RouterLink>
+          <RouterLink to="/blog">{t('Navigation.blog')}</RouterLink>
+          <RouterLink to="/contacts">{t('Navigation.contacts')}</RouterLink>
         </nav>
+
+        {/* Language Dropdown */}
+        <div style={{ marginLeft: '20px' }}>
+          <LanguageDropdown />
+        </div>
       </div>
     </header>
   );
