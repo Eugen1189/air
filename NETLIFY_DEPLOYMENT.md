@@ -20,7 +20,7 @@ Complete guide for deploying Air Tour React app to Netlify.
 ```bash
 git add .
 git commit -m "Ready for Netlify deployment"
-git push origin main
+git push origin master
 ```
 
 **Step 2: Connect to Netlify**

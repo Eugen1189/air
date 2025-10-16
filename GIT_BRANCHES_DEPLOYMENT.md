@@ -5,7 +5,7 @@
 ### **Branch Structure:**
 
 ```
-main (or master)     ← Production branch (live site)
+master               ← Production branch (live site)
 └── develop          ← Development branch (testing)
 ```
 

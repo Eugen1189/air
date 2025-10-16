@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Air Tour - Redirecting...</title>
+  <script>
+    // GitHub Pages SPA redirect trick
+    // Stores the attempted path and redirects to index.html
+    sessionStorage.setItem('redirect', location.pathname + location.search + location.hash);
+    location.replace(location.origin + '/Air-tour/');
+  </script>
+</head>
+<body>
+  <p>Redirecting...</p>
+</body>
+</html>
+

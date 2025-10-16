@@ -382,7 +382,7 @@ npm run lint     # Run ESLint
    ```bash
    git add .
    git commit -m "Ready for deployment"
-   git push origin main
+   git push origin master
    ```
 
 2. **Connect to Netlify**

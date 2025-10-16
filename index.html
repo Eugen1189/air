@@ -1,21 +1,32 @@
 <!doctype html>
-<html lang="uk">
+<html lang="es">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Air Tour - Подорожі, що змінюють життя</title>
+    <title>Air Tour - Viajes que Cambian Vidas</title>
+    <meta name="description" content="Discover unforgettable tours around the world with Air Tour. 4 languages, professional service, best prices.">
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- GitHub Pages SPA redirect handler -->
+    <script>
+      (function() {
+        var redirect = sessionStorage.getItem('redirect');
+        if (redirect) {
+          sessionStorage.removeItem('redirect');
+          history.replaceState(null, null, redirect);
+        }
+      })();
+    </script>
 </head>
 <body>
     <div id="root"></div>
-
     <script type="module" src="/src/main.jsx"></script>
 </body>
 </html>
-шдбь ш8ОТьлїб\лжзип.шгли7
