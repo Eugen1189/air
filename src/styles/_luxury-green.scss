@@ -1,0 +1,63 @@
+// ============================================
+// LUXURY BLACK-GREEN THEME
+// Sophisticated dark background with emerald accents
+// ============================================
+
+// Additional green theme styles
+.luxury-green-section {
+  background: linear-gradient(180deg, 
+    rgba(10, 14, 13, 0.95) 0%,
+    rgba(26, 46, 31, 0.9) 50%,
+    rgba(10, 14, 13, 0.95) 100%
+  );
+}
+
+.green-accent-text {
+  color: #50C878; // Emerald
+  text-shadow: 0 0 20px rgba(80, 200, 120, 0.3);
+}
+
+.green-glow-card {
+  box-shadow: 0 4px 20px rgba(46, 125, 50, 0.15),
+              0 0 40px rgba(80, 200, 120, 0.08);
+  
+  &:hover {
+    box-shadow: 0 8px 30px rgba(46, 125, 50, 0.25),
+                0 0 60px rgba(80, 200, 120, 0.15);
+  }
+}
+
+// Emerald gradient overlay
+.emerald-overlay {
+  background: linear-gradient(135deg,
+    rgba(46, 125, 50, 0.2) 0%,
+    rgba(80, 200, 120, 0.1) 100%
+  );
+}
+
+// Section backgrounds with subtle green
+.section-dark-green {
+  background: linear-gradient(180deg,
+    #0A0E0D 0%,
+    #1A2E1F 100%
+  );
+  padding: 80px 40px;
+  
+  @media (max-width: 768px) {
+    padding: 60px 20px;
+  }
+}
+
+// Premium gold on dark green
+.gold-on-green {
+  background: #1A2E1F;
+  color: #D4AF37;
+  border: 2px solid #D4AF37;
+  
+  &:hover {
+    background: #2E7D32;
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.3),
+                0 0 60px rgba(80, 200, 120, 0.2);
+  }
+}
+

@@ -2,11 +2,18 @@
 // MAIN STYLES FILE
 // ============================================
 
+// Google Fonts - Cormorant Garamond for logo
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&display=swap');
+
 // SCSS/SASS
 // --- Import base files ---
 @import 'variables';
+@import 'platinum-theme';  // Platinum color scheme with CSS variables
+@import 'luxury-green';    // Black-Green luxury theme
 @import 'base';
 @import 'components';
+@import 'text-white';      // WHITE TEXT for dark background readability
+@import 'dark-integration'; // Integrate all white blocks into dark theme
 @import 'search-page'; // Search results page
 @import 'tour-page';   // Individual tour page
 @import 'mobile';      // Mobile responsive styles

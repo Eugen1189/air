@@ -1,0 +1,95 @@
+// ============================================
+// WHITE TEXT OVERRIDE FOR DARK THEME
+// Make all text white/readable on black-green background
+// ============================================
+
+// Section titles
+.section-title {
+  color: #FFFFFF !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.section-subtitle {
+  color: rgba(255, 255, 255, 0.9) !important;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+}
+
+// All paragraphs
+p {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+// Links - emerald accent on hover
+a {
+  color: #81D4FA !important; // Light blue
+  
+  &:hover {
+    color: #64B5F6 !important; // Brighter blue
+  }
+}
+
+// Cards text (if not already white)
+.tour-card,
+.collection-card {
+  p, span {
+    color: rgba(255, 255, 255, 0.95) !important;
+  }
+}
+
+// About section
+.about-us-section {
+  h2, h3, h4, p {
+    color: #FFFFFF !important;
+  }
+  
+  .feature h4 {
+    color: #FFFFFF !important;
+  }
+  
+  .feature p {
+    color: rgba(255, 255, 255, 0.9) !important;
+  }
+}
+
+// Blog text
+.blog-page,
+.blog-post {
+  h1, h2, h3, p {
+    color: #FFFFFF !important;
+  }
+}
+
+// Contacts text
+.contacts-page {
+  h1, h2, h3, p, label {
+    color: #FFFFFF !important;
+  }
+}
+
+// Tours list
+.tours-list-page {
+  h1, h2, p {
+    color: #FFFFFF !important;
+  }
+}
+
+// Buttons - keep gold/coral
+.button,
+.btn {
+  // Buttons keep their colors
+}
+
+// Forms - white labels
+label {
+  color: #FFFFFF !important;
+}
+
+// Footer already white
+.site-footer {
+  color: #FFFFFF !important;
+  
+  p, a, li {
+    color: rgba(255, 255, 255, 0.9) !important;
+  }
+}
+

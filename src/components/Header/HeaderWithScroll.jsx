@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link as ScrollLink } from 'react-scroll';
+import { Link as ScrollLink, Events } from 'react-scroll';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Logo from '../Logo/Logo';
@@ -11,6 +11,7 @@ const HeaderWithScroll = () => {
   const location = useLocation();
   const isHomePage = location.pathname === '/';
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -19,6 +20,22 @@ const HeaderWithScroll = () => {
   const closeMenu = () => {
     setIsMenuOpen(false);
   };
+
+  // Track scroll position to change header style
+  useEffect(() => {
+    const handleScroll = () => {
+      // Set isScrolled to true if scrolled more than 50px
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScroll);
+
+    // Cleanup listener on component unmount
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   useEffect(() => {
     if (isMenuOpen) {
@@ -32,6 +49,14 @@ const HeaderWithScroll = () => {
     };
   }, [isMenuOpen]);
 
+  // Cleanup react-scroll events on unmount
+  useEffect(() => {
+    return () => {
+      Events.scrollEvent.remove('begin');
+      Events.scrollEvent.remove('end');
+    };
+  }, []);
+
   // Configuration for react-scroll
   const scrollConfig = {
     spy: true,           // Highlights active link
@@ -41,7 +66,7 @@ const HeaderWithScroll = () => {
   };
 
   return (
-    <header className="site-header">
+    <header className={`site-header ${isScrolled ? 'is-scrolled' : ''}`}>
       <div className="header-container">
         <div className="logo">
           <RouterLink to="/">

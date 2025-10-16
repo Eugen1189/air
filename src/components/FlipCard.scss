@@ -1,211 +1,332 @@
 // src/components/FlipCard.scss
+// Flip card with description on back
+@import '../styles/variables';
 
-.flip-card {
-  background-color: transparent;
-  width: 100%;
-  aspect-ratio: 3 / 4; // Make cards taller
-  perspective: 1000px; // Creates 3D space for child elements
+// Main container
+.collection-card {
   display: block;
-  color: white;
-  text-decoration: none;
-  padding: 15px; // Increase internal spacing around card
-  position: relative; // For proper z-index work
+  width: 100%;
+  aspect-ratio: 1 / 1; // Square cards
+  perspective: 1200px; // Increased for more dramatic 3D
+  cursor: pointer;
+  transform: scale(1); // Prepare for hover scale
+  transition: transform 0.3s ease;
   
-  &:hover {
-    z-index: 10; // Raise card above others on hover
+  @media (min-width: 768px) {
+    cursor: default;
+    
+    &:hover {
+      transform: scale(1.02); // Subtle lift on hover
+      z-index: 10;
+    }
   }
 }
 
-.flip-card-inner {
+// Inner wrapper for flip animation with BOUNCE effect
+.collection-card-inner {
   position: relative;
   width: 100%;
   height: 100%;
-  text-align: center;
-  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); // Bounce!
   transform-style: preserve-3d;
-  -webkit-transform-style: preserve-3d; // Safari fix
-  transform: translateZ(0); // Force GPU acceleration
-  -webkit-transform: translateZ(0); // Safari
+  -webkit-transform-style: preserve-3d;
 }
 
-// On hover over .flip-card, flip .flip-card-inner
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg) scale(0.92); // Reduce on flip for spacing
+// Desktop: flip on hover
+@media (min-width: 768px) {
+  .collection-card:hover .collection-card-inner {
+    transform: rotateY(180deg);
+  }
 }
 
-// Common styles for front and back sides
-.flip-card-front,
-.flip-card-back {
+// Mobile: flip on tap with .is-flipped class
+.collection-card.is-flipped .collection-card-inner {
+  transform: rotateY(180deg);
+}
+
+// Both sides
+.collection-card-front,
+.collection-card-back {
   position: absolute;
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  -webkit-backface-visibility: hidden; // Safari
-  -moz-backface-visibility: hidden; // Firefox
-  border-radius: 12px;
+  -webkit-backface-visibility: hidden;
+  border-radius: 16px;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   transition: box-shadow 0.3s ease;
+}
+
+.collection-card:hover .collection-card-front,
+.collection-card:hover .collection-card-back {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+// Front side - Image with title
+.collection-card-front {
+  transform: translateZ(0); // Establish 3D context
   
-  // Safari specific fixes
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.flip-card:hover .flip-card-front,
-.flip-card:hover .flip-card-back {
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); // Larger shadow on hover
-}
-
-// Styles for front side
-.flip-card-front {
-  background-color: #bbb;
-  color: white;
-  display: flex;
-  justify-content: flex-end; // Place title at bottom
-
   img {
     position: absolute;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.5s ease;
   }
   
-  .overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  @media (min-width: 768px) {
+    &:hover img {
+      transform: scale(1.05);
+    }
   }
+}
 
-  h3 {
-    position: relative;
-    z-index: 2;
+// Overlay gradient
+.collection-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.3) 50%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+  z-index: 1;
+}
+
+// Content container
+.collection-card-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 30px;
+  z-index: 2;
+  
+  @media (max-width: 768px) {
+    padding: 25px;
+  }
+  
+  @media (max-width: 480px) {
     padding: 20px;
-    font-size: 1.8rem;
-    margin: 0;
+  }
+  
+  // On back side - center content
+  .collection-card-back & {
+    justify-content: center;
   }
 }
 
-// Styles for back side
-.flip-card-back {
-  background-color: #D9795D;
+// Title
+.collection-card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem; // Bigger for eye-catching
+  font-weight: 700;
+  margin: 0 0 15px 0;
   color: white;
-  transform: rotateY(180deg);
-  -webkit-transform: rotateY(180deg); // Safari
-  padding: 20px;
+  line-height: 1.1;
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  width: 100%;
   
-  // Safari text rendering fix
-  * {
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    transform: translateZ(0);
-    -webkit-transform: translateZ(0);
-  }
-
-  h3 {
+  @media (max-width: 768px) {
     font-size: 1.8rem;
-    margin: 0 0 15px 0;
+    margin-bottom: 12px;
   }
-
-  .flip-card-description {
-    font-size: 1rem;
-    line-height: 1.4;
-    flex-grow: 1; // Takes free space to push button to bottom
-    display: flex;
-    align-items: center;
-    margin: 0;
-    text-align: center;
+  
+  @media (max-width: 480px) {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
   }
-
-  .flip-card-action {
-    font-size: 1rem;
-    border: 1px solid white;
-    padding: 8px 16px;
-    border-radius: 20px;
-    margin-top: 15px;
-    display: inline-block;
-  }
-
-  .flip-card-button {
-    font-size: 1rem;
-    background: white;
-    color: #D9795D;
-    border: 2px solid white;
-    padding: 12px 24px;
-    border-radius: 25px;
-    margin-top: 15px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: all 0.3s ease;
+  
+  // Smaller on back side
+  .collection-card-back & {
+    font-size: 2rem;
+    margin-bottom: 20px;
     
-    &:hover {
-      background: transparent;
-      color: white;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    }
-    
-    &:active {
-      transform: translateY(0);
+    @media (max-width: 768px) {
+      font-size: 1.7rem;
+      margin-bottom: 16px;
     }
   }
 }
 
-// Mobile styles - enable flip on click
-@media (max-width: 767px) {
-  .flip-card {
-    cursor: pointer;
-    touch-action: manipulation; // Better touch handling
-    
-    // Remove hover effect on mobile
-    &:hover .flip-card-inner {
-      transform: none;
-    }
-    
-    &:hover .flip-card-front,
-    &:hover .flip-card-back {
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    }
+// Back side - Coral background with text
+.collection-card-back {
+  background: linear-gradient(135deg, #D9795D 0%, #c4684d 100%);
+  color: white;
+  // Rotate 180deg AND move closer to viewer (fixes z-fighting)
+  transform: rotateY(180deg) translateZ(1px);
+  -webkit-transform: rotateY(180deg) translateZ(1px);
+}
+
+// Description text (only on back)
+.collection-card-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0 0 25px 0;
+  text-align: center;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  max-height: 200px;
+  overflow-y: auto;
+  
+  // Custom scrollbar
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+  
+  &::-webkit-scrollbar {
+    width: 4px;
   }
   
-  // Add flip effect when is-flipped class is present
-  .flip-card.is-flipped .flip-card-inner {
-    transform: rotateY(180deg);
+  &::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
   }
   
-  .flip-card-back {
-    .flip-card-description {
-      font-size: 0.95rem;
-      padding: 10px 0;
-    }
-    
-    h3 {
-      font-size: 1.5rem;
-    }
-    
-    .flip-card-button {
-      font-size: 0.9rem;
-      padding: 10px 20px;
-    }
+  @media (max-width: 768px) {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    max-height: 150px;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 0.9rem;
+    margin-bottom: 16px;
+    max-height: 120px;
   }
 }
 
-// Tablet and smaller desktops
+// Premium luxury button
+.collection-card-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-decoration: none;
+  flex-shrink: 0; // Button never shrinks
+  
+  // Premium dark theme with gold accent
+  background-color: #1A1A1A;
+  color: #D4AF37;
+  border: 2px solid #D4AF37;
+  
+  // Typography
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  
+  // Shape and spacing
+  padding: 16px 36px;
+  border-radius: 8px;
+  
+  // Premium effects
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3),
+              0 2px 8px rgba(212, 175, 55, 0.2);
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              background-color 0.3s ease,
+              color 0.3s ease,
+              box-shadow 0.3s ease,
+              border-color 0.3s ease;
+  overflow: hidden;
+  will-change: transform;
+  
+  // Ensure clickability
+  pointer-events: auto;
+  z-index: 10;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  
+  // Gold shimmer effect
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+                transparent, 
+                rgba(212, 175, 55, 0.2), 
+                transparent);
+    transition: left 0.6s ease;
+  }
+  
+  &:hover::before {
+    left: 100%;
+  }
+  
+  @media (max-width: 768px) {
+    padding: 14px 32px;
+    font-size: 1.05rem;
+    gap: 8px;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 12px 28px;
+    font-size: 1rem;
+    gap: 8px;
+    min-width: 200px;
+  }
+  
+  // Premium hover effect
+  &:hover {
+    background-color: #252525;
+    color: #E5C158;
+    transform: translateY(-4px);
+    box-shadow: 0 6px 25px rgba(212, 175, 55, 0.4),
+                0 8px 20px rgba(0, 0, 0, 0.4);
+    border-color: #E5C158;
+  }
+  
+  &:active {
+    transform: translateY(-2px);
+    transition-duration: 0.1s;
+  }
+  
+  // Crown icon styling
+  .button-icon {
+    font-size: 1.1em;
+    color: #D4AF37;
+    transition: transform 0.4s ease, color 0.3s ease;
+    filter: drop-shadow(0 2px 4px rgba(212, 175, 55, 0.3));
+  }
+  
+  &:hover .button-icon {
+    color: #E5C158;
+    transform: scale(1.15) rotate(-5deg);
+    filter: drop-shadow(0 3px 6px rgba(229, 193, 88, 0.5));
+  }
+  
+  // Arrow icon styling
+  &::after {
+    content: '→';
+    font-size: 1.2em;
+    color: #D4AF37;
+    transition: transform 0.3s ease, color 0.3s ease;
+    margin-left: 2px;
+  }
+  
+  &:hover::after {
+    transform: translateX(4px);
+    color: #E5C158;
+  }
+}
+
+// Tablet
 @media (min-width: 768px) and (max-width: 1024px) {
-  .flip-card-back {
-    .flip-card-description {
-      font-size: 0.95rem;
-    }
-    
-    h3 {
-      font-size: 1.6rem;
-    }
+  .collection-card-title {
+    font-size: 1.8rem;
+  }
+  
+  .collection-card-description {
+    font-size: 0.95rem;
   }
 }
-

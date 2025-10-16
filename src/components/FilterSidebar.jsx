@@ -21,9 +21,10 @@ const FilterSidebar = ({ filters, onFilterChange, onReset, resultsCount }) => {
       <div className="filters-container">
       
       {/* Search */}
-      <div style={{ marginBottom: '25px' }}>
-        <label style={{ display: 'block', fontWeight: '600', marginBottom: '10px', color: '#333', fontSize: '0.95rem' }}>
-          🔎 {t('ToursPage.searchLabel')}
+      <div className="filter-group">
+        <label>
+          <span className="filter-icon filter-icon--search">🌍</span>
+          {t('ToursPage.searchLabel')}
         </label>
         <input
           type="text"
@@ -41,9 +42,10 @@ const FilterSidebar = ({ filters, onFilterChange, onReset, resultsCount }) => {
       </div>
 
       {/* Destination */}
-      <div style={{ marginBottom: '25px' }}>
-        <label style={{ display: 'block', fontWeight: '600', marginBottom: '10px', color: '#333', fontSize: '0.95rem' }}>
-          📍 {t('ToursPage.destinationLabel')}
+      <div className="filter-group">
+        <label>
+          <span className="filter-icon filter-icon--destination">✈️</span>
+          {t('ToursPage.destinationLabel')}
         </label>
         <select
           value={filters.destination}
@@ -67,9 +69,10 @@ const FilterSidebar = ({ filters, onFilterChange, onReset, resultsCount }) => {
       </div>
 
       {/* Type */}
-      <div style={{ marginBottom: '25px' }}>
-        <label style={{ display: 'block', fontWeight: '600', marginBottom: '10px', color: '#333', fontSize: '0.95rem' }}>
-          🎯 {t('ToursPage.tourTypeLabel')}
+      <div className="filter-group">
+        <label>
+          <span className="filter-icon filter-icon--type">🎭</span>
+          {t('ToursPage.tourTypeLabel')}
         </label>
         <select
           value={filters.type}
@@ -93,9 +96,10 @@ const FilterSidebar = ({ filters, onFilterChange, onReset, resultsCount }) => {
       </div>
 
       {/* Duration */}
-      <div style={{ marginBottom: '25px' }}>
-        <label style={{ display: 'block', fontWeight: '600', marginBottom: '10px', color: '#333', fontSize: '0.95rem' }}>
-          ⏱️ {t('ToursPage.durationLabel')}
+      <div className="filter-group">
+        <label>
+          <span className="filter-icon filter-icon--duration">⏳</span>
+          {t('ToursPage.durationLabel')}
         </label>
         <select
           value={filters.duration}
@@ -119,9 +123,10 @@ const FilterSidebar = ({ filters, onFilterChange, onReset, resultsCount }) => {
       </div>
 
       {/* Difficulty */}
-      <div style={{ marginBottom: '25px' }}>
-        <label style={{ display: 'block', fontWeight: '600', marginBottom: '10px', color: '#333', fontSize: '0.95rem' }}>
-          🏔️ {t('ToursPage.difficultyLabel')}
+      <div className="filter-group">
+        <label>
+          <span className="filter-icon filter-icon--difficulty">⚡</span>
+          {t('ToursPage.difficultyLabel')}
         </label>
         <select
           value={filters.difficulty}
@@ -145,9 +150,10 @@ const FilterSidebar = ({ filters, onFilterChange, onReset, resultsCount }) => {
       </div>
 
       {/* Price Range */}
-      <div style={{ marginBottom: '25px' }}>
-        <label style={{ display: 'block', fontWeight: '600', marginBottom: '10px', color: '#333', fontSize: '0.95rem' }}>
-          💰 {t('ToursPage.priceRangeLabel')}
+      <div className="filter-group">
+        <label>
+          <span className="filter-icon filter-icon--price">💎</span>
+          {t('ToursPage.priceRangeLabel')}
         </label>
         <select
           value={filters.priceRange}

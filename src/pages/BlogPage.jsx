@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import ArticleCard from '../components/ArticleCard';
 import { mockPosts } from '../data/mock-posts';
+import './BlogPage.scss';
 
 const BlogPage = () => {
   const { t } = useTranslation();
@@ -25,25 +26,15 @@ const BlogPage = () => {
     : mockPosts.filter(post => post.category === selectedCategory);
 
   return (
-    <div style={{ padding: '100px 20px 60px', maxWidth: '1200px', margin: '0 auto' }}>
+    <div className="blog-page">
       {/* Header */}
-      <div style={{ textAlign: 'center', marginBottom: '60px' }}>
-        <h1 style={{ fontSize: '3rem', marginBottom: '20px', color: '#0A2342' }}>
-          {t('Blog.title')}
-        </h1>
-        <p style={{ fontSize: '1.3rem', color: '#6c757d', maxWidth: '700px', margin: '0 auto' }}>
-          {t('Blog.subtitle')}
-        </p>
+      <div className="blog-header">
+        <h1>{t('Blog.title')}</h1>
+        <p>{t('Blog.subtitle')}</p>
       </div>
 
       {/* Categories Filter */}
-      <div style={{
-        display: 'flex',
-        gap: '15px',
-        justifyContent: 'center',
-        flexWrap: 'wrap',
-        marginBottom: '50px'
-      }}>
+      <div className="blog-categories">
         {categories.map((cat) => (
           <button
             key={cat}
@@ -75,57 +66,25 @@ const BlogPage = () => {
       </div>
 
       {/* Blog Grid */}
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))',
-        gap: '40px',
-        marginBottom: '60px'
-      }}>
+      <div className="blog-grid">
         {filteredPosts.map((post) => (
           <ArticleCard key={post.id} article={post} />
         ))}
       </div>
 
       {/* Newsletter Section */}
-      <div style={{
-        backgroundColor: '#f8f9fa',
-        padding: '50px 40px',
-        borderRadius: '16px',
-        textAlign: 'center'
-      }}>
-        <h3 style={{ fontSize: '2rem', marginBottom: '15px', color: '#0A2342' }}>
-          {t('Blog.newsletter')}
-        </h3>
-        <p style={{ fontSize: '1.1rem', color: '#6c757d', marginBottom: '30px', maxWidth: '600px', margin: '0 auto 30px' }}>
-          {t('Blog.newsletterText')}
-        </p>
-        <div style={{
-          display: 'flex',
-          gap: '10px',
-          maxWidth: '500px',
-          margin: '0 auto'
-        }}>
+      <div className="blog-newsletter">
+        <h3>{t('Blog.newsletter')}</h3>
+        <p>{t('Blog.newsletterText')}</p>
+        <div className="newsletter-form">
           <input
             type="email"
             placeholder={t('Blog.emailPlaceholder')}
-            style={{
-              flex: 1,
-              padding: '15px 20px',
-              border: '2px solid #e0e0e0',
-              borderRadius: '8px',
-              fontSize: '1rem'
-            }}
           />
-          <button style={{
-            padding: '15px 35px',
-            backgroundColor: '#D9795D',
-            color: 'white',
-            border: 'none',
-            borderRadius: '8px',
-            fontWeight: '600',
-            cursor: 'pointer',
-            fontSize: '1rem'
-          }}>
+          <button
+            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#c4684d'}
+            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#D9795D'}
+          >
             {t('Blog.subscribe')}
           </button>
         </div>

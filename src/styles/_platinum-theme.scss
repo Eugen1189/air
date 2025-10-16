@@ -1,0 +1,97 @@
+// ============================================
+// PLATINUM THEME - Cool Minimalist Design
+// ============================================
+
+// Sophisticated Black-Green Theme (Default)
+:root {
+  // Backgrounds - Black-Green luxury
+  --background-color: #0D1813;        // Deep black-green
+  --background-secondary: #1A2E1F;    // Dark forest green
+  --card-background: #FFFFFF;         // Pure white cards (contrast)
+  
+  // Text Colors - White for readability
+  --text-primary: #FFFFFF;            // Pure white
+  --text-secondary: rgba(255, 255, 255, 0.9);  // Slightly transparent
+  --text-muted: rgba(255, 255, 255, 0.7);      // More transparent
+  
+  // Accent Colors - Emerald & Gold
+  --accent-primary: #2E7D32;          // Rich emerald green
+  --accent-secondary: #43A047;        // Bright green
+  --accent-gold: #D4AF37;             // Luxurious gold (for premium elements)
+  --accent-emerald: #50C878;          // Bright emerald
+  
+  // Borders & Dividers
+  --border-color: #D5D5D5;            // Light gray border
+  --border-color-hover: #B0B0B0;      // Darker on hover
+  
+  // Shadows
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --shadow-xl: 0 12px 36px rgba(0, 0, 0, 0.15);
+  
+  // Overlays
+  --overlay-light: rgba(0, 0, 0, 0.3);
+  --overlay-dark: rgba(0, 0, 0, 0.6);
+  
+  // Premium Elements
+  --premium-bg: #1A1A1A;              // Dark for premium buttons
+  --premium-gold: #D4AF37;            // Gold accent
+  --premium-gold-bright: #E5C158;     // Brighter gold on hover
+}
+
+// Dark Platinum Theme
+[data-theme='dark'] {
+  // Backgrounds
+  --background-color: #1E1E1E;        // Dark charcoal
+  --background-secondary: #2A2A2A;    // Slightly lighter
+  --card-background: #252525;         // Dark cards
+  
+  // Text Colors
+  --text-primary: #E5E4E2;            // Light platinum
+  --text-secondary: #B0B0B0;          // Medium gray
+  --text-muted: #808080;              // Darker gray
+  
+  // Accent Colors
+  --accent-primary: #85929E;          // Light blue-gray
+  --accent-secondary: #5D6D7E;        // Darker blue-gray
+  --accent-gold: #D4AF37;             // Gold stays same
+  
+  // Borders & Dividers
+  --border-color: #404040;            // Dark border
+  --border-color-hover: #606060;      // Lighter on hover
+  
+  // Shadows
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 12px 36px rgba(0, 0, 0, 0.6);
+  
+  // Overlays
+  --overlay-light: rgba(0, 0, 0, 0.5);
+  --overlay-dark: rgba(0, 0, 0, 0.8);
+  
+  // Premium Elements
+  --premium-bg: #0A0A0A;              // Even darker for contrast
+  --premium-gold: #E5C158;            // Brighter gold in dark mode
+  --premium-gold-bright: #F0D670;     // Very bright on hover
+}
+
+// Helper classes for using CSS variables
+.platinum-bg {
+  background-color: var(--background-color);
+}
+
+.platinum-card {
+  background-color: var(--card-background);
+  box-shadow: var(--shadow-md);
+}
+
+.platinum-text {
+  color: var(--text-primary);
+}
+
+.platinum-accent {
+  color: var(--accent-primary);
+}
+

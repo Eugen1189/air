@@ -5,22 +5,37 @@
 // Smooth scroll for entire site
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px; // Offset for sticky header
+  scroll-padding-top: 100px; // Offset for fixed header
 }
 
 // SCSS/SASS
 body {
   font-family: $font-family-body;
-  color: $text-color;
-  background-color: $background-color;
+  color: #FFFFFF; // White text for readability on dark background
+  // Sophisticated black-green gradient background
+  background: linear-gradient(135deg, 
+    #0A0E0D 0%,      // Deep black-green
+    #1A2E1F 25%,     // Dark forest green
+    #0D1813 50%,     // Black-green
+    #1F3B2A 75%,     // Emerald dark
+    #0A0E0D 100%     // Back to black-green
+  );
+  background-attachment: fixed; // Parallax effect
   margin: 0;
+  padding-top: 100px;
   line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4, h5, h6 {
   font-family: $font-family-headings;
   font-weight: 600; // Make headings slightly bolder
-  color: $primary-color;
+  color: #FFFFFF; // White headings
+  transition: color 0.3s ease;
+}
+
+p {
+  color: rgba(255, 255, 255, 0.9); // Slightly transparent white for body text
 }
 
 a {

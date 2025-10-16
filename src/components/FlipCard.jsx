@@ -1,7 +1,8 @@
 // src/components/FlipCard.jsx
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { FaCrown } from 'react-icons/fa';
 import { useTranslatedCollection } from '../hooks/useTranslatedContent';
 import './FlipCard.scss'; // Import styles
 
@@ -15,12 +16,11 @@ const FlipCard = ({ imageSrc, title, link, description, collectionId }) => {
   
   // Use translated content if available, otherwise fallback to props
   const displayTitle = translatedContent?.title || title;
-  const displayDescription = translatedContent?.description || description;
 
   // Handle card click on mobile - flip the card
   const handleCardClick = (e) => {
-    // Check if screen width is mobile (< 768px)
-    if (window.innerWidth < 768) {
+    // Only flip if clicking directly on card (not on button)
+    if (window.innerWidth < 768 && !e.target.closest('button')) {
       e.preventDefault();
       setIsFlipped(!isFlipped);
     }
@@ -30,34 +30,49 @@ const FlipCard = ({ imageSrc, title, link, description, collectionId }) => {
   const handleButtonClick = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    // Smooth scroll to top before navigation
+    
+    console.log('Button clicked! Navigating to:', link);
+    
+    // Scroll to top
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    // Navigate after short delay for smooth transition
+    
+    // Navigate to the collection page
     setTimeout(() => {
       navigate(link);
-    }, 300);
+    }, 200);
   };
+
+  // Get translated description
+  const displayDescription = translatedContent?.description || description;
 
   return (
     <div 
-      className={`flip-card ${isFlipped ? 'is-flipped' : ''}`}
+      className={`collection-card ${isFlipped ? 'is-flipped' : ''}`}
       onClick={handleCardClick}
     >
-      <div className="flip-card-inner">
-        <div className="flip-card-front">
+      <div className="collection-card-inner">
+        {/* Front side - Image with title */}
+        <div className="collection-card-front">
           <img src={imageSrc} alt={displayTitle} />
-          <div className="overlay"></div>
-          <h3>{displayTitle}</h3>
+          <div className="collection-card-overlay"></div>
+          <div className="collection-card-content">
+            <h3 className="collection-card-title">{displayTitle}</h3>
+          </div>
         </div>
-        <div className="flip-card-back">
-          <h3>{displayTitle}</h3>
-          <p className="flip-card-description">{displayDescription}</p>
-          <button 
-            className="flip-card-button"
-            onClick={handleButtonClick}
-          >
-            {t('Buttons.learnMore')} →
-          </button>
+        
+        {/* Back side - Text description with button */}
+        <div className="collection-card-back">
+          <div className="collection-card-content">
+            <h3 className="collection-card-title">{displayTitle}</h3>
+            <p className="collection-card-description">{displayDescription}</p>
+            <button 
+              className="collection-card-button"
+              onClick={handleButtonClick}
+            >
+              <FaCrown className="button-icon" />
+              <span>{t('Buttons.learnMore')}</span>
+            </button>
+          </div>
         </div>
       </div>
     </div>

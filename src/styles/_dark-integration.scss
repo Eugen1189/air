@@ -1,0 +1,166 @@
+// ============================================
+// DARK THEME INTEGRATION
+// Integrate all white blocks into black-green theme
+// ============================================
+
+// Tour Cards - dark glassmorphic
+.tour-card {
+  background: rgba(26, 46, 31, 0.6) !important; // Dark forest green with transparency
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(80, 200, 120, 0.2) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+  
+  &:hover {
+    background: rgba(26, 46, 31, 0.8) !important;
+    border-color: rgba(80, 200, 120, 0.4) !important;
+    box-shadow: 0 8px 30px rgba(80, 200, 120, 0.2) !important;
+  }
+  
+  h3, p, span {
+    color: #FFFFFF !important;
+  }
+}
+
+// Booking Sidebar - dark emerald
+.booking-sidebar {
+  background: linear-gradient(135deg, 
+    rgba(13, 24, 19, 0.95) 0%,
+    rgba(26, 46, 31, 0.95) 100%
+  ) !important;
+  backdrop-filter: blur(15px) !important;
+  border: 1px solid rgba(80, 200, 120, 0.3) !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4) !important;
+  
+  h3, p, label, span {
+    color: #FFFFFF !important;
+  }
+  
+  input, select, textarea {
+    background: rgba(10, 14, 13, 0.6) !important;
+    border: 1px solid rgba(80, 200, 120, 0.3) !important;
+    color: #FFFFFF !important;
+    
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.5) !important;
+    }
+    
+    &:focus {
+      border-color: #50C878 !important;
+      box-shadow: 0 0 15px rgba(80, 200, 120, 0.3) !important;
+    }
+  }
+}
+
+// Booking Widget - dark theme
+.booking-widget {
+  background: rgba(26, 46, 31, 0.8) !important;
+  backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(80, 200, 120, 0.25) !important;
+}
+
+// Contact Cards - dark glassmorphic
+.contact-card,
+.contact-info-card {
+  background: rgba(26, 46, 31, 0.7) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(80, 200, 120, 0.2) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+  
+  &:hover {
+    background: rgba(26, 46, 31, 0.9) !important;
+    box-shadow: 0 8px 25px rgba(80, 200, 120, 0.2) !important;
+  }
+  
+  h3, p, a {
+    color: #FFFFFF !important;
+  }
+}
+
+// Forms - dark inputs
+.form-group input,
+.form-group select,
+.form-group textarea {
+  background: rgba(10, 14, 13, 0.7) !important;
+  border: 1px solid rgba(80, 200, 120, 0.3) !important;
+  color: #FFFFFF !important;
+  
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.5) !important;
+  }
+  
+  &:focus {
+    background: rgba(10, 14, 13, 0.9) !important;
+    border-color: #50C878 !important;
+    box-shadow: 0 0 20px rgba(80, 200, 120, 0.4) !important;
+  }
+}
+
+// Blog Cards - dark theme
+.article-card {
+  background: rgba(26, 46, 31, 0.7) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(80, 200, 120, 0.2) !important;
+  
+  &:hover {
+    background: rgba(26, 46, 31, 0.9) !important;
+    box-shadow: 0 8px 25px rgba(80, 200, 120, 0.25) !important;
+  }
+}
+
+// About Us Section - semi-transparent
+.about-us-section {
+  background: linear-gradient(180deg,
+    rgba(10, 14, 13, 0.6) 0%,
+    rgba(26, 46, 31, 0.4) 100%
+  ) !important;
+  backdrop-filter: blur(8px) !important;
+}
+
+// Review Cards - dark
+.review-item {
+  background: rgba(26, 46, 31, 0.6) !important;
+  border: 1px solid rgba(80, 200, 120, 0.2) !important;
+}
+
+// Filter Sidebar - dark glassmorphic
+.filters,
+.filter-sidebar {
+  background: rgba(13, 24, 19, 0.8) !important;
+  backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(80, 200, 120, 0.25) !important;
+}
+
+// Buttons - keep gold/coral/emerald
+.button,
+.btn,
+.submit-button {
+  // Buttons keep their accent colors for visibility
+}
+
+// White cards on dark pages - integrate
+.page-container,
+.content-wrapper {
+  background: transparent !important;
+}
+
+// Social Media Card - dark theme
+.social-media-card {
+  background: rgba(10, 14, 13, 0.9) !important;
+  border: 1px solid rgba(80, 200, 120, 0.3) !important;
+}
+
+// Map Section - dark
+.map-placeholder {
+  background: rgba(26, 46, 31, 0.5) !important;
+  border: 1px solid rgba(80, 200, 120, 0.25) !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+// Newsletter - dark
+.newsletter-section {
+  background: rgba(13, 24, 19, 0.7) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(80, 200, 120, 0.2) !important;
+}
+
