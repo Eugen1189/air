@@ -1,88 +1,11 @@
-// ============================================
-// STYLES FOR SEARCH RESULTS PAGE
-// ============================================
-
-// 👇 ДОДАЄМО ІМПОРТ ФАЙЛУ ЗІ ЗМІННИМИ ТА МІКСИНАМИ
-@import 'variables';
-
-// SCSS/SASS
-
-// --- General search page layout ---
-.search-page {
-  padding: 40px 0; // Top and bottom padding
-}
-
-.search-layout {
-  display: grid;
-  grid-template-columns: 1fr; // One column for mobile
-  gap: 30px;
-
-  // Two columns for tablets and desktops
-  @media (min-width: $breakpoint-tablet) {
-    grid-template-columns: 280px 1fr; // Fixed column for filters
-  }
-}
-
-
-// --- Styles for filters block (Pragmatism) ---
-.filters {
-  background-color: $white-color;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 20px rgba($primary-color, 0.05);
-
-  &__title {
-    font-size: 1.5rem;
-    margin-top: 0;
-    margin-bottom: 20px;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 15px;
-  }
-}
-
-.filter-group {
-  margin-bottom: 25px;
-
-  &__label {
-    display: block;
-    font-weight: 700;
-    margin-bottom: 10px;
-  }
-
-  &__input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-family: $font-family-body;
-  }
-}
-
-
-// --- Styles for tour cards (Emotion + Pragmatism) ---
-.results-grid {
-  display: grid;
-  grid-template-columns: 1fr; // One card per row on mobile
-  gap: 25px;
-
-  // Two columns on tablets
-  @media (min-width: 700px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  // Three columns on desktops
-  @media (min-width: $breakpoint-desktop) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
 // "СИЛОВИЙ" МЕТОД: Використовуємо !important для гарантованого перебиття старих стилів
 // Використовуємо більш "сильний" селектор, додавши клас батьківського елемента
 .results-grid .tour-card,
 .tours-grid .tour-card,
 .collections-grid .tour-card,
 .tour-card {
-  // Застосовуємо "скляний" фон з !important
-  background-color: rgba(255, 255, 255, 0.05) !important;
+  // Застосовуємо "скляний" фон з !important - ТЕСТОВИЙ ЧЕРВОНИЙ КОЛІР
+  background-color: rgba(255, 0, 0, 0.3) !important;
   backdrop-filter: blur(15px) !important;
   -webkit-backdrop-filter: blur(15px) !important;
   border: 1px solid rgba(255, 255, 255, 0.1) !important;
@@ -139,7 +62,7 @@
     line-height: 1.3 !important;
 
     a {
-      color: #FFFFFF !important;
+      color: #FFFF00 !important; // ТЕСТОВИЙ ЖОВТИЙ КОЛІР
       font-weight: 600 !important;
       text-decoration: none !important;
     }
@@ -282,4 +205,3 @@
     margin-top: auto !important;
   }
 }
-

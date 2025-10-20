@@ -1,0 +1,240 @@
+// src/pages/BlogPostPage.scss
+
+// 👇 ДОДАЄМО ІМПОРТ ФАЙЛУ ЗІ ЗМІННИМИ ТА МІКСИНАМИ
+@import '../styles/variables';
+
+// Blog Post Page Styles
+.blog-post-page {
+  padding: 100px 20px 60px;
+}
+
+// Контейнер для кнопки "Назад"
+.back-container {
+  max-width: 900px;
+  margin: 0 auto 30px;
+}
+
+// Посилання "Назад до блогу"
+.back-link {
+  color: var(--accent-color, #D9795D); // Робимо його акцентним кольором
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #c4684d;
+  }
+}
+
+// Контейнер статті
+.article-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+// Хедер статті
+.post-header {
+  text-align: center; // Центруємо весь контент
+  padding: 60px 0;
+  margin-bottom: 40px;
+}
+
+// Категорія
+.category-badge {
+  display: inline-block;
+  background-color: var(--accent-color, #D9795D);
+  color: white;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+// Головний заголовок статті
+.post-title {
+  color: #FFFFFF; // Робимо білим та яскравим
+  font-size: 3.5rem; // Можна зробити його більшим
+  margin-bottom: 20px;
+  line-height: 1.2;
+  font-weight: 700;
+
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 2rem;
+  }
+}
+
+// Мета-інформація (дата, час читання)
+.post-meta {
+  color: rgba(255, 255, 255, 0.7); // Світло-сірий, трохи прозорий
+  display: flex;
+  gap: 25px;
+  font-size: 1rem;
+  margin-bottom: 40px;
+  padding-bottom: 30px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  justify-content: center;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+}
+
+// Зображення статті
+.post-image {
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 50px;
+
+  img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+  }
+}
+
+// Витримка статті
+.post-excerpt {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 40px;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-left: 4px solid var(--accent-color, #D9795D);
+  border-radius: 8px;
+  font-style: italic;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+// Контент статті
+.blog-content {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9);
+
+  h3 {
+    font-size: 1.8rem;
+    color: #FFFFFF;
+    margin: 40px 0 20px;
+    font-weight: 700;
+  }
+
+  p {
+    margin-bottom: 20px;
+  }
+
+  ul, ol {
+    margin: 20px 0;
+    padding-left: 30px;
+  }
+
+  li {
+    margin-bottom: 12px;
+    line-height: 1.8;
+  }
+
+  strong {
+    color: var(--accent-color, #D9795D);
+    font-weight: 600;
+  }
+}
+
+// Секція поділитися
+.share-section {
+  margin-top: 60px;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #FFFFFF;
+  }
+
+  .share-links {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    font-size: 2rem;
+
+    a {
+      color: var(--accent-color, #D9795D);
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+}
+
+// Пов'язані статті
+.related-posts {
+  max-width: 1200px;
+  margin: 80px auto 0;
+
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    text-align: center;
+    color: #FFFFFF;
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
+
+  .related-card {
+    text-decoration: none;
+    color: inherit;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 20px;
+
+      h4 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+        color: #FFFFFF;
+      }
+
+      p {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.95rem;
+      }
+    }
+  }
+}

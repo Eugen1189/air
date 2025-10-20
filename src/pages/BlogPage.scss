@@ -16,16 +16,23 @@
 
 .blog-header {
   text-align: center;
+  padding: 60px 0; // Додаємо відступи
   margin-bottom: 60px;
   
   @media (max-width: 768px) {
+    padding: 40px 0;
     margin-bottom: 40px;
   }
   
+  @media (max-width: 480px) {
+    padding: 30px 0;
+  }
+  
+  // Робимо головний заголовок білим та виразним
   h1 {
     font-size: 3rem;
     margin-bottom: 20px;
-    color: #0A2342;
+    color: #FFFFFF;
     
     @media (max-width: 768px) {
       font-size: 2rem;
@@ -36,11 +43,12 @@
     }
   }
   
+  // Робимо підзаголовок світло-сірим та читабельним
   p {
     font-size: 1.3rem;
-    color: #6c757d;
-    max-width: 700px;
-    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 600px;
+    margin: 15px auto 0 auto;
     
     @media (max-width: 768px) {
       font-size: 1rem;
@@ -109,25 +117,36 @@
 }
 
 .blog-newsletter {
-  background-color: #f8f9fa;
-  padding: 60px 40px;
+  // 1. Застосовуємо "скляний" фон
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  
+  // 2. Додаємо рамку та заокруглення
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 16px;
+  
+  // Інші стилі для вигляду
+  padding: 50px;
   text-align: center;
-  color: #0A2342;
+  margin: 60px 0;
   
   @media (max-width: 768px) {
     padding: 40px 25px;
     border-radius: 12px;
+    margin: 40px 0;
   }
   
   @media (max-width: 480px) {
     padding: 30px 20px;
+    margin: 30px 0;
   }
   
+  // 3. Робимо весь текст всередині світлим
   h3 {
     font-size: 2.2rem;
     margin-bottom: 15px;
-    color: #0A2342;
+    color: #FFFFFF;
     
     @media (max-width: 768px) {
       font-size: 1.75rem;
@@ -140,9 +159,9 @@
   
   p {
     font-size: 1.1rem;
-    color: #6c757d;
+    color: rgba(255, 255, 255, 0.7);
     margin-bottom: 30px;
-    max-width: 600px;
+    max-width: 500px;
     margin-left: auto;
     margin-right: auto;
     
@@ -160,7 +179,8 @@
 
 .newsletter-form {
   display: flex;
-  gap: 15px;
+  justify-content: center;
+  gap: 10px;
   max-width: 500px;
   margin: 0 auto;
   
@@ -172,9 +192,15 @@
   input {
     flex: 1;
     padding: 15px 20px;
-    border: 2px solid #e0e0e0;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 8px;
     font-size: 1rem;
+    color: #FFFFFF;
+    
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
     
     @media (max-width: 768px) {
       padding: 14px 18px;
@@ -185,10 +211,10 @@
   
   button {
     padding: 15px 30px;
-    background-color: #D9795D;
+    background-color: var(--accent-color, #D9795D);
     border: none;
     border-radius: 8px;
-    color: white;
+    color: #FFFFFF;
     font-weight: 600;
     cursor: pointer;
     transition: background-color 0.3s ease;

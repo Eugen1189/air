@@ -93,7 +93,7 @@ export const mockTours = [
     id: 9, 
     title: 'Tesori della Thailandia', 
     slug: 'thailandia', 
-    image: 'https://images.unsplash.com/photo-1528181304800-259b08848526?q=80&w=2070', 
+    image: 'https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?q=80&w=2070', 
     price: 1650, 
     destination: 'Thailandia', 
     duration: 10, 

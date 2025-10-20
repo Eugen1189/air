@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useTranslatedBlogPost } from '../hooks/useTranslatedContent';
+import './ArticleCard.scss';
 
 const ArticleCard = ({ article }) => {
   const { t, i18n } = useTranslation();
@@ -23,94 +24,38 @@ const ArticleCard = ({ article }) => {
   };
 
   return (
-    <article
-      style={{
-        borderRadius: '16px',
-        overflow: 'hidden',
-        boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
-        transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-        cursor: 'pointer',
-        height: '100%',
-        display: 'flex',
-        flexDirection: 'column'
-      }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.transform = 'translateY(-8px)';
-        e.currentTarget.style.boxShadow = '0 8px 30px rgba(0,0,0,0.15)';
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.transform = 'translateY(0)';
-        e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
-      }}
-    >
+    <article className="article-card">
       {/* Image */}
-      <div style={{ position: 'relative', height: '240px', overflow: 'hidden' }}>
+      <div className="article-card__image">
         <img
           src={article.coverImage}
           alt={displayTitle}
-          style={{
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover'
-          }}
         />
-        <div style={{
-          position: 'absolute',
-          top: '15px',
-          left: '15px',
-          backgroundColor: '#D9795D',
-          color: 'white',
-          padding: '6px 15px',
-          borderRadius: '20px',
-          fontSize: '0.85rem',
-          fontWeight: '600'
-        }}>
+        <div className="article-card__category">
           {displayCategory}
         </div>
       </div>
 
       {/* Content */}
-      <div style={{ padding: '25px', display: 'flex', flexDirection: 'column', flex: 1 }}>
-        <div style={{
-          display: 'flex',
-          gap: '15px',
-          fontSize: '0.85rem',
-          color: '#999',
-          marginBottom: '15px'
-        }}>
+      <div className="article-card__content">
+        <div className="article-card__meta">
           <span>📅 {formatDate(article.publishDate)}</span>
           <span>⏱️ {article.readTime}</span>
         </div>
 
-        <h3 style={{
-          fontSize: '1.5rem',
-          marginBottom: '15px',
-          color: '#0A2342',
-          lineHeight: '1.3'
-        }}>
-          {displayTitle}
+        <h3 className="article-card__title">
+          <Link to={`/blog/${article.slug}`}>
+            {displayTitle}
+          </Link>
         </h3>
 
-        <p style={{
-          color: '#6c757d',
-          lineHeight: '1.6',
-          marginBottom: '20px',
-          flex: 1
-        }}>
+        <p className="article-card__excerpt">
           {displayExcerpt}
         </p>
 
         <Link
           to={`/blog/${article.slug}`}
-          style={{
-            color: '#D9795D',
-            fontWeight: '600',
-            textDecoration: 'none',
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '8px',
-            marginTop: 'auto'
-          }}
+          className="article-card__link"
         >
           {t('Blog.readMore')} →
         </Link>

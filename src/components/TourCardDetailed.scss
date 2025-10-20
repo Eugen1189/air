@@ -1,0 +1,156 @@
+// Tour Card Detailed Styles - як в блозі
+@import '../styles/variables';
+
+.tour-card-detailed {
+  // 1. Застосовуємо "скляний" фон
+  background-color: rgba(255, 255, 255, 0.05); // Напівпрозорий світлий фон
+  backdrop-filter: blur(15px);                  // Ефект розмитого скла позаду елемента
+  -webkit-backdrop-filter: blur(15px);        // Підтримка для Safari
+  
+  // 2. Додаємо ледь помітну рамку для чіткості контурів
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  
+  // Інші стилі для вигляду та інтерактивності
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%; // Важливо, щоб всі картки були однакової висоти
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.25);
+  }
+
+  // Image container
+  &__image {
+    position: relative;
+    height: 240px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  // Price badge
+  &__price-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: var(--accent-color, #D9795D);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  // Type badge
+  &__type-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: rgba(10, 35, 66, 0.9);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+
+  // Content container
+  &__content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  // Meta information (destination, duration, difficulty)
+  &__meta {
+    display: flex;
+    gap: 15px;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+  }
+
+  // Tour title
+  &__title {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    line-height: 1.3;
+    color: #FFFFFF;
+    font-weight: 600;
+  }
+
+  // Tour description
+  &__description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 20px;
+    flex: 1;
+  }
+
+  // Details link
+  &__link {
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--accent-color, #D9795D);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: auto;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  // Responsive adjustments
+  @media (max-width: 768px) {
+    &__content {
+      padding: 20px;
+    }
+
+    &__title {
+      font-size: 1.3rem;
+    }
+
+    &__description {
+      font-size: 0.95rem;
+    }
+
+    &__meta {
+      gap: 10px;
+      font-size: 0.75rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    &__content {
+      padding: 18px;
+    }
+
+    &__title {
+      font-size: 1.2rem;
+    }
+
+    &__description {
+      font-size: 0.9rem;
+    }
+
+    &__meta {
+      gap: 8px;
+      font-size: 0.7rem;
+    }
+  }
+}

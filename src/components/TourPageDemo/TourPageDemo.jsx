@@ -6,15 +6,20 @@ import ImportantInfo from '../ImportantInfo';
 import TourGallery from '../TourGallery/TourGallery';
 import Accordion from '../Accordion/Accordion';
 import ReviewsSection from '../ReviewsSection';
-import { tourDetails } from '../../data/toursData';
+import { getTourById, getTourBySlug } from '../../utils/tourUtils';
 import { useTranslatedTourDetails } from '../../hooks/useTranslatedContent';
 
 const TourPageDemo = () => {
   const { t } = useTranslation();
   const { id } = useParams();
-  const tour = tourDetails[id] || tourDetails[1]; // Fallback to tour 1 if not found
   
-  // Get translated tour details if available
+  // Спочатку намагаємося знайти тур за slug, потім за id
+  let tour = getTourBySlug(id);
+  if (!tour) {
+    tour = getTourById(id); // Fallback до пошуку за id
+  }
+  
+  // Get translated tour details if available (тільки для числових ID)
   const translatedDetails = useTranslatedTourDetails(parseInt(id) || 1);
   
   // Use translated content if available, otherwise fallback to original
@@ -24,6 +29,28 @@ const TourPageDemo = () => {
   const displayIncluded = translatedDetails?.included || tour.included;
   const displayItinerary = translatedDetails?.itinerary || tour.itinerary;
   const displayFullDescription = translatedDetails?.fullDescription || tour.fullDescription;
+
+  // Якщо тур не знайдено, показуємо повідомлення про помилку
+  if (!tour) {
+    return (
+      <div className="tour-page-layout" style={{ padding: '60px 20px', textAlign: 'center' }}>
+        <h1 style={{ color: '#FFFFFF', marginBottom: '20px' }}>Tour non trovato</h1>
+        <p style={{ color: 'rgba(255, 255, 255, 0.8)', marginBottom: '30px' }}>
+          Il tour che stai cercando non esiste o è stato rimosso.
+        </p>
+        <a 
+          href="/tours" 
+          style={{ 
+            color: 'var(--accent-color, #D9795D)', 
+            textDecoration: 'none',
+            fontWeight: '600'
+          }}
+        >
+          ← Torna alla lista dei tour
+        </a>
+      </div>
+    );
+  }
 
   return (
     <div className="tour-page-layout" style={{ padding: '60px 20px' }}>

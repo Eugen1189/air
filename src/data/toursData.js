@@ -57,7 +57,7 @@ export const hitTours = [
   },
   {
     id: 9,
-    imageUrl: 'https://images.unsplash.com/photo-1528181304800-259b08848526?q=80&w=2070',
+    imageUrl: 'https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?q=80&w=2070',
     title: 'Tesori della Thailandia',
     details: '10 giorni, 9 notti',
     price: '1650',
@@ -68,31 +68,52 @@ export const hitTours = [
 export const collections = [
   { 
     id: 'gastro', 
-    link: '/collection/gastro', 
+    slug: 'gastro-tours', // Додаємо slug
+    link: '/collection/gastro-tours', // Оновлюємо посилання
     imageUrl: 'https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=1964', 
     title: 'Tour Gastronomici',
     description: 'Immergiti nel mondo dei sapori autentici. Dalle strade animate dei mercati locali alle sale eleganti dei ristoranti stellati Michelin. Degusta vini pregiati, impara le ricette tradizionali dai maestri locali e scopri i segreti della cucina regionale in ogni angolo del mondo.' 
   },
   { 
     id: 'relax', 
-    link: '/collection/relax', 
+    slug: 'relax-trips', // Додаємо slug
+    link: '/collection/relax-trips', // Оновлюємо посилання
     imageUrl: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=2070', 
     title: 'Viaggi per il Relax',
     description: 'Trova la pace interiore nelle migliori destinazioni benessere del mondo. Spa di lusso, resort sulle spiagge paradisiache, bagni termali naturali e centri yoga. Ricaricati con massaggi ayurvedici, meditazione al tramonto e trattamenti esclusivi in ambienti da sogno.'
   },
   { 
     id: 'active', 
-    link: '/collection/active', 
+    slug: 'active-vacations', // Додаємо slug
+    link: '/collection/active-vacations', // Оновлюємо посилання
     imageUrl: 'https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=2070', 
     title: 'Vacanze Attive',
     description: 'Per gli spiriti avventurosi che non stanno mai fermi. Trekking sulle vette delle Alpi, kayak tra i fiordi norvegesi, safari fotografici nella savana africana, immersioni nelle barriere coralline e rafting su fiumi impetuosi. L\'adrenalina e l\'emozione ti aspettano!'
   },
   { 
     id: 'family', 
-    link: '/collection/family', 
+    slug: 'family-holidays', // Додаємо slug
+    link: '/collection/family-holidays', // Оновлюємо посилання
     imageUrl: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070', 
     title: 'Vacanze Familiari',
     description: 'Crea ricordi indimenticabili con tutta la famiglia. Parchi tematici entusiasmanti, spiagge sicure per bambini, hotel con animazione e club per ragazzi. Attività coinvolgenti per tutte le età: dai laboratori creativi alle escursioni educative nella natura.'
+  },
+  // --- ДОДАЄМО ДВА НОВІ ЕЛЕМЕНТИ ---
+  { 
+    id: 'exotic', 
+    slug: 'exotic-trips', // Додаємо slug
+    link: '/collection/exotic-trips', // Оновлюємо посилання
+    imageUrl: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?q=80&w=2070', // Унікальне зображення для екзотичних подорожей
+    title: 'Viaggi Esotici',
+    description: 'Scopri angoli remoti del pianeta e culture uniche. Dalle Maldive alle Seychelles, dalle Hawaii alle Fiji. Isole paradisiache, spiagge di sabbia bianca, acque cristalline e tramonti mozzafiato. Un\'esperienza di lusso in ambienti da sogno.'
+  },
+  { 
+    id: 'cultural', 
+    slug: 'cultural-tours', // Додаємо slug
+    link: '/collection/cultural-tours', // Оновлюємо посилання
+    imageUrl: 'https://images.unsplash.com/photo-1552832230-c0197dd311b5?q=80&w=2070', // Унікальне зображення для культурних турів
+    title: 'Tour Culturali',
+    description: 'Immergiti nella storia e nell\'arte delle più grandi civiltà. Musei di fama mondiale, siti archeologici, monumenti storici e tradizioni secolari. Dalla Roma antica alla Parigi artistica, dall\'Egitto dei faraoni alla Grecia classica. Un viaggio nel tempo e nella cultura.'
   },
 ];
 
@@ -100,6 +121,7 @@ export const collections = [
 export const tourDetails = {
   1: {
     id: 1,
+    slug: 'costa-smeralda-italia',
     title: 'Costa Smeralda d\'Italia',
     subtitle: '8 giorni di viaggio indimenticabile lungo la costa italiana',
     price: '950',
@@ -145,6 +167,7 @@ export const tourDetails = {
   },
   2: {
     id: 2,
+    slug: 'fiordi-norvegesi',
     title: 'Magia dei Fiordi Norvegesi',
     subtitle: '10 giorni nell\'incantevole natura della Norvegia',
     price: '1450',
@@ -190,6 +213,7 @@ export const tourDetails = {
   },
   3: {
     id: 3,
+    slug: 'sakura-giappone',
     title: 'Fioritura del Sakura in Giappone',
     subtitle: '12 giorni nel paese del sol levante durante la fioritura dei ciliegi',
     price: '2800',
@@ -235,6 +259,7 @@ export const tourDetails = {
   },
   4: {
     id: 4,
+    slug: 'safari-kenya',
     title: 'Safari in Kenya',
     subtitle: '9 giorni di avventura nella savana africana',
     price: '2200',
@@ -280,6 +305,7 @@ export const tourDetails = {
   },
   5: {
     id: 5,
+    slug: 'isole-greche',
     title: 'Isole Greche da Sogno',
     subtitle: '10 giorni alla scoperta delle perle del Mar Egeo',
     price: '1350',
@@ -325,6 +351,7 @@ export const tourDetails = {
   },
   6: {
     id: 6,
+    slug: 'machu-picchu',
     title: 'Misteri del Machu Picchu',
     subtitle: '11 giorni nell\'impero Inca tra montagne e storia',
     price: '2400',
@@ -370,6 +397,7 @@ export const tourDetails = {
   },
   7: {
     id: 7,
+    slug: 'marocco',
     title: 'Magia del Marocco',
     subtitle: '9 giorni tra deserto, medine e kasbahs',
     price: '1100',
@@ -415,6 +443,7 @@ export const tourDetails = {
   },
   8: {
     id: 8,
+    slug: 'nuova-zelanda',
     title: 'Avventura in Nuova Zelanda',
     subtitle: '14 giorni nella terra del Signore degli Anelli',
     price: '3200',
@@ -460,6 +489,7 @@ export const tourDetails = {
   },
   9: {
     id: 9,
+    slug: 'thailandia',
     title: 'Tesori della Thailandia',
     subtitle: '10 giorni tra templi, spiagge e cultura',
     price: '1650',
@@ -497,10 +527,10 @@ export const tourDetails = {
       'Assaggerai pad thai autentico, curry speziati, mango sticky rice. Imparerai la cultura buddhista, farai massaggi tradizionali, nuoterai in acque cristalline tra pesci tropicali.'
     ],
     gallery: [
-      { src: 'https://images.unsplash.com/photo-1528181304800-259b08848526?q=80&w=2070' },
       { src: 'https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?q=80&w=2070' },
       { src: 'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?q=80&w=2070' },
-      { src: 'https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?q=80&w=2070' }
+      { src: 'https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?q=80&w=2070' },
+      { src: 'https://images.unsplash.com/photo-1528181304800-259b08848526?q=80&w=2070' }
     ]
   }
 };

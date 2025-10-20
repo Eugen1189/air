@@ -4,6 +4,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import StripeWrapper from '../components/StripeWrapper';
 import PaymentForm from '../components/PaymentForm';
 import { tourDetails } from '../data/toursData';
+import './CheckoutPage.scss';
 
 const CheckoutPage = () => {
   const { id } = useParams();
@@ -18,7 +19,7 @@ const CheckoutPage = () => {
 
   if (!tour) {
     return (
-      <div style={{ padding: '100px 20px', textAlign: 'center' }}>
+      <div className="error-page">
         <h1>Tour non trovato</h1>
         <p>Il tour che stai cercando non esiste.</p>
       </div>
@@ -41,64 +42,42 @@ const CheckoutPage = () => {
   };
 
   return (
-    <div style={{ padding: '100px 20px 60px', maxWidth: '1200px', margin: '0 auto' }}>
+    <div className="checkout-page">
       {/* Header */}
-      <div style={{ textAlign: 'center', marginBottom: '50px' }}>
-        <h1 style={{ fontSize: '3rem', marginBottom: '20px', color: '#0A2342' }}>
+      <div className="checkout-header">
+        <h1 className="section-title">
           Checkout
         </h1>
-        <p style={{ fontSize: '1.2rem', color: '#6c757d' }}>
+        <p className="section-subtitle">
           Completa la prenotazione per il tuo viaggio
         </p>
       </div>
 
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: '1fr',
-        gap: '40px',
-        '@media (min-width: 768px)': {
-          gridTemplateColumns: '1.5fr 1fr'
-        }
-      }}>
+      <div className="checkout-layout">
         {/* Left Column - Booking Details */}
         <div>
           {/* Tour Summary */}
-          <div style={{
-            backgroundColor: '#f8f9fa',
-            padding: '30px',
-            borderRadius: '16px',
-            marginBottom: '30px'
-          }}>
-            <h2 style={{ fontSize: '2rem', marginBottom: '20px', color: '#0A2342' }}>
+          <div className="tour-summary-card">
+            <h2>
               Riepilogo Tour
             </h2>
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: '150px 1fr',
-              gap: '20px',
-              alignItems: 'start'
-            }}>
+            <div className="tour-summary-content">
               <img
                 src={tour.gallery[0].src}
                 alt={tour.title}
-                style={{
-                  width: '100%',
-                  height: '120px',
-                  objectFit: 'cover',
-                  borderRadius: '8px'
-                }}
+                className="tour-image"
               />
-              <div>
-                <h3 style={{ fontSize: '1.5rem', marginBottom: '10px', color: '#0A2342' }}>
+              <div className="tour-info">
+                <h3>
                   {tour.title}
                 </h3>
-                <p style={{ color: '#6c757d', marginBottom: '5px' }}>
+                <p>
                   ⏱️ {tour.duration}
                 </p>
-                <p style={{ color: '#6c757d', marginBottom: '5px' }}>
+                <p>
                   👥 {tour.groupSize}
                 </p>
-                <p style={{ color: '#6c757d' }}>
+                <p>
                   🏔️ Difficoltà: {tour.difficulty}
                 </p>
               </div>
@@ -106,60 +85,42 @@ const CheckoutPage = () => {
           </div>
 
           {/* Booking Form */}
-          <div style={{
-            backgroundColor: 'white',
-            padding: '30px',
-            borderRadius: '16px',
-            border: '2px solid #e0e0e0'
-          }}>
-            <h2 style={{ fontSize: '1.8rem', marginBottom: '25px', color: '#0A2342' }}>
+          <div className="booking-details-form">
+            <h2>
               Dettagli Prenotazione
             </h2>
 
-            <div style={{ marginBottom: '20px' }}>
-              <label style={{ display: 'block', fontWeight: '600', marginBottom: '8px', color: '#333' }}>
-                Nome Completo *
-              </label>
+            <div className="form-group">
               <input
                 type="text"
                 name="name"
                 value={bookingDetails.name}
                 onChange={handleInputChange}
                 required
-                style={{
-                  width: '100%',
-                  padding: '12px',
-                  border: '2px solid #e0e0e0',
-                  borderRadius: '8px',
-                  fontSize: '1rem'
-                }}
+                placeholder=" "
+                className="form-input"
               />
+              <label className="form-label">
+                Nome Completo *
+              </label>
             </div>
 
-            <div style={{ marginBottom: '20px' }}>
-              <label style={{ display: 'block', fontWeight: '600', marginBottom: '8px', color: '#333' }}>
-                Email *
-              </label>
+            <div className="form-group">
               <input
                 type="email"
                 name="email"
                 value={bookingDetails.email}
                 onChange={handleInputChange}
                 required
-                style={{
-                  width: '100%',
-                  padding: '12px',
-                  border: '2px solid #e0e0e0',
-                  borderRadius: '8px',
-                  fontSize: '1rem'
-                }}
+                placeholder=" "
+                className="form-input"
               />
+              <label className="form-label">
+                Email *
+              </label>
             </div>
 
-            <div style={{ marginBottom: '20px' }}>
-              <label style={{ display: 'block', fontWeight: '600', marginBottom: '8px', color: '#333' }}>
-                Data Partenza *
-              </label>
+            <div className="form-group">
               <input
                 type="date"
                 name="date"
@@ -167,20 +128,15 @@ const CheckoutPage = () => {
                 onChange={handleInputChange}
                 required
                 min={new Date().toISOString().split('T')[0]}
-                style={{
-                  width: '100%',
-                  padding: '12px',
-                  border: '2px solid #e0e0e0',
-                  borderRadius: '8px',
-                  fontSize: '1rem'
-                }}
+                placeholder=" "
+                className="form-input"
               />
+              <label className="form-label">
+                Data Partenza *
+              </label>
             </div>
 
-            <div style={{ marginBottom: '20px' }}>
-              <label style={{ display: 'block', fontWeight: '600', marginBottom: '8px', color: '#333' }}>
-                Numero di Persone *
-              </label>
+            <div className="form-group">
               <input
                 type="number"
                 name="guests"
@@ -189,14 +145,12 @@ const CheckoutPage = () => {
                 min="1"
                 max="15"
                 required
-                style={{
-                  width: '100%',
-                  padding: '12px',
-                  border: '2px solid #e0e0e0',
-                  borderRadius: '8px',
-                  fontSize: '1rem'
-                }}
+                placeholder=" "
+                className="form-input"
               />
+              <label className="form-label">
+                Numero di Persone *
+              </label>
             </div>
           </div>
         </div>
@@ -204,50 +158,30 @@ const CheckoutPage = () => {
         {/* Right Column - Payment */}
         <div>
           {/* Price Summary */}
-          <div style={{
-            backgroundColor: 'white',
-            padding: '30px',
-            borderRadius: '16px',
-            border: '2px solid #e0e0e0',
-            marginBottom: '30px'
-          }}>
-            <h2 style={{ fontSize: '1.8rem', marginBottom: '25px', color: '#0A2342' }}>
+          <div className="price-summary-card">
+            <h2>
               Riepilogo Prezzo
             </h2>
 
-            <div style={{ marginBottom: '15px', display: 'flex', justifyContent: 'space-between' }}>
-              <span style={{ color: '#6c757d' }}>Prezzo per persona</span>
-              <span style={{ fontWeight: '600' }}>{tour.price}€</span>
+            <div className="price-item">
+              <span className="price-label">Prezzo per persona</span>
+              <span className="price-value">{tour.price}€</span>
             </div>
 
-            <div style={{ marginBottom: '15px', display: 'flex', justifyContent: 'space-between' }}>
-              <span style={{ color: '#6c757d' }}>Numero di persone</span>
-              <span style={{ fontWeight: '600' }}>× {bookingDetails.guests}</span>
+            <div className="price-item">
+              <span className="price-label">Numero di persone</span>
+              <span className="price-value">× {bookingDetails.guests}</span>
             </div>
 
-            <div style={{
-              borderTop: '2px solid #e0e0e0',
-              paddingTop: '15px',
-              marginTop: '15px',
-              display: 'flex',
-              justifyContent: 'space-between',
-              fontSize: '1.5rem',
-              fontWeight: '700',
-              color: '#0A2342'
-            }}>
+            <div className="price-total">
               <span>Totale</span>
               <span>{totalAmount}€</span>
             </div>
           </div>
 
           {/* Payment Form */}
-          <div style={{
-            backgroundColor: 'white',
-            padding: '30px',
-            borderRadius: '16px',
-            border: '2px solid #D9795D'
-          }}>
-            <h2 style={{ fontSize: '1.8rem', marginBottom: '25px', color: '#0A2342' }}>
+          <div className="payment-form-card">
+            <h2>
               Informazioni di Pagamento
             </h2>
 
@@ -261,17 +195,11 @@ const CheckoutPage = () => {
           </div>
 
           {/* Trust Badges */}
-          <div style={{
-            marginTop: '20px',
-            padding: '20px',
-            backgroundColor: '#f8f9fa',
-            borderRadius: '12px',
-            textAlign: 'center'
-          }}>
-            <p style={{ margin: '0 0 10px', fontSize: '0.9rem', color: '#6c757d' }}>
+          <div className="trust-badges">
+            <p>
               ✓ Pagamento sicuro con crittografia SSL
             </p>
-            <p style={{ margin: 0, fontSize: '0.9rem', color: '#6c757d' }}>
+            <p>
               ✓ Cancellazione gratuita fino a 45 giorni prima
             </p>
           </div>

@@ -20,13 +20,14 @@ $color-border: #e5e7eb;                                // Borders
 $color-overlay: rgba(0, 0, 0, 0.4);                    // Dark overlay on images
 
 // -------- Typography (our fonts) --------
-$font-family-headings: 'Cormorant Garamond', serif;
+$font-family-headings: 'Poppins', sans-serif;
 $font-family-body: 'Inter', sans-serif;
 
 $font-size-base: 16px;
 $font-size-small: 14px;
 $font-size-large: 18px;
 
+$font-weight-light: 300;
 $font-weight-regular: 400;
 $font-weight-medium: 500;
 $font-weight-semibold: 600;
@@ -64,4 +65,21 @@ $container-padding: $spacing-lg;
 // -------- Transitions --------
 $transition-base: all 0.3s ease;
 $transition-fast: all 0.15s ease;
+
+// -------- Mixins --------
+@mixin glass-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+@mixin modern-box {
+  box-sizing: border-box;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
 

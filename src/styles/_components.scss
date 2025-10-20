@@ -2,6 +2,38 @@
 // COMPONENTS
 // ============================================
 
+// Order Summary Component Styles (глобальний клас)
+.order-summary {
+  // 1. Застосовуємо наш "скляний" стиль
+  @include glass-card;
+
+  // 2. Робимо текст всередині світлим та контрастним
+  h3 { // Заголовок "Riepilogo"
+    color: #FFFFFF;
+    margin-top: 0;
+  }
+
+  // Стилі для рядків "Ціна", "Кількість"
+  .summary-item {
+    display: flex;
+    justify-content: space-between;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  // Стилі для фінальної суми "Total"
+  .summary-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    padding-top: 20px;
+    margin-top: 10px;
+  }
+}
+
 // SCSS/SASS
 .btn {
   display: inline-block;

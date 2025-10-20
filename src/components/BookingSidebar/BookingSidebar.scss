@@ -1,0 +1,135 @@
+// src/components/BookingSidebar/BookingSidebar.scss
+
+// 👇 ДОДАЄМО ІМПОРТ ФАЙЛУ ЗІ ЗМІННИМИ ТА МІКСИНАМИ
+@import '../../styles/variables';
+
+// Booking Sidebar Styles
+.tour-sidebar {
+  position: relative;
+  
+  &.is-sticky {
+    position: sticky;
+    top: 20px;
+  }
+}
+
+.booking-widget {
+  @include glass-card;
+
+  // Робимо текст світлим
+  &__price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 5px;
+    
+    span {
+      font-size: 1rem;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.8);
+    }
+  }
+
+  .form-group {
+    position: relative;
+    margin-top: 20px;
+  }
+
+  .form-label {
+    position: absolute;
+    top: 12px;
+    left: 15px;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.5);
+    pointer-events: none; // Дозволяє клікати "крізь" лейбл
+    transition: all 0.2s ease;
+  }
+
+  // Оновлюємо поля вводу
+  .form-input {
+    width: 100%;
+    padding: 12px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    &:focus {
+      outline: none;
+      border-color: var(--accent-color, #D9795D);
+    }
+  }
+
+  // Анімація лейбла, коли поле у фокусі АБО коли в ньому є текст
+  .form-input:focus + .form-label,
+  .form-input:not(:placeholder-shown) + .form-label {
+    top: -10px; // "Випливає" вгору
+    left: 10px;
+    font-size: 0.8rem;
+    color: var(--accent-color, #D9795D); // Змінюємо колір
+    background-color: var(--card-background, #0A2342); // Фон картки, щоб перекрити рамку
+    padding: 0 5px;
+  }
+
+  &__button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 15px;
+    font-size: 18px;
+    background-color: var(--accent-color, #D9795D);
+    color: #FFFFFF;
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: #c4684d;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(217, 121, 93, 0.3);
+    }
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+  }
+
+  .booking-info {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 15px;
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  // Responsive adjustments
+  @media (max-width: 768px) {
+    padding: 25px 20px;
+    
+    &__price {
+      font-size: 2rem;
+    }
+    
+    .form-input {
+      font-size: 16px; // Prevents iOS zoom on focus
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 20px 15px;
+    
+    &__price {
+      font-size: 1.8rem;
+    }
+  }
+}

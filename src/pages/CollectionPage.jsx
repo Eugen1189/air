@@ -1,16 +1,31 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { collectionDetails } from '../data/collectionsData';
+import CollectionToursSection from '../components/CollectionToursSection';
+import './CollectionPage.scss';
 
 const CollectionPage = () => {
-  const { id } = useParams();
+  const { id } = useParams(); // id тепер є slug (наприклад, 'gastro-tours')
   const collection = collectionDetails[id];
 
+  // Якщо дані ще завантажуються або колекція не знайдена
   if (!collection) {
     return (
       <div style={{ padding: '100px 20px', textAlign: 'center' }}>
-        <h1>Collezione non trovata</h1>
-        <p>La collezione che stai cercando non esiste.</p>
+        <h1 style={{ color: '#FFFFFF', marginBottom: '20px' }}>Collezione non trovata</h1>
+        <p style={{ color: 'rgba(255, 255, 255, 0.8)', marginBottom: '30px' }}>
+          La collezione che stai cercando non esiste.
+        </p>
+        <a 
+          href="/" 
+          style={{ 
+            color: 'var(--accent-color, #D9795D)', 
+            textDecoration: 'none',
+            fontWeight: '600'
+          }}
+        >
+          ← Torna alla home
+        </a>
       </div>
     );
   }
@@ -44,89 +59,20 @@ const CollectionPage = () => {
 
       {/* Description */}
       <section style={{ marginBottom: '60px' }}>
-        <p style={{ fontSize: '1.2rem', lineHeight: '1.8', color: '#333' }}>
+        <p className="page-description">
           {collection.fullDescription}
         </p>
       </section>
 
-      {/* Destinations */}
-      <section>
-        <h2 style={{ fontSize: '2.5rem', marginBottom: '40px', color: '#0A2342' }}>
-          Destinazioni Consigliate
-        </h2>
-        <div style={{ 
-          display: 'grid', 
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-          gap: '30px'
-        }}>
-          {collection.destinations.map((destination, index) => (
-            <div key={index} style={{
-              borderRadius: '12px',
-              overflow: 'hidden',
-              boxShadow: '0 4px 15px rgba(0,0,0,0.1)',
-              transition: 'transform 0.3s ease'
-            }}>
-              <img 
-                src={destination.image} 
-                alt={destination.name}
-                style={{
-                  width: '100%',
-                  height: '250px',
-                  objectFit: 'cover'
-                }}
-              />
-              <div style={{ padding: '25px' }}>
-                <h3 style={{ 
-                  fontSize: '1.5rem', 
-                  marginBottom: '10px',
-                  color: '#0A2342'
-                }}>
-                  {destination.name}
-                </h3>
-                <p style={{ 
-                  fontSize: '0.95rem',
-                  color: '#6c757d',
-                  marginBottom: '15px'
-                }}>
-                  📍 {destination.location}
-                </p>
-                <p style={{ 
-                  lineHeight: '1.6',
-                  color: '#333',
-                  marginBottom: '15px'
-                }}>
-                  {destination.description}
-                </p>
-                <div style={{
-                  padding: '15px',
-                  backgroundColor: '#f8f9fa',
-                  borderRadius: '8px'
-                }}>
-                  <p style={{ 
-                    margin: 0,
-                    fontWeight: 600,
-                    color: '#D9795D'
-                  }}>
-                    💡 {destination.whyVisit}
-                  </p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+      {/* Tours for this specific collection */}
+      <CollectionToursSection collectionId={collection.id} />
 
       {/* Best Time to Visit */}
-      <section style={{ 
-        marginTop: '60px',
-        padding: '40px',
-        backgroundColor: '#f8f9fa',
-        borderRadius: '12px'
-      }}>
-        <h3 style={{ fontSize: '2rem', marginBottom: '20px', color: '#0A2342' }}>
+      <section className="info-block">
+        <h3 className="info-block__title">
           Periodo Migliore per Visitare
         </h3>
-        <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#333' }}>
+        <p className="info-block__text">
           {collection.bestTime}
         </p>
       </section>

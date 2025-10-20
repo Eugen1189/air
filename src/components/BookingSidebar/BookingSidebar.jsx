@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useSticky } from '../../hooks/useSticky';
+import './BookingSidebar.scss';
 
 const BookingSidebar = ({ price = '950' }) => {
   const { t } = useTranslation();
@@ -24,13 +25,13 @@ const BookingSidebar = ({ price = '950' }) => {
         </div>
         
         <div className="form-group">
+          <input type="date" className="form-input" placeholder=" " />
           <label className="form-label">{t('BookingWidget.dateFrom')}</label>
-          <input type="date" className="form-input" />
         </div>
         
         <div className="form-group">
+          <input type="number" className="form-input" min="1" defaultValue="2" placeholder=" " />
           <label className="form-label">{t('BookingWidget.guests')}</label>
-          <input type="number" className="form-input" min="1" defaultValue="2" />
         </div>
         
         <button 
@@ -40,7 +41,7 @@ const BookingSidebar = ({ price = '950' }) => {
           {t('BookingWidget.bookTour')}
         </button>
         
-        <p style={{ fontSize: '14px', color: '#6c757d', marginTop: '15px', textAlign: 'center' }}>
+        <p className="booking-info">
           {t('BookingWidget.noCommission')} • {t('BookingWidget.instantConfirm')}
         </p>
       </div>

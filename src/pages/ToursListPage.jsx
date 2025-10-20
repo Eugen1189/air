@@ -95,11 +95,11 @@ const ToursListPage = () => {
   return (
     <div className="tours-list-page" style={{ padding: '100px 20px 60px', maxWidth: '1400px', margin: '0 auto' }}>
       {/* Header Section */}
-      <div style={{ textAlign: 'center', marginBottom: '50px' }}>
-        <h1 style={{ fontSize: '3rem', marginBottom: '20px', color: '#0A2342' }}>
+      <div className="page-header">
+        <h1 className="section-title">
           {t('ToursPage.title')}
         </h1>
-        <p style={{ fontSize: '1.3rem', color: '#6c757d', maxWidth: '800px', margin: '0 auto' }}>
+        <p className="section-subtitle">
           {t('ToursPage.subtitle')}
         </p>
       </div>
@@ -158,41 +158,23 @@ const ToursListPage = () => {
         {/* Tours Grid */}
         <div>
           {filteredTours.length === 0 ? (
-            <div style={{
-              textAlign: 'center',
-              padding: '80px 20px',
-              backgroundColor: '#f8f9fa',
-              borderRadius: '16px'
-            }}>
-              <div style={{ fontSize: '4rem', marginBottom: '20px' }}>🔍</div>
-              <h3 style={{ fontSize: '2rem', marginBottom: '15px', color: '#0A2342' }}>
+            <div className="no-tours-found">
+              <div className="no-tours-icon">🔍</div>
+              <h3 className="no-tours-title">
                 {t('ToursPage.noToursFound')}
               </h3>
-              <p style={{ fontSize: '1.1rem', color: '#6c757d', marginBottom: '25px' }}>
+              <p className="no-tours-text">
                 {t('ToursPage.tryModifyFilters')}
               </p>
               <button
                 onClick={resetFilters}
-                style={{
-                  padding: '15px 35px',
-                  backgroundColor: '#D9795D',
-                  color: 'white',
-                  border: 'none',
-                  borderRadius: '8px',
-                  fontSize: '1.1rem',
-                  fontWeight: '600',
-                  cursor: 'pointer'
-                }}
+                className="clear-filters-button"
               >
                 {t('ToursPage.clearAllFilters')}
               </button>
             </div>
           ) : (
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-              gap: '30px'
-            }}>
+            <div className="tours-grid">
               {filteredTours.map((tour) => (
                 <TourCardDetailed key={tour.id} tour={tour} />
               ))}
@@ -202,38 +184,16 @@ const ToursListPage = () => {
       </div>
 
       {/* Custom Tour Section */}
-      <div style={{
-        marginTop: '60px',
-        backgroundColor: '#f8f9fa',
-        padding: '40px',
-        borderRadius: '16px',
-        textAlign: 'center'
-      }}>
-        <h3 style={{ fontSize: '1.8rem', marginBottom: '15px', color: '#0A2342' }}>
+      <div className="custom-tour-section">
+        <h3 className="custom-tour-title">
           {t('ToursPage.customTourSection.title')}
         </h3>
-        <p style={{ fontSize: '1.1rem', color: '#6c757d', marginBottom: '25px', maxWidth: '800px', margin: '0 auto 25px' }}>
+        <p className="custom-tour-description">
           {t('ToursPage.customTourSection.description')}
         </p>
         <Link 
           to="/contacts"
-          style={{
-            display: 'inline-block',
-            backgroundColor: '#D9795D',
-            color: 'white',
-            padding: '15px 40px',
-            borderRadius: '8px',
-            textDecoration: 'none',
-            fontWeight: '600',
-            fontSize: '1.1rem',
-            transition: 'background-color 0.3s ease'
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = '#c4684d';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = '#D9795D';
-          }}
+          className="custom-tour-button"
         >
           {t('ToursPage.customTourSection.contactButton')}
         </Link>

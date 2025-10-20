@@ -1,6 +1,7 @@
 export const collectionDetails = {
-  gastro: {
+  'gastro-tours': {
     id: 'gastro',
+    slug: 'gastro-tours',
     title: 'Tour Gastronomici',
     subtitle: 'Un viaggio attraverso i sapori del mondo',
     imageUrl: 'https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=1964',
@@ -37,8 +38,9 @@ export const collectionDetails = {
       }
     ]
   },
-  relax: {
+  'relax-trips': {
     id: 'relax',
+    slug: 'relax-trips',
     title: 'Viaggi per il Relax',
     subtitle: 'Ritrova la pace e l\'armonia interiore',
     imageUrl: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=2070',
@@ -75,8 +77,9 @@ export const collectionDetails = {
       }
     ]
   },
-  active: {
+  'active-vacations': {
     id: 'active',
+    slug: 'active-vacations',
     title: 'Vacanze Attive',
     subtitle: 'Avventure adrenaliniche per spiriti liberi',
     imageUrl: 'https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=2070',
@@ -113,8 +116,9 @@ export const collectionDetails = {
       }
     ]
   },
-  family: {
+  'family-holidays': {
     id: 'family',
+    slug: 'family-holidays',
     title: 'Vacanze Familiari',
     subtitle: 'Momenti preziosi da condividere insieme',
     imageUrl: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070',
@@ -148,6 +152,70 @@ export const collectionDetails = {
         image: 'https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=2000',
         description: 'Borghi colorati patrimonio UNESCO sul mare. Sentieri panoramici facili, spiagge tranquille, gelato artigianale e focaccia ligure. Treni che collegano i villaggi rendono gli spostamenti facili anche con bambini.',
         whyVisit: 'Paesaggi da cartolina con sentieri facili e mare cristallino'
+      }
+    ]
+  },
+  'exotic-trips': {
+    id: 'exotic',
+    slug: 'exotic-trips',
+    title: 'Viaggi Esotici',
+    subtitle: 'Scopri angoli remoti del pianeta',
+    imageUrl: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?q=80&w=2070',
+    fullDescription: 'Scopri angoli remoti del pianeta e culture uniche. Dalle Maldive alle Seychelles, dalle Hawaii alle Fiji. Isole paradisiache, spiagge di sabbia bianca, acque cristalline e tramonti mozzafiato. Un\'esperienza di lusso in ambienti da sogno dove la natura incontaminata incontra il comfort più raffinato.',
+    bestTime: 'Il periodo migliore varia per destinazione: Maldive e Seychelles (novembre-aprile), Hawaii (aprile-ottobre), Fiji (maggio-ottobre). Evitare la stagione dei monsoni per le destinazioni tropicali.',
+    destinations: [
+      {
+        name: 'Maldive',
+        location: 'Oceano Indiano',
+        image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2000',
+        description: 'Ville sull\'acqua di lusso, snorkeling con mante e tartarughe, spiagge di sabbia bianca e acque cristalline. Resort esclusivi con spa di lusso e ristoranti gourmet.',
+        whyVisit: 'Il paradiso terrestre per eccellenza con ville sull\'acqua uniche al mondo'
+      },
+      {
+        name: 'Hawaii',
+        location: 'Oceano Pacifico',
+        image: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=2000',
+        description: 'Tre isole uniche: Oahu con Pearl Harbor, Maui con l\'Haleakala, Big Island con vulcani attivi. Cultura polinesiana, spiagge vulcaniche e natura selvaggia.',
+        whyVisit: 'Vulcani attivi, cultura polinesiana e paesaggi unici al mondo'
+      },
+      {
+        name: 'Seychelles',
+        location: 'Oceano Indiano',
+        image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=2000',
+        description: 'Isole granitiche uniche al mondo, spiagge da cartolina come Anse Source d\'Argent, Vallée de Mai patrimonio UNESCO. Resort di lusso e natura incontaminata.',
+        whyVisit: 'Isole granitiche uniche al mondo con spiagge considerate tra le più belle'
+      }
+    ]
+  },
+  'cultural-tours': {
+    id: 'cultural',
+    slug: 'cultural-tours',
+    title: 'Tour Culturali',
+    subtitle: 'Immergiti nella storia e nell\'arte',
+    imageUrl: 'https://images.unsplash.com/photo-1552832230-c0197dd311b5?q=80&w=2070',
+    fullDescription: 'Immergiti nella storia e nell\'arte delle più grandi civiltà. Musei di fama mondiale, siti archeologici, monumenti storici e tradizioni secolari. Dalla Roma antica alla Parigi artistica, dall\'Egitto dei faraoni alla Grecia classica. Un viaggio nel tempo e nella cultura che ti arricchirà per sempre.',
+    bestTime: 'Primavera (aprile-giugno) e autunno (settembre-novembre) sono ideali per le destinazioni culturali europee. Per l\'Egitto: ottobre-aprile per evitare il caldo estremo.',
+    destinations: [
+      {
+        name: 'Roma, Italia',
+        location: 'Lazio, Italia',
+        image: 'https://images.unsplash.com/photo-1539650116574-75c0c6d73c6e?q=80&w=2000',
+        description: 'Colosseo, Fori Imperiali, Vaticano e Cappella Sistina. Musei Capitolini, Pantheon, Fontana di Trevi. Una città museo a cielo aperto con 3000 anni di storia.',
+        whyVisit: 'La Città Eterna con la più alta concentrazione di monumenti storici al mondo'
+      },
+      {
+        name: 'Parigi, Francia',
+        location: 'Île-de-France, Francia',
+        image: 'https://images.unsplash.com/photo-1552832230-c0197dd311b5?q=80&w=2000',
+        description: 'Louvre, Musée d\'Orsay, Montmartre e Sacré-Cœur. Quartieri artistici del Marais e Saint-Germain-des-Prés. La capitale mondiale dell\'arte e della cultura.',
+        whyVisit: 'La capitale mondiale dell\'arte con i musei più famosi del mondo'
+      },
+      {
+        name: 'Egitto',
+        location: 'Nord Africa',
+        image: 'https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?q=80&w=2000',
+        description: 'Piramidi di Giza, Valle dei Re, Luxor e Karnak. Crociera sul Nilo, Abu Simbel e Museo Egizio del Cairo. La culla della civiltà con tesori archeologici unici.',
+        whyVisit: 'La culla della civiltà con i monumenti più antichi e misteriosi del mondo'
       }
     ]
   }

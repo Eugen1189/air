@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { getReviewsForTour, getAverageRating } from '../data/mock-reviews';
 import ReviewsList from './ReviewsList';
 import ReviewForm from './ReviewForm';
+import './ReviewsSection.scss';
 
 const ReviewsSection = ({ tourId }) => {
   const [reviews, setReviews] = useState(getReviewsForTour(tourId));
@@ -22,26 +23,22 @@ const ReviewsSection = ({ tourId }) => {
   };
 
   return (
-    <section style={{ margin: '60px 0' }}>
+    <section className="reviews-section">
       {/* Header with Average Rating */}
-      <div style={{ marginBottom: '40px' }}>
-        <h2 style={{ fontSize: '2.5rem', marginBottom: '15px', color: '#0A2342' }}>
+      <div className="reviews-summary">
+        <h2 className="section-title">
           Recensioni dei Viaggiatori
         </h2>
         
-        <div style={{ display: 'flex', alignItems: 'center', gap: '20px', marginBottom: '30px' }}>
-          <div style={{
-            fontSize: '3rem',
-            fontWeight: '700',
-            color: '#D9795D'
-          }}>
+        <div className="rating-container">
+          <div className="rating-number">
             {averageRating}
           </div>
-          <div>
-            <div style={{ fontSize: '1.5rem', marginBottom: '5px' }}>
+          <div className="rating-details">
+            <div className="stars">
               {renderStars(Math.round(averageRating))}
             </div>
-            <div style={{ color: '#6c757d', fontSize: '1rem' }}>
+            <div className="rating-text">
               Basato su {reviews.length} {reviews.length === 1 ? 'recensione' : 'recensioni'}
             </div>
           </div>
@@ -50,17 +47,7 @@ const ReviewsSection = ({ tourId }) => {
         {/* Add Review Button */}
         <button
           onClick={() => setShowForm(!showForm)}
-          style={{
-            padding: '15px 35px',
-            backgroundColor: showForm ? '#6c757d' : '#D9795D',
-            color: 'white',
-            border: 'none',
-            borderRadius: '8px',
-            fontSize: '1.1rem',
-            fontWeight: '600',
-            cursor: 'pointer',
-            transition: 'background-color 0.3s ease'
-          }}
+          className={`add-review-button ${showForm ? 'cancel' : ''}`}
         >
           {showForm ? 'Annulla' : '✍️ Scrivi una Recensione'}
         </button>

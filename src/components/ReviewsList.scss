@@ -1,0 +1,123 @@
+// Reviews List Styles
+.reviews-list {
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #FFFFFF;
+  }
+  
+  .reviews-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+  
+  // --- 2. Застосовуємо "скляний" стиль до кожної картки відгуку ---
+  .review-item {
+    // Фон та рамка
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      border-color: rgba(255, 255, 255, 0.25);
+      transform: translateY(-2px);
+    }
+    
+    .review-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 15px;
+      
+      .review-avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+      
+      .review-info {
+        flex: 1;
+        
+        // --- 3. Робимо весь текст всередині світлим ---
+        .review-author {
+          font-size: 1.2rem;
+          margin-bottom: 5px;
+          color: #FFFFFF;
+          font-weight: 600;
+        }
+        
+        .review-date {
+          font-size: 0.9rem;
+          color: rgba(255, 255, 255, 0.6);
+        }
+      }
+      
+      .review-stars {
+        font-size: 1.3rem;
+        color: #FFC700; // Золоті зірочки
+      }
+    }
+    
+    .review-text {
+      color: rgba(255, 255, 255, 0.9);
+      line-height: 1.7;
+      font-size: 1.05rem;
+      margin: 0;
+    }
+    
+    .review-actions {
+      margin-top: 20px;
+      display: flex;
+      gap: 15px;
+      
+      .helpful-button {
+        padding: 8px 20px;
+        background-color: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 20px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.7);
+        transition: all 0.3s ease;
+        
+        &:hover {
+          border-color: var(--accent-color, #D9795D);
+          color: var(--accent-color, #D9795D);
+        }
+      }
+    }
+  }
+  
+  .no-reviews {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    margin: 20px 0;
+    
+    .no-reviews-icon {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+    
+    .no-reviews-title {
+      font-size: 1.5rem;
+      color: #FFFFFF;
+      margin-bottom: 10px;
+    }
+    
+    .no-reviews-text {
+      color: rgba(255, 255, 255, 0.8);
+    }
+  }
+}

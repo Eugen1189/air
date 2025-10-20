@@ -1,3 +1,8 @@
+// src/pages/ContactsPage.scss
+
+// 👇 ДОДАЄМО ІМПОРТ ФАЙЛУ ЗІ ЗМІННИМИ ТА МІКСИНАМИ
+@import '../styles/variables';
+
 // Contacts Page - Mobile Responsive Styles
 
 .contacts-page {
@@ -11,6 +16,30 @@
   
   @media (max-width: 480px) {
     padding: 70px 10px 30px;
+  }
+
+  // Покращуємо читабельність головного заголовка
+  .section-title {
+    color: #FFFFFF; // Робимо його білим та яскравим
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .section-subtitle {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 600px;
+    margin: 0 auto 60px auto;
+  }
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr; // Змінюємо пропорцію
+  gap: 50px;
+
+  @media (max-width: 992px) {
+    grid-template-columns: 1fr; // Адаптація для мобільних
   }
 }
 
@@ -55,7 +84,7 @@
 // Main layout: Form on left, Contact info on right
 .contacts-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr; // Form is wider (2/3), Info is narrower (1/3)
+  grid-template-columns: 2fr 1.5fr; // Змінюємо пропорцію згідно з рекомендаціями
   gap: 50px;
   
   @media (max-width: 1024px) {
@@ -63,8 +92,8 @@
     gap: 40px;
   }
   
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr; // Stack vertically on mobile
+  @media (max-width: 992px) {
+    grid-template-columns: 1fr; // Адаптація для мобільних
     gap: 30px;
   }
 }
@@ -86,57 +115,151 @@
   }
 }
 
+// Стилі для нової форми
+.contact-form {
+  @include glass-card;
+  
+  h3 {
+    color: #FFFFFF;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    
+    @media (max-width: 768px) {
+      font-size: 1.75rem;
+      margin-bottom: 25px;
+    }
+    
+    @media (max-width: 480px) {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+  }
+}
+
 .form-group {
-  margin-bottom: 20px;
+  position: relative;
+  margin-bottom: 35px;
   
   @media (max-width: 768px) {
-    margin-bottom: 16px;
+    margin-bottom: 30px;
   }
   
-  label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 600;
-    color: #333;
-    font-size: 0.95rem;
-    
-    @media (max-width: 768px) {
-      font-size: 0.9rem;
-    }
+  @media (max-width: 480px) {
+    margin-bottom: 25px;
+  }
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 1rem;
+  color: #FFFFFF; // Колір тексту, що вводиться
+
+  // Робимо поле видимим
+  background-color: rgba(255, 255, 255, 0.05); 
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+  
+  @media (max-width: 768px) {
+    font-size: 16px; // Prevents iOS zoom on focus
+    padding: 14px 15px;
   }
   
-  input,
-  select,
-  textarea {
-    width: 100%;
-    box-sizing: border-box; // Ensures padding doesn't affect width
-    padding: 15px;
-    border: 2px solid #e0e0e0;
-    border-radius: 8px;
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
-    
-    @media (max-width: 768px) {
-      padding: 14px;
-      font-size: 16px; // Prevents iOS zoom on focus
-    }
-    
-    &:focus {
-      outline: none;
-      border-color: #D9795D;
-    }
+  @media (max-width: 480px) {
+    padding: 12px 15px;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: var(--accent-color, #D9795D); // Акцентний колір при фокусі
   }
   
-  textarea {
-    min-height: 150px;
+  // Спеціальні стилі для textarea
+  &[type="textarea"] {
+    min-height: 120px;
     resize: vertical;
     font-family: inherit;
     
     @media (max-width: 768px) {
-      min-height: 120px;
+      min-height: 100px;
+    }
+  }
+  
+  // Спеціальні стилі для select
+  &[type="select"] {
+    cursor: pointer;
+    
+    option {
+      background-color: #0A2342;
+      color: #FFFFFF;
     }
   }
 }
+
+// Окремі селектори для textarea та select з класом form-input
+textarea.form-input {
+  min-height: 120px;
+  resize: vertical;
+  font-family: inherit;
+  
+  @media (max-width: 768px) {
+    min-height: 100px;
+  }
+}
+
+select.form-input {
+  cursor: pointer;
+  
+  option {
+    background-color: #0A2342;
+    color: #FFFFFF;
+  }
+}
+
+.form-label {
+  position: absolute;
+  top: 12px;
+  left: 15px;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.5);
+  pointer-events: none; // Дозволяє клікати "крізь" лейбл
+  
+  // Плавна анімація
+  transition: all 0.2s ease;
+  
+  @media (max-width: 768px) {
+    font-size: 0.95rem;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 0.9rem;
+  }
+}
+
+// МАГІЯ: Анімація лейбла, коли поле у фокусі АБО коли в ньому є текст
+.form-input:focus + .form-label,
+.form-input:not(:placeholder-shown) + .form-label,
+select.form-input:focus + .form-label,
+select.form-input:not([value=""]) + .form-label,
+textarea.form-input:focus + .form-label,
+textarea.form-input:not(:placeholder-shown) + .form-label {
+  top: -10px; // "Випливає" вгору
+  left: 10px;
+  font-size: 0.8rem;
+  color: var(--accent-color, #D9795D); // Змінюємо колір
+  background-color: var(--card-background, #0A2342); // Фон картки, щоб перекрити рамку
+  padding: 0 5px;
+  
+  @media (max-width: 768px) {
+    font-size: 0.75rem;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 0.7rem;
+  }
+}
+
 
 .submit-button {
   width: 100%;
@@ -178,6 +301,112 @@
     
     @media (max-width: 480px) {
       font-size: 1.5rem;
+    }
+  }
+}
+
+// Єдина панель для контактної інформації
+.contact-info-panel {
+  @include glass-card;
+  
+  @media (max-width: 768px) {
+    padding: 25px 20px;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 20px 15px;
+  }
+  
+  h3 {
+    color: #FFFFFF;
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 30px;
+    
+    @media (max-width: 768px) {
+      font-size: 1.75rem;
+      margin-bottom: 25px;
+    }
+    
+    @media (max-width: 480px) {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.info-item {
+  display: flex;
+  align-items: start;
+  gap: 15px;
+  margin-bottom: 25px;
+  color: rgba(255, 255, 255, 0.9);
+  
+  @media (max-width: 768px) {
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  
+  @media (max-width: 480px) {
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+
+  .icon {
+    font-size: 1.5rem;
+    color: #D9795D; // Акцентний колір для іконок
+    flex-shrink: 0;
+    
+    @media (max-width: 768px) {
+      font-size: 1.3rem;
+    }
+    
+    @media (max-width: 480px) {
+      font-size: 1.2rem;
+    }
+  }
+  
+  .text {
+    flex: 1;
+    
+    strong {
+      display: block;
+      color: #FFFFFF;
+      font-weight: 600;
+      margin-bottom: 5px;
+      
+      @media (max-width: 768px) {
+        font-size: 0.95rem;
+      }
+      
+      @media (max-width: 480px) {
+        font-size: 0.9rem;
+      }
+    }
+    
+    p {
+      margin: 0;
+      line-height: 1.5;
+      
+      @media (max-width: 768px) {
+        font-size: 0.95rem;
+      }
+      
+      @media (max-width: 480px) {
+        font-size: 0.9rem;
+      }
+    }
+    
+    a {
+      color: #D9795D;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+      
+      &:hover {
+        color: #c4684d;
+        text-decoration: underline;
+      }
     }
   }
 }
@@ -348,26 +577,28 @@
   }
 }
 
-.map-placeholder {
+.map-container {
   width: 100%;
-  height: 400px;
-  background-color: #e0e0e0;
+  height: 450px;
   border-radius: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #6c757d;
-  font-size: 1.2rem;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
   
   @media (max-width: 768px) {
-    height: 300px;
-    font-size: 1rem;
+    height: 350px;
     border-radius: 12px;
   }
   
   @media (max-width: 480px) {
-    height: 250px;
-    font-size: 0.95rem;
+    height: 300px;
+    border-radius: 8px;
+  }
+  
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: inherit;
   }
 }
 

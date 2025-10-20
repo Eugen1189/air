@@ -135,13 +135,20 @@
 
 // --- Accordion with animation ---
 .accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; // Відстань між елементами
   margin-top: 30px;
 }
 
 .accordion-item {
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  margin-bottom: 15px;
+  // 1. Застосовуємо "скляний" фон та рамку
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  transition: all 0.3s ease;
   overflow: hidden;
 }
 
@@ -151,19 +158,20 @@
   gap: 15px;
   width: 100%;
   padding: 20px;
-  background-color: #f8f9fa;
+  background-color: transparent;
   border: none;
   cursor: pointer;
   text-align: left;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
+  color: #FFFFFF;
 
   &:hover {
-    background-color: #e9ecef;
+    background-color: rgba(255, 255, 255, 0.1);
   }
 
   &__day {
     font-weight: 700;
-    color: $primary-color;
+    color: var(--accent-color, $accent-color);
     min-width: 80px;
   }
 
@@ -172,12 +180,13 @@
     font-size: 1.1rem;
     font-weight: 600;
     margin: 0;
+    color: #FFFFFF;
   }
 
   &__icon {
     font-size: 24px;
     font-weight: 300;
-    color: $primary-color;
+    color: #FFFFFF;
     transition: transform 0.4s ease;
   }
 }
@@ -187,11 +196,14 @@
   overflow: hidden;
   transition: max-height 0.4s ease-out, padding 0.4s ease-out;
   padding: 0 15px; // Horizontal padding when block is closed
-  background-color: $white-color;
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 // Styles for open state
 .accordion-item.is-open {
+  border-color: var(--accent-color, $accent-color); // Підсвічуємо рамку акцентним кольором
+  
   .accordion-content {
     max-height: 500px; // Just a large value so content fits
     padding: 20px 15px; // Return vertical padding

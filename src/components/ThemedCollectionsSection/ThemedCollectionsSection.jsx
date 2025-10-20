@@ -17,7 +17,7 @@ const ThemedCollectionsSection = () => {
           <FlipCard
             key={collection.id}
             collectionId={collection.id}
-            link={collection.link}
+            link={`/collection/${collection.slug}`} // Оновлюємо посилання з використанням slug
             imageSrc={collection.imageUrl}
             title={collection.title}
             description={collection.description}

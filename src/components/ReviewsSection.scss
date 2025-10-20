@@ -1,0 +1,63 @@
+// Reviews Section Styles
+.reviews-section {
+  margin: 60px 0;
+  
+  // --- 1. Оновлюємо колір тексту в хедері блоку ---
+  .reviews-summary {
+    margin-bottom: 40px;
+    
+    // Заголовок "Recensioni dei Viaggiatori"
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      color: #FFFFFF;
+    }
+    
+    .rating-container {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 30px;
+      
+      .rating-number {
+        font-size: 3rem;
+        font-weight: 700;
+        color: var(--accent-color, #D9795D);
+      }
+      
+      .rating-details {
+        .stars {
+          font-size: 1.5rem;
+          margin-bottom: 5px;
+          color: #FFC700; // Робимо зірочки золотими
+        }
+        
+        // Текст "Basato su 2 recensioni"
+        .rating-text {
+          color: rgba(255, 255, 255, 0.7);
+          font-size: 1rem;
+        }
+      }
+    }
+    
+    .add-review-button {
+      padding: 15px 35px;
+      background-color: var(--accent-color, #D9795D);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      
+      &:hover {
+        background-color: #c4684d;
+      }
+      
+      &.cancel {
+        background-color: #6c757d;
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+// src/pages/CollectionPage.scss
+
+// 👇 ДОДАЄМО ІМПОРТ ФАЙЛУ ЗІ ЗМІННИМИ ТА МІКСИНАМИ
+@import '../styles/variables';
+
+// Category/Collection Page styles
+
+// Описовий текст під головним зображенням
+.page-description {
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 700px;
+  text-align: center;
+  margin: 40px auto;
+}
+
+// Заголовок для нижньої секції
+.section-title {
+  color: #FFFFFF;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+// Інформаційний блок "Periodo Migliore per Visitare"
+.info-block {
+  @include glass-card; // Застосовуємо наш міксин
+  // Збільшуємо відступ зверху, щоб відділити його від сітки карток
+  margin-top: 80px;
+  
+  // Робимо текст світлим
+  &__title {
+    color: #FFFFFF;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+  
+  &__text {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin: 0;
+  }
+}
+
+

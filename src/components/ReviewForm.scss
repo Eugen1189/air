@@ -1,0 +1,131 @@
+// src/components/ReviewForm.scss
+
+// 👇 ДОДАЄМО ІМПОРТ ФАЙЛУ ЗІ ЗМІННИМИ ТА МІКСИНАМИ
+@import '../styles/variables';
+
+// Review Form Styles
+.review-form {
+  @include glass-card;
+  padding: 40px;
+  margin-top: 40px;
+
+  // 2. Робимо текст всередині світлим
+  .form-title {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    color: #FFFFFF;
+  }
+
+  .form-group {
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  .form-label {
+    position: absolute;
+    top: 12px;
+    left: 15px;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.5);
+    pointer-events: none; // Дозволяє клікати "крізь" лейбл
+    transition: all 0.2s ease;
+  }
+
+  // 3. Стилізуємо поля вводу, як ми робили на сторінці контактів
+  .form-input,
+  .form-select,
+  .form-textarea {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 12px 15px;
+    color: #FFFFFF;
+    margin-top: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    &:focus {
+      outline: none;
+      border-color: var(--accent-color, #D9795D);
+    }
+  }
+
+  // Анімація лейбла, коли поле у фокусі АБО коли в ньому є текст
+  .form-input:focus + .form-label,
+  .form-input:not(:placeholder-shown) + .form-label,
+  .form-select:focus + .form-label,
+  .form-select:not([value=""]) + .form-label,
+  .form-textarea:focus + .form-label,
+  .form-textarea:not(:placeholder-shown) + .form-label {
+    top: -10px; // "Випливає" вгору
+    left: 10px;
+    font-size: 0.8rem;
+    color: var(--accent-color, #D9795D); // Змінюємо колір
+    background-color: var(--card-background, #0A2342); // Фон картки, щоб перекрити рамку
+    padding: 0 5px;
+  }
+
+  .form-select {
+    cursor: pointer;
+    
+    option {
+      background-color: #0A2342;
+      color: #FFFFFF;
+    }
+  }
+
+  .form-textarea {
+    resize: vertical;
+    min-height: 120px;
+    font-family: inherit;
+  }
+
+  // Кнопка відправки
+  .submit-button {
+    padding: 15px 40px;
+    background-color: var(--accent-color, #D9795D);
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background-color: #c4684d;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(217, 121, 93, 0.3);
+    }
+  }
+
+  // Responsive adjustments
+  @media (max-width: 768px) {
+    padding: 30px 25px;
+    margin-top: 30px;
+    
+    .form-title {
+      font-size: 1.6rem;
+    }
+    
+    .form-input,
+    .form-select,
+    .form-textarea {
+      font-size: 16px; // Prevents iOS zoom on focus
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 25px 20px;
+    margin-top: 25px;
+    
+    .form-title {
+      font-size: 1.4rem;
+    }
+  }
+}

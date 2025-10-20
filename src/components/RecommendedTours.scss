@@ -1,0 +1,223 @@
+// src/components/RecommendedTours.scss
+
+// 👇 ДОДАЄМО ІМПОРТ ФАЙЛУ ЗІ ЗМІННИМИ ТА МІКСИНАМИ
+@import '../styles/variables';
+
+// RecommendedTours.scss
+
+.recommendations-section {
+  padding: 60px 0;
+  text-align: center;
+  
+  // Стилі для заголовка
+  .section-title {
+    color: #FFFFFF;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    font-weight: 600;
+    
+    @media (max-width: 768px) {
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+    
+    @media (max-width: 480px) {
+      font-size: 1.75rem;
+      margin-bottom: 25px;
+    }
+  }
+}
+
+// Контейнер для всіх колекцій
+.collections-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px; // Відстань між блоками колекцій
+  
+  @media (max-width: 768px) {
+    padding: 0 15px;
+    gap: 40px;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 0 10px;
+    gap: 30px;
+  }
+}
+
+// Блок однієї колекції з її турами
+.collection-block {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  
+  @media (max-width: 768px) {
+    gap: 25px;
+  }
+}
+
+// Стилі для карток колекцій
+.collection-card {
+  @include glass-card; // Застосовуємо наш міксин
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  display: block;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.25);
+  }
+  
+  // Зображення
+  &__image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+  
+  // Оверлей для затемнення
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.6));
+    border-radius: 12px;
+  }
+  
+  // Контент
+  &__content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    z-index: 2;
+  }
+  
+  // Заголовок
+  &__title {
+    color: #FFFFFF !important;
+    font-size: 1.5rem;
+    margin: 0 0 10px 0;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  }
+  
+  // Опис
+  &__description {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin: 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  }
+}
+
+// Стилі для блоку рекомендованих турів
+.recommended-tours {
+  @include glass-card; // Застосовуємо наш міксин
+  padding: 25px;
+  
+  &__title {
+    color: #FFFFFF !important;
+    font-size: 1.5rem;
+    margin: 0 0 20px 0;
+    font-weight: 600;
+    text-align: center;
+  }
+}
+
+// Сітка для турів
+.tours-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); // Фіксовано 3 колонки для всіх турів
+  gap: 20px;
+  
+  @media (max-width: 992px) {
+    grid-template-columns: repeat(2, 1fr); // 2 колонки на планшетах
+    gap: 18px;
+  }
+  
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr; // 1 колонка на мобільних
+    gap: 12px;
+  }
+}
+
+// "СИЛОВИЙ" МЕТОД для tour-card-small: Використовуємо !important для гарантованого перебиття старих стилів
+.tour-card-small {
+  // Застосовуємо "скляний" фон з !important
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(15px) !important;
+  -webkit-backdrop-filter: blur(15px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  
+  // Інші стилі з !important
+  border-radius: 16px !important;
+  padding: 15px !important;
+  text-decoration: none !important;
+  display: block !important;
+  transition: all 0.3s ease !important;
+  overflow: hidden !important;
+  
+  &:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2) !important;
+    border-color: rgba(255, 255, 255, 0.25) !important;
+  }
+  
+  // Зображення
+  &__image {
+    width: 100% !important;
+    height: 120px !important;
+    object-fit: cover !important;
+    border-radius: 8px !important;
+    margin-bottom: 12px !important;
+  }
+  
+  // Контент
+  &__content {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+  }
+  
+  // Заголовок
+  &__title {
+    color: #FFFFFF !important;
+    font-size: 1rem !important;
+    margin: 0 !important;
+    font-weight: 600 !important;
+    line-height: 1.3 !important;
+  }
+  
+  // Деталі
+  &__details {
+    color: rgba(255, 255, 255, 0.8) !important; // Збільшуємо контраст як в блозі
+    font-size: 0.85rem !important;
+    margin: 0 !important;
+  }
+  
+  // Ціна
+  &__price {
+    color: var(--accent-color, #D9795D) !important;
+    font-size: 1.1rem !important;
+    font-weight: 700 !important;
+    margin: 0 !important;
+    margin-top: auto !important;
+  }
+}

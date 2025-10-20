@@ -1,5 +1,50 @@
 // Tours List Page - Professional Mobile Filters
 
+// 👇 ДОДАЄМО ІМПОРТ ФАЙЛУ ЗІ ЗМІННИМИ ТА МІКСИНАМИ
+@import '../styles/variables';
+
+// ============================================
+// Головний контейнер сторінки
+// ============================================
+
+.tours-list-page {
+  // 1. Робимо заголовки сторінки світлими
+  .page-header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .section-title, .section-subtitle {
+    color: #FFFFFF;
+    text-align: center;
+  }
+  
+  .section-title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+
+    @media (max-width: 768px) {
+      font-size: 2rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 1.75rem;
+    }
+  }
+  
+  .section-subtitle {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.3rem;
+    max-width: 800px;
+    margin: 0 auto;
+
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
+  }
+}
+
 // ============================================
 // MOBILE FILTER TOGGLE BUTTON
 // ============================================
@@ -54,7 +99,10 @@
     width: 100%;
     height: 100vh;
     height: 100dvh; // Dynamic viewport height for mobile
-    background-color: #ffffff;
+    // Застосовуємо "скляний" стиль
+    background-color: rgba(10, 35, 66, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     z-index: 9999;
     transform: translateX(-100%);
     transition: transform 0.3s ease-in-out;
@@ -72,8 +120,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  border-bottom: 1px solid #e0e0e0;
-  background-color: #ffffff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.05);
   position: sticky;
   top: 0;
   z-index: 10;
@@ -81,7 +129,7 @@
   h2 {
     font-size: 1.5rem;
     margin: 0;
-    color: #0A2342;
+    color: #FFFFFF; // Робимо білим
     font-weight: 700;
   }
 }
@@ -91,7 +139,7 @@
   background: none;
   border: none;
   font-size: 2rem;
-  color: #0A2342;
+  color: #FFFFFF; // Робимо білим
   cursor: pointer;
   padding: 8px;
   line-height: 1;
@@ -104,7 +152,7 @@
   border-radius: 50%;
   
   &:hover {
-    background-color: #f0f0f0;
+    background-color: rgba(255, 255, 255, 0.1);
   }
   
   &:active {
@@ -136,8 +184,8 @@
 // Filters Footer (Apply Button)
 .filters-mobile-footer {
   padding: 20px;
-  border-top: 1px solid #e0e0e0;
-  background-color: #ffffff;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.05);
   position: sticky;
   bottom: 0;
   z-index: 10;
@@ -203,6 +251,99 @@
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr; // Single column on mobile
+  }
+}
+
+// ============================================
+// СТИЛІ ДЛЯ СЕКЦІЙ СТОРІНКИ
+// ============================================
+
+// Сітка турів
+.tours-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+// Секція "Тури не знайдені"
+.no-tours-found {
+  @include glass-card;
+  text-align: center;
+  padding: 80px 20px;
+
+  .no-tours-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+  }
+
+  .no-tours-title {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #FFFFFF;
+    font-weight: 700;
+  }
+
+  .no-tours-text {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 25px;
+  }
+
+  .clear-filters-button {
+    padding: 15px 35px;
+    background-color: var(--accent-color, #D9795D);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: #c4684d;
+      transform: translateY(-2px);
+    }
+  }
+}
+
+// Секція "Індивідуальний тур"
+.custom-tour-section {
+  @include glass-card;
+  margin-top: 60px;
+  text-align: center;
+
+  .custom-tour-title {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #FFFFFF;
+    font-weight: 700;
+  }
+
+  .custom-tour-description {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 25px;
+    max-width: 800px;
+    margin: 0 auto 25px;
+  }
+
+  .custom-tour-button {
+    display: inline-block;
+    background-color: var(--accent-color, #D9795D);
+    color: white;
+    padding: 15px 40px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: #c4684d;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(217, 121, 93, 0.3);
+    }
   }
 }
 

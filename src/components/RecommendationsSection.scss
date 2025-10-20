@@ -1,0 +1,84 @@
+// src/components/RecommendationsSection.scss
+
+// 👇 ДОДАЄМО ІМПОРТ ФАЙЛУ ЗІ ЗМІННИМИ ТА МІКСИНАМИ
+@import '../styles/variables';
+
+// Можливо, вам знадобиться батьківський контейнер для центрування
+.recommendations-section {
+  min-height: 40vh; // Зменшуємо з 60vh до 40vh
+  display: flex;
+  align-items: center; // Вертикально центруємо вміст
+  justify-content: center; // Горизонтально центруємо вміст
+  padding: 20px 15px; // Зменшуємо відступи ще більше
+}
+
+// Ваш основний блок з колонками
+.recommendations-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px; // Зменшуємо відстань між картками
+  
+  // --- ОСНОВНІ ЗМІНИ ТУТ ---
+  
+  // 1. Зменшуємо висоту до 30% від висоти екрану (набагато компактніше!)
+  height: 30vh; 
+  
+  // 2. Обмежуємо ширину до 80% від ширини екрану
+  width: 80%; 
+  
+  // Адаптивність для менших екранів
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px; // Зменшуємо
+  }
+  
+  @media (max-width: 992px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px; // Зменшуємо
+  }
+  
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px; // Зменшуємо
+    height: 25vh; // Зменшуємо з 45vh до 25vh
+  }
+  
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    gap: 4px; // Зменшуємо
+    height: 20vh; // Зменшуємо з 40vh до 20vh
+  }
+}
+
+// Стилі для карток рекомендацій
+.recommendation-card {
+  @include glass-card; // Застосовуємо наш міксин
+  padding: 12px; // Зменшуємо з 20px до 12px
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.25);
+  }
+  
+  // Робимо текст світлим та дуже компактним
+  h3 {
+    color: #FFFFFF;
+    font-size: 0.95rem; // Зменшуємо з 1.1rem до 0.95rem
+    margin-bottom: 4px; // Зменшуємо з 8px до 4px
+    font-weight: 600;
+  }
+  
+  p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.75rem; // Зменшуємо з 0.85rem до 0.75rem
+    line-height: 1.2; // Зменшуємо з 1.3 до 1.2
+    margin: 0;
+  }
+}

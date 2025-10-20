@@ -1,5 +1,6 @@
 // src/components/ReviewsList.jsx
 import React from 'react';
+import './ReviewsList.scss';
 
 const ReviewsList = ({ tourId, reviews }) => {
   // Use passed reviews or empty array
@@ -16,18 +17,12 @@ const ReviewsList = ({ tourId, reviews }) => {
 
   if (reviewsForTour.length === 0) {
     return (
-      <div style={{
-        textAlign: 'center',
-        padding: '60px 20px',
-        backgroundColor: '#f8f9fa',
-        borderRadius: '12px',
-        margin: '20px 0'
-      }}>
-        <div style={{ fontSize: '3rem', marginBottom: '15px' }}>💬</div>
-        <h3 style={{ fontSize: '1.5rem', color: '#0A2342', marginBottom: '10px' }}>
+      <div className="no-reviews">
+        <div className="no-reviews-icon">💬</div>
+        <h3 className="no-reviews-title">
           Nessuna recensione ancora
         </h3>
-        <p style={{ color: '#6c757d' }}>
+        <p className="no-reviews-text">
           Sii il primo a condividere la tua esperienza con questo tour!
         </p>
       </div>
@@ -36,84 +31,46 @@ const ReviewsList = ({ tourId, reviews }) => {
 
   return (
     <div className="reviews-list">
-      <h3 className="section-title" style={{ fontSize: '2rem', marginBottom: '30px', color: '#0A2342' }}>
+      <h3 className="section-title">
         Recensioni dei Clienti
       </h3>
       
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '25px' }}>
+      <div className="reviews-container">
         {reviewsForTour.map(review => (
           <div
             key={review.id}
             className="review-item"
-            style={{
-              backgroundColor: '#ffffff',
-              padding: '30px',
-              borderRadius: '12px',
-              border: '2px solid #f0f0f0',
-              transition: 'border-color 0.3s ease'
-            }}
-            onMouseEnter={(e) => e.currentTarget.style.borderColor = '#D9795D'}
-            onMouseLeave={(e) => e.currentTarget.style.borderColor = '#f0f0f0'}
           >
             {/* Review Header */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '15px' }}>
+            <div className="review-header">
               {review.avatar && (
                 <img
                   src={review.avatar}
                   alt={review.author}
-                  style={{
-                    width: '60px',
-                    height: '60px',
-                    borderRadius: '50%',
-                    objectFit: 'cover'
-                  }}
+                  className="review-avatar"
                 />
               )}
-              <div style={{ flex: 1 }}>
-                <h4 style={{ fontSize: '1.2rem', marginBottom: '5px', color: '#0A2342', fontWeight: '600' }}>
+              <div className="review-info">
+                <h4 className="review-author">
                   {review.author}
                 </h4>
-                <div style={{ fontSize: '0.9rem', color: '#6c757d' }}>
+                <div className="review-date">
                   {formatDate(review.date)}
                 </div>
               </div>
-              <div style={{ fontSize: '1.3rem' }}>
+              <div className="review-stars">
                 {renderStars(review.rating)}
               </div>
             </div>
 
             {/* Review Text */}
-            <p style={{
-              color: '#333',
-              lineHeight: '1.7',
-              fontSize: '1.05rem',
-              margin: 0
-            }}>
+            <p className="review-text">
               {review.text}
             </p>
 
             {/* Helpful Button */}
-            <div style={{ marginTop: '20px', display: 'flex', gap: '15px' }}>
-              <button
-                style={{
-                  padding: '8px 20px',
-                  backgroundColor: 'transparent',
-                  border: '1px solid #e0e0e0',
-                  borderRadius: '20px',
-                  cursor: 'pointer',
-                  fontSize: '0.9rem',
-                  color: '#6c757d',
-                  transition: 'all 0.3s ease'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = '#D9795D';
-                  e.currentTarget.style.color = '#D9795D';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = '#e0e0e0';
-                  e.currentTarget.style.color = '#6c757d';
-                }}
-              >
+            <div className="review-actions">
+              <button className="helpful-button">
                 👍 Utile
               </button>
             </div>
