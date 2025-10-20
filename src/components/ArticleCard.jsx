@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useTranslatedBlogPost } from '../hooks/useTranslatedContent';
+import OptimizedImage from './OptimizedImage';
 import './ArticleCard.scss';
 
 const ArticleCard = ({ article }) => {
@@ -27,9 +28,13 @@ const ArticleCard = ({ article }) => {
     <article className="article-card">
       {/* Image */}
       <div className="article-card__image">
-        <img
+        <OptimizedImage
           src={article.coverImage}
           alt={displayTitle}
+          width={400}
+          height={250}
+          className="article-card__image"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
         <div className="article-card__category">
           {displayCategory}

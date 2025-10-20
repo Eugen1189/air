@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useTranslatedTour } from '../hooks/useTranslatedContent';
+import OptimizedImage from './OptimizedImage';
 import './TourCard.scss';
 const TourCard = ({ imageUrl, title, details, price, link, tourId, duration, difficulty }) => {
   const { t } = useTranslation();
@@ -18,7 +19,14 @@ const TourCard = ({ imageUrl, title, details, price, link, tourId, duration, dif
   // JSX structure now exactly matches your markup and styles
   return (
     <div className="tour-card">
-      <img src={imageUrl} alt={displayTitle} className="tour-card__image" />
+      <OptimizedImage 
+        src={imageUrl} 
+        alt={displayTitle} 
+        className="tour-card__image"
+        width={400}
+        height={300}
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+      />
       <div className="tour-card__content">
         {/* Meta information like in blog cards */}
         {(displayDuration || displayDifficulty) && (

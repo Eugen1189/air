@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useTranslatedTour, useTranslatedTourDetails } from '../hooks/useTranslatedContent';
 import { getTranslatedFilterValue } from '../utils/filterOptions';
+import OptimizedImage from './OptimizedImage';
 import './TourCardDetailed.scss';
 
 const TourCardDetailed = ({ tour }) => {
@@ -36,9 +37,12 @@ const TourCardDetailed = ({ tour }) => {
       >
         {/* Tour Image */}
         <div className="tour-card-detailed__image">
-          <img 
+          <OptimizedImage 
             src={tour.image}
             alt={displayTitle}
+            width={400}
+            height={250}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
           
           {/* Price Badge */}

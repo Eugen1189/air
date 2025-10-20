@@ -1,4 +1,5 @@
 import React from 'react';
+import OptimizedImage from '../OptimizedImage';
 
 const Logo = ({ variant = 'default', theme = 'light' }) => {
   const styles = {
@@ -39,10 +40,13 @@ const Logo = ({ variant = 'default', theme = 'light' }) => {
 
   return (
     <div style={styles.container}>
-      <img 
+      <OptimizedImage 
         src="/Gemini_Generated_Image_hnyrk9hnyrk9hnyr.png" 
         alt="Elysian Ways Logo" 
+        width={variant === 'large' ? 50 : 40}
+        height={variant === 'large' ? 50 : 40}
         style={styles.logoImage}
+        sizes="(max-width: 768px) 40px, 50px"
       />
       <div style={styles.textContainer}>
         <span style={styles.mainText}>Elysian Ways</span>

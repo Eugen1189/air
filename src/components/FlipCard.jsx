@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { FaCrown } from 'react-icons/fa';
 import { useTranslatedCollection } from '../hooks/useTranslatedContent';
+import OptimizedImage from './OptimizedImage';
 import './FlipCard.scss'; // Import styles
 
 const FlipCard = ({ imageSrc, title, link, description, collectionId }) => {
@@ -53,7 +54,13 @@ const FlipCard = ({ imageSrc, title, link, description, collectionId }) => {
       <div className="collection-card-inner">
         {/* Front side - Image with title */}
         <div className="collection-card-front">
-          <img src={imageSrc} alt={displayTitle} />
+          <OptimizedImage 
+            src={imageSrc} 
+            alt={displayTitle}
+            width={400}
+            height={300}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
           <div className="collection-card-overlay"></div>
           <div className="collection-card-content">
             <h3 className="collection-card-title">{displayTitle}</h3>
