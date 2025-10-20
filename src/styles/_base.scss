@@ -14,6 +14,14 @@ textarea {
 }
 
 // Smooth scroll for entire site
+html,
+body,
+#root {
+  /* Встановлюємо мінімальну висоту, рівну висоті екрану */
+  min-height: 100vh; 
+  height: 100%; /* Для кращої сумісності */
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 100px; // Offset for fixed header
@@ -36,6 +44,8 @@ body {
   padding-top: 100px;
   line-height: 1.6;
   transition: background-color 0.3s ease, color 0.3s ease;
+  /* Переконайтесь, що ваш темний фон застосований саме до body */
+  background: var(--background-color, linear-gradient(135deg, #0A0E0D 0%, #1A2E1F 25%, #0D1813 50%, #1F3B2A 75%, #0A0E0D 100%));
 }
 
 h1, h2, h3, h4, h5, h6 {

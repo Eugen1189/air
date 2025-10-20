@@ -11,6 +11,14 @@ textarea {
   max-width: 100%;
 }
 
+html,
+body,
+#root {
+  /* Встановлюємо мінімальну висоту, рівну висоті екрану */
+  min-height: 100vh; 
+  height: 100%; /* Для кращої сумісності */
+}
+
 html {
   /* Запобігаємо горизонтальній прокрутці */
   overflow-x: hidden;
@@ -24,6 +32,8 @@ body {
   line-height: 1.6;
   /* Запобігаємо горизонтальній прокрутці */
   overflow-x: hidden;
+  /* Переконайтесь, що ваш темний фон застосований саме до body */
+  background: var(--background-color, #F8F9FA);
 }
 
 h1, h2, h3 {
