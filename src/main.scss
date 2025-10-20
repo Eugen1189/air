@@ -3,13 +3,18 @@
 // ============================================
 
 // --- Import base files ---
-@import 'styles/variables';
-@import 'styles/base';
-@import 'styles/components';
-@import 'styles/layouts';     // Layout styles (grids, columns)
-@import 'styles/header';      // Header and navigation
-@import 'styles/footer';      // Footer
-@import 'styles/search-page'; // Search results page
-@import 'styles/tour-page';   // Individual tour page
+// 1. Файл зі змінними та міксинами підключаємо з додаванням 'as *'
+// Це зробить всі ваші змінні ($primary-color) та міксини (@include glass-card)
+// глобально доступними, як і раніше.
+@use 'styles/variables' as *;
+
+// 2. РЕШТУ файлів підключаємо через звичайний @use
+@use 'styles/base';
+@use 'styles/components';
+@use 'styles/layouts';     // Layout styles (grids, columns)
+@use 'styles/header';      // Header and navigation
+@use 'styles/footer';      // Footer
+@use 'styles/search-page'; // Search results page
+@use 'styles/tour-page';   // Individual tour page
 
 

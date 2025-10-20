@@ -1,7 +1,65 @@
 // Language Switcher - Professional Design
+@import '../styles/variables';
 
 .language-switcher {
-  position: relative;
+  position: relative; // Для позиціонування випадаючого списку
+
+  // Стиль для поточної обраної мови
+  .current-locale-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    padding: 8px 15px;
+    cursor: pointer;
+    
+    // Робимо текст і іконку білими
+    color: #FFFFFF;
+    font-weight: 600;
+    transition: all 0.3s ease;
+
+    // Стилі для іконки глобуса
+    span:first-child {
+      font-size: 1.1em;
+      opacity: 0.9;
+    }
+
+    // Стилі для коду мови
+    span:last-child {
+      font-family: $font-family-body;
+      letter-spacing: 0.5px;
+      font-size: 0.9em;
+    }
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.5);
+      
+      span:first-child {
+        opacity: 1;
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  // Стилі для випадаючого списку (якщо у вас кастомний dropdown)
+  .locale-dropdown {
+    display: none; // За замовчуванням схований
+    position: absolute;
+    top: 120%;
+    right: 0;
+    
+    @include glass-card; // Застосовуємо наш "скляний" стиль
+    padding: 10px;
+    min-width: 100px;
+  }
+  
+  // Показуємо список при наведенні
+  &:hover .locale-dropdown {
+    display: block;
+  }
   
   &--header {
     display: flex;
@@ -24,9 +82,9 @@
 .lang-button {
   padding: 8px 16px;
   background-color: transparent;
-  color: var(--color-text-primary);
-  border: 2px solid var(--color-border);
-  border-radius: 25px;
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
   cursor: pointer;
   font-size: 0.9rem;
   font-weight: 600;
@@ -45,8 +103,8 @@
   }
   
   &:hover:not(&--active) {
-    background-color: var(--color-bg-secondary);
-    border-color: var(--color-accent);
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
@@ -56,9 +114,9 @@
   }
   
   &--active {
-    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-dark) 100%);
+    background: linear-gradient(135deg, $accent-color 0%, $color-accent-dark 100%);
     color: white;
-    border-color: var(--color-accent);
+    border-color: $accent-color;
     box-shadow: 0 4px 12px rgba(217, 121, 93, 0.3);
     
     &:hover {
@@ -99,8 +157,8 @@
     }
     
     &--active {
-      background: linear-gradient(135deg, #E89B84 0%, #D9795D 100%);
-      border-color: #E89B84;
+      background: linear-gradient(135deg, $accent-color 0%, $color-accent-dark 100%);
+      border-color: $accent-color;
       color: white;
     }
   }
@@ -127,8 +185,8 @@
     }
     
     &--active {
-      background: linear-gradient(135deg, #E89B84 0%, #D9795D 100%);
-      border-color: #E89B84;
+      background: linear-gradient(135deg, $accent-color 0%, $color-accent-dark 100%);
+      border-color: $accent-color;
       color: white;
     }
   }
@@ -140,18 +198,20 @@
   
   &__trigger {
     padding: 8px 16px;
-    background-color: var(--color-bg-secondary);
-    border: 2px solid var(--color-border);
-    border-radius: 25px;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
     cursor: pointer;
     display: flex;
     align-items: center;
     gap: 8px;
     font-weight: 600;
+    color: #FFFFFF;
     transition: all 0.3s ease;
     
     &:hover {
-      border-color: var(--color-accent);
+      background-color: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.5);
     }
     
     .arrow {
@@ -168,10 +228,7 @@
     position: absolute;
     top: calc(100% + 8px);
     right: 0;
-    background-color: var(--color-bg-card);
-    border: 2px solid var(--color-border);
-    border-radius: 12px;
-    box-shadow: var(--shadow-lg);
+    @include glass-card; // Застосовуємо скляний стиль
     padding: 8px;
     min-width: 150px;
     z-index: 1000;
@@ -194,29 +251,34 @@
       cursor: pointer;
       border-radius: 8px;
       transition: background-color 0.2s ease;
-      color: var(--color-text-primary);
+      color: rgba(255, 255, 255, 0.8);
       
       &:hover {
-        background-color: var(--color-bg-secondary);
+        background-color: rgba(255, 255, 255, 0.1);
       }
       
       &--active {
-        background-color: var(--color-accent);
-        color: white;
+        background-color: rgba(217, 121, 93, 0.15);
+        color: $accent-color;
         font-weight: 600;
       }
       
       .flag {
         font-size: 1.3em;
+        margin-right: 8px;
       }
       
       .name {
         flex: 1;
+        font-family: $font-family-body;
+        font-size: 0.9em;
       }
       
       .check {
         opacity: 0;
         font-size: 0.9em;
+        color: $accent-color;
+        font-weight: bold;
       }
       
       &--active .check {

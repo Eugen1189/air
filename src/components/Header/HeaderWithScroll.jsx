@@ -90,34 +90,50 @@ const HeaderWithScroll = () => {
 
         {/* Mobile Navigation */}
         <nav className={`mobile-nav ${isMenuOpen ? 'is-open' : ''}`}>
-          {isHomePage ? (
-            <>
-              <ScrollLink 
-                to="collections" 
-                {...scrollConfig}
-                onClick={closeMenu}
-                activeClass="active"
-              >
-                {t('Navigation.collections')}
-              </ScrollLink>
-              <ScrollLink 
-                to="about" 
-                {...scrollConfig}
-                onClick={closeMenu}
-                activeClass="active"
-              >
-                {t('Navigation.aboutUs')}
-              </ScrollLink>
-            </>
-          ) : (
-            <>
-              <RouterLink to="/#collections" onClick={closeMenu}>{t('Navigation.collections')}</RouterLink>
-              <RouterLink to="/#about" onClick={closeMenu}>{t('Navigation.aboutUs')}</RouterLink>
-            </>
-          )}
-          <RouterLink to="/tours" onClick={closeMenu}>{t('Navigation.tours')}</RouterLink>
-          <RouterLink to="/blog" onClick={closeMenu}>{t('Navigation.blog')}</RouterLink>
-          <RouterLink to="/contacts" onClick={closeMenu}>{t('Navigation.contacts')}</RouterLink>
+          <ul>
+            {isHomePage ? (
+              <>
+                <li>
+                  <ScrollLink 
+                    to="collections" 
+                    {...scrollConfig}
+                    onClick={closeMenu}
+                    activeClass="active"
+                  >
+                    {t('Navigation.collections')}
+                  </ScrollLink>
+                </li>
+                <li>
+                  <ScrollLink 
+                    to="about" 
+                    {...scrollConfig}
+                    onClick={closeMenu}
+                    activeClass="active"
+                  >
+                    {t('Navigation.aboutUs')}
+                  </ScrollLink>
+                </li>
+              </>
+            ) : (
+              <>
+                <li>
+                  <RouterLink to="/#collections" onClick={closeMenu}>{t('Navigation.collections')}</RouterLink>
+                </li>
+                <li>
+                  <RouterLink to="/#about" onClick={closeMenu}>{t('Navigation.aboutUs')}</RouterLink>
+                </li>
+              </>
+            )}
+            <li>
+              <RouterLink to="/tours" onClick={closeMenu}>{t('Navigation.tours')}</RouterLink>
+            </li>
+            <li>
+              <RouterLink to="/blog" onClick={closeMenu}>{t('Navigation.blog')}</RouterLink>
+            </li>
+            <li>
+              <RouterLink to="/contacts" onClick={closeMenu}>{t('Navigation.contacts')}</RouterLink>
+            </li>
+          </ul>
         </nav>
 
         <nav className="desktop-nav">

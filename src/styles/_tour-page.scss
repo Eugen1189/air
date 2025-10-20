@@ -2,6 +2,8 @@
 // STYLES FOR TOUR PAGE
 // ============================================
 
+@use 'variables' as *;
+
 // SCSS/SASS
 
 // --- General tour page layout ---
@@ -86,52 +88,7 @@
   }
 }
 
-.booking-widget {
-  background-color: $white-color;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 8px 30px rgba($primary-color, 0.1);
-  
-  &__price {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: $primary-color;
-    margin-bottom: 5px;
-
-    span { // For text like "/ per person"
-      font-size: 1rem;
-      font-weight: 400;
-      color: #6c757d;
-    }
-  }
-  
-  .form-group {
-    margin-top: 20px;
-  }
-  
-  .form-label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 700;
-  }
-  
-  .form-input {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-sizing: border-box; // So padding doesn't affect width
-  }
-  
-  &__button {
-    @extend .btn;
-    @extend .btn--accent;
-    width: 100%;
-    margin-top: 20px;
-    padding: 15px; // Make button large and noticeable
-    font-size: 18px;
-  }
-}
+// Booking widget styles moved to BookingWidget.scss
 
 // --- Accordion with animation ---
 .accordion {

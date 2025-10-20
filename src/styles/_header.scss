@@ -2,6 +2,8 @@
 // STYLES FOR HEADER AND NAVIGATION
 // ============================================
 
+@use 'variables' as *;
+
 .site-header {
   position: fixed;
   top: 0;
@@ -47,6 +49,8 @@
   height: 100%;
   position: relative;
   overflow: visible;
+  /* Запобігаємо горизонтальній прокрутці */
+  box-sizing: border-box;
   
   @media (max-width: 768px) {
     padding: 0 20px;
@@ -160,34 +164,45 @@
     display: none;
   }
 
-  a {
-    color: #FFFFFF;
-    font-family: $font-family-headings;
-    font-size: 20px;
-    font-weight: $font-weight-medium;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    padding: 14px 24px;
-    border-radius: 12px;
-    background-color: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    width: 85%;
+  // Оновлюємо стилі для списку посилань
+  ul {
+    list-style: none;
+    padding: 0;
     text-align: center;
-    letter-spacing: 0.5px;
+    width: 100%;
+    margin: 0;
+  }
+
+  li {
+    margin: 0;
+    padding: 0;
+  }
+
+  // Оновлюємо стилі для самих посилань
+  a {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.5rem, 8vw, 4rem); // Адаптивний розмір
+    color: #FFFFFF;
+    text-decoration: none;
+    display: block;
+    padding: 10px 0;
+    transition: color 0.3s ease;
+    
+    // Прибираємо фон плашок
+    background: none;
+    border: none;
+    border-radius: 0;
+    width: auto;
+    text-align: center;
+    letter-spacing: normal;
     box-sizing: border-box;
 
     &:hover {
-      background-color: rgba(255, 255, 255, 0.1);
-      border-color: rgba(255, 255, 255, 0.2);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      color: var(--accent-color, $accent-color);
     }
 
     &.active {
-      color: $accent-color;
-      background-color: rgba(217, 121, 93, 0.15);
-      border-color: rgba(217, 121, 93, 0.3);
+      color: var(--accent-color, $accent-color);
     }
   }
 
@@ -222,58 +237,42 @@
 
 // --- Mobile Language Switcher --- (видалено)
 
-// --- Burger button ---
+// --- Minimalist Burger Button ---
 .burger-button {
-  display: block;
-  position: relative;
-  z-index: 100;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
+  background: none; // Прибираємо фон
+  border: none;     // Прибираємо рамку
   cursor: pointer;
-  padding: 12px;
-  transition: all 0.3s ease;
-  box-sizing: border-box;
+  padding: 15px;
+  z-index: 1001;
   
   @media (min-width: $breakpoint-tablet) {
     display: none;
-  }
-
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.2);
-    transform: scale(1.05);
   }
 
   span {
     display: block;
     width: 25px;
     height: 3px;
-    background-color: #FFFFFF;
-    margin: 5px 0;
-    transition: transform 0.3s, opacity 0.3s;
-    border-radius: 2px;
+    background-color: #FFFFFF; // Робимо палички білими
+    border-radius: 3px;
+    position: relative;
+    transition: transform 0.3s ease-in-out, opacity 0.2s ease;
+
+    &:not(:last-child) {
+      margin-bottom: 5px;
+    }
   }
 
-  // Animate icon to "X"
+  // Анімація в хрестик
   &.is-active {
-    background-color: rgba(217, 121, 93, 0.15);
-    border-color: rgba(217, 121, 93, 0.3);
-    
     span:nth-child(1) {
       transform: translateY(8px) rotate(45deg);
-      background-color: $accent-color;
     }
-    
     span:nth-child(2) {
       opacity: 0;
     }
-    
     span:nth-child(3) {
       transform: translateY(-8px) rotate(-45deg);
-      background-color: $accent-color;
     }
   }
 }
@@ -284,5 +283,10 @@
 .header-container .language-switcher a,
 .header-container .language-dropdown a {
   color: #FFFFFF;
+}
+
+// "Силовий" метод для приховування кнопки закриття
+.mobile-nav .close-button {
+  display: none !important;
 }
 

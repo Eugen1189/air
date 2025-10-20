@@ -2,6 +2,8 @@
 // COMPONENTS
 // ============================================
 
+@use 'variables' as *;
+
 // Order Summary Component Styles (глобальний клас)
 .order-summary {
   // 1. Застосовуємо наш "скляний" стиль

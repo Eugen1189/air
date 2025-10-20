@@ -2,12 +2,28 @@
   box-sizing: border-box;
 }
 
+/* Виправляємо поля, що виходять за рамки */
+input,
+select,
+textarea {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+}
+
+html {
+  /* Запобігаємо горизонтальній прокрутці */
+  overflow-x: hidden;
+}
+
 body {
   font-family: "Inter", sans-serif;
   color: #212529;
   background-color: #F8F9FA;
   margin: 0;
   line-height: 1.6;
+  /* Запобігаємо горизонтальній прокрутці */
+  overflow-x: hidden;
 }
 
 h1, h2, h3 {
@@ -29,6 +45,8 @@ a:hover {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+  /* Запобігаємо горизонтальній прокрутці */
+  overflow-x: hidden;
 }
 
 .btn, .booking-widget__button, .tour-card__button {
@@ -95,6 +113,30 @@ a:hover {
   border: 1px solid #ddd;
   border-radius: 5px;
   font-family: "Inter", sans-serif;
+}
+
+/* Стилізація білих <select> у фільтрах */
+.filter-group select {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  font-family: "Inter", sans-serif;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.filter-group select:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.filter-group select option {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #FFFFFF;
 }
 
 .results-grid {
@@ -173,69 +215,7 @@ a:hover {
   }
 }
 
-.booking-widget {
-  /* 1. Застосовуємо "скляний" фон */
-  background-color: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  
-  /* 2. Додаємо рамку та заокруглення */
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
-  
-  padding: 30px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-}
-.booking-widget__price {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #FFFFFF;
-  margin-bottom: 5px;
-}
-.booking-widget__price span {
-  font-size: 1rem;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.8);
-}
-.booking-widget .form-group {
-  margin-top: 20px;
-}
-.booking-widget .form-label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.8);
-}
-.booking-widget .form-input {
-  width: 100%;
-  padding: 12px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
-  box-sizing: border-box;
-  color: #FFFFFF;
-}
-.booking-widget .form-input::placeholder {
-  color: rgba(255, 255, 255, 0.5);
-}
-.booking-widget__button {
-  width: 100%;
-  margin-top: 20px;
-  padding: 15px;
-  font-size: 18px;
-  background-color: var(--accent-color, #D9795D);
-  color: #FFFFFF;
-  font-weight: 700;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-.booking-widget__button:hover {
-  background-color: #c4684d;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(217, 121, 93, 0.3);
-}
+/* Booking widget styles moved to BookingWidget.scss */
 
 .hero {
   display: flex;

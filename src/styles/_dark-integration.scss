@@ -52,12 +52,7 @@
   }
 }
 
-// Booking Widget - dark theme
-.booking-widget {
-  background: rgba(26, 46, 31, 0.8) !important;
-  backdrop-filter: blur(12px) !important;
-  border: 1px solid rgba(80, 200, 120, 0.25) !important;
-}
+// Booking Widget styles moved to BookingWidget.scss
 
 // Contact Cards - dark glassmorphic
 .contact-card,

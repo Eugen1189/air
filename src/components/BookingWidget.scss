@@ -5,23 +5,38 @@
 
 // Booking Widget Styles
 .booking-widget {
-  // Застосовуємо "скляний" фон
-  background-color: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
-  padding: 30px;
+  // Застосовуємо "скляний" фон з найвищим пріоритетом
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(15px) !important;
+  -webkit-backdrop-filter: blur(15px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 16px !important;
+  padding: 30px !important;
+
+  // Робимо текст всередині світлим
+  .booking-widget__price, .form-label, .form-input {
+    color: #FFFFFF !important;
+  }
+  
+  .form-label {
+    color: rgba(255, 255, 255, 0.8) !important;
+  }
+
+  // Оновлюємо поля вводу
+  .form-input {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  }
 
   // Робимо текст світлим
   &__price {
-    color: #FFFFFF;
+    color: #FFFFFF !important;
     font-size: 3rem;
     font-weight: 700;
     margin-bottom: 20px;
 
     span {
-      color: rgba(255, 255, 255, 0.8);
+      color: rgba(255, 255, 255, 0.8) !important;
       font-size: 1rem;
       font-weight: 400;
     }
@@ -32,7 +47,7 @@
   }
 
   .form-label {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.8) !important;
     font-weight: 600;
     display: block;
     margin-bottom: 8px;
@@ -41,33 +56,33 @@
   
   // Оновлюємо поля вводу
   .form-input {
-    background-color: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
     border-radius: 8px;
-    color: #FFFFFF;
+    color: #FFFFFF !important;
     padding: 14px 16px;
     width: 100%;
     font-size: 1rem;
     transition: all 0.3s ease;
 
     &::placeholder {
-      color: rgba(255, 255, 255, 0.6);
+      color: rgba(255, 255, 255, 0.6) !important;
     }
 
     &:focus {
       outline: none;
-      border-color: var(--accent-color, #D9795D);
-      background-color: rgba(255, 255, 255, 0.08);
+      border-color: var(--accent-color, #D9795D) !important;
+      background-color: rgba(255, 255, 255, 0.08) !important;
       box-shadow: 0 0 0 3px rgba(217, 121, 93, 0.2);
     }
 
     &:hover {
-      border-color: rgba(255, 255, 255, 0.3);
+      border-color: rgba(255, 255, 255, 0.3) !important;
     }
   }
 
   .form-error {
-    color: #ff6b6b;
+    color: #ff6b6b !important;
     font-size: 0.875rem;
     margin-top: 5px;
     font-weight: 500;
@@ -75,14 +90,14 @@
 
   // Кнопка з м'яким стилем
   &__button {
-    width: 100%;
+    width: 100% !important;
     margin-top: 25px;
     padding: 16px 20px;
     font-size: 18px;
-    background: linear-gradient(135deg, var(--accent-color, #D9795D), #c4684d);
-    color: #FFFFFF;
+    background: linear-gradient(135deg, var(--accent-color, #D9795D), #c4684d) !important;
+    color: #FFFFFF !important;
     font-weight: 700;
-    border: none;
+    border: none !important;
     border-radius: 12px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -91,7 +106,7 @@
     box-shadow: 0 4px 15px rgba(217, 121, 93, 0.2);
 
     &:hover {
-      background: linear-gradient(135deg, #c4684d, #b55a42);
+      background: linear-gradient(135deg, #c4684d, #b55a42) !important;
       transform: translateY(-2px);
       box-shadow: 0 6px 20px rgba(217, 121, 93, 0.3);
     }
@@ -101,16 +116,16 @@
     }
 
     &:disabled {
-      opacity: 0.6;
+      opacity: 0.6 !important;
       cursor: not-allowed;
       transform: none;
-      background: rgba(217, 121, 93, 0.6);
+      background: rgba(217, 121, 93, 0.6) !important;
     }
   }
 
   // Стилі для повідомлень про комісію
   .commission-info {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.8) !important;
     font-size: 0.9rem;
     text-align: center;
     margin-top: 15px;
@@ -123,34 +138,34 @@
     border-radius: 12px;
     text-align: center;
     font-weight: 600;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
 
     &--success {
-      background-color: rgba(76, 175, 80, 0.15);
-      color: #4caf50;
-      border-color: rgba(76, 175, 80, 0.3);
+      background-color: rgba(76, 175, 80, 0.15) !important;
+      color: #4caf50 !important;
+      border-color: rgba(76, 175, 80, 0.3) !important;
     }
 
     &--error {
-      background-color: rgba(244, 67, 54, 0.15);
-      color: #f44336;
-      border-color: rgba(244, 67, 54, 0.3);
+      background-color: rgba(244, 67, 54, 0.15) !important;
+      color: #f44336 !important;
+      border-color: rgba(244, 67, 54, 0.3) !important;
     }
   }
 
   // Responsive adjustments
   @media (max-width: 768px) {
-    padding: 25px 20px;
+    padding: 25px 20px !important;
     
     &__price {
-      font-size: 2.5rem;
+      font-size: 2.5rem !important;
       margin-bottom: 15px;
     }
     
     .form-input {
-      font-size: 16px; // Prevents iOS zoom on focus
+      font-size: 16px !important; // Prevents iOS zoom on focus
       padding: 12px 14px;
     }
 
@@ -161,10 +176,10 @@
   }
 
   @media (max-width: 480px) {
-    padding: 20px 15px;
+    padding: 20px 15px !important;
     
     &__price {
-      font-size: 2rem;
+      font-size: 2rem !important;
     }
 
     .form-label {

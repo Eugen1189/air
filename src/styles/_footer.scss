@@ -2,6 +2,8 @@
 // STYLES FOR FOOTER
 // ============================================
 
+@use 'variables' as *;
+
 .site-footer {
   // Black-green gradient to match site theme
   background: linear-gradient(to bottom, 

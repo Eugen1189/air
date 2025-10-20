@@ -56,6 +56,30 @@
     border-radius: 5px;
     font-family: $font-family-body;
   }
+
+  // Стилізація білих <select> у фільтрах
+  select {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #FFFFFF;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: $font-family-body;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    
+    &:focus {
+      outline: none;
+      border-color: rgba(255, 255, 255, 0.4);
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    option {
+      background-color: rgba(0, 0, 0, 0.8);
+      color: #FFFFFF;
+    }
+  }
 }
 
 

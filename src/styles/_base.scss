@@ -2,6 +2,17 @@
 // BASE STYLES
 // ============================================
 
+@use 'variables' as *;
+
+/* Виправляємо поля, що виходять за рамки */
+input,
+select,
+textarea {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+}
+
 // Smooth scroll for entire site
 html {
   scroll-behavior: smooth;
