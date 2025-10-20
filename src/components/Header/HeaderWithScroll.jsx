@@ -4,7 +4,6 @@ import { Link as RouterLink, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Logo from '../Logo/Logo';
 import LanguageDropdown from '../LanguageDropdown';
-import LanguageSwitcher from '../LanguageSwitcher';
 
 const HeaderWithScroll = () => {
   const { t } = useTranslation();
@@ -119,11 +118,6 @@ const HeaderWithScroll = () => {
           <RouterLink to="/tours" onClick={closeMenu}>{t('Navigation.tours')}</RouterLink>
           <RouterLink to="/blog" onClick={closeMenu}>{t('Navigation.blog')}</RouterLink>
           <RouterLink to="/contacts" onClick={closeMenu}>{t('Navigation.contacts')}</RouterLink>
-          
-          {/* Language Switcher in Mobile Menu */}
-          <div className="mobile-lang-switcher">
-            <LanguageSwitcher variant="mobile" />
-          </div>
         </nav>
 
         <nav className="desktop-nav">

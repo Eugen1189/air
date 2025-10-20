@@ -220,46 +220,7 @@
   to { opacity: 1; }
 }
 
-// --- Mobile Language Switcher ---
-.mobile-lang-switcher {
-  margin-top: 20px;
-  padding: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  background-color: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  
-  a {
-    color: rgba(255, 255, 255, 0.8);
-    text-decoration: none;
-    padding: 10px 18px;
-    margin: 0 5px;
-    border-radius: 8px;
-    background-color: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease;
-    font-family: $font-family-body;
-    font-size: 14px;
-    font-weight: $font-weight-medium;
-    letter-spacing: 0.3px;
-    box-sizing: border-box;
-    
-    &:hover {
-      background-color: rgba(255, 255, 255, 0.1);
-      border-color: rgba(255, 255, 255, 0.2);
-      color: #FFFFFF;
-    }
-    
-    &.active {
-      background-color: rgba(217, 121, 93, 0.15);
-      border-color: rgba(217, 121, 93, 0.3);
-      color: $accent-color;
-    }
-  }
-}
+// --- Mobile Language Switcher --- (видалено)
 
 // --- Burger button ---
 .burger-button {
