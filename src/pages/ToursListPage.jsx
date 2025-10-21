@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { mockTours } from '../data/mock-tours';
+import { allTours } from '../data/allTours';
 import FilterSidebar from '../components/FilterSidebar';
 import TourCardDetailed from '../components/TourCardDetailed';
 import './ToursListPage.scss';
@@ -36,7 +36,7 @@ const ToursListPage = () => {
   }, [filtersOpen]);
 
   // Filter logic - now works directly with Italian values stored in state
-  const filteredTours = mockTours.filter(tour => {
+  const filteredTours = allTours.filter(tour => {
     // Destination filter
     if (filters.destination !== 'Tutti' && tour.destination !== filters.destination) {
       return false;
@@ -61,9 +61,10 @@ const ToursListPage = () => {
 
     // Price range filter
     if (filters.priceRange !== 'Tutti') {
-      if (filters.priceRange === 'Meno di 1000€' && tour.price >= 1000) return false;
-      if (filters.priceRange === '1000-2000€' && (tour.price < 1000 || tour.price > 2000)) return false;
-      if (filters.priceRange === 'Più di 2000€' && tour.price <= 2000) return false;
+      const tourPrice = typeof tour.price === 'string' ? parseInt(tour.price) : tour.price;
+      if (filters.priceRange === 'Meno di 1000€' && tourPrice >= 1000) return false;
+      if (filters.priceRange === '1000-2000€' && (tourPrice < 1000 || tourPrice > 2000)) return false;
+      if (filters.priceRange === 'Più di 2000€' && tourPrice <= 2000) return false;
     }
 
     // Search query filter

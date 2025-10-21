@@ -4,12 +4,33 @@ import { useParams, useNavigate } from 'react-router-dom';
 import StripeWrapper from '../components/StripeWrapper';
 import PaymentForm from '../components/PaymentForm';
 import { tourDetails } from '../data/toursData';
+import { collectionTours } from '../data/collectionTours';
+import { allTours } from '../data/allTours';
 import './CheckoutPage.scss';
 
 const CheckoutPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const tour = tourDetails[id];
+  
+  // Спочатку намагаємося знайти тур в tourDetails
+  let tour = tourDetails[id];
+  
+  // Якщо не знайдено, шукаємо в колекційних турах
+  if (!tour) {
+    // Шукаємо в усіх колекціях
+    for (const collection of Object.values(collectionTours)) {
+      const foundTour = collection.find(t => t.id === id || t.slug === id);
+      if (foundTour) {
+        tour = foundTour;
+        break;
+      }
+    }
+  }
+  
+  // Якщо все ще не знайдено, шукаємо в об'єднаному списку
+  if (!tour) {
+    tour = allTours.find(t => t.id === id || t.slug === id);
+  }
   const [bookingDetails, setBookingDetails] = useState({
     guests: 1,
     date: '',
@@ -26,7 +47,9 @@ const CheckoutPage = () => {
     );
   }
 
-  const totalAmount = tour.price * bookingDetails.guests;
+  // Розрахунок загальної суми з урахуванням різних форматів ціни
+  const tourPrice = typeof tour.price === 'string' ? parseInt(tour.price) : tour.price;
+  const totalAmount = tourPrice * bookingDetails.guests;
 
   const handlePaymentSuccess = (paymentIntent) => {
     console.log('Payment successful:', paymentIntent);
@@ -63,7 +86,7 @@ const CheckoutPage = () => {
             </h2>
             <div className="tour-summary-content">
               <img
-                src={tour.gallery[0].src}
+                src={tour.gallery?.[0]?.src || tour.imageUrl || tour.image}
                 alt={tour.title}
                 className="tour-image"
               />
@@ -72,14 +95,19 @@ const CheckoutPage = () => {
                   {tour.title}
                 </h3>
                 <p>
-                  ⏱️ {tour.duration}
+                  ⏱️ {tour.duration || tour.details}
                 </p>
                 <p>
-                  👥 {tour.groupSize}
+                  👥 {tour.groupSize || 'Fino a 12 persone'}
                 </p>
                 <p>
-                  🏔️ Difficoltà: {tour.difficulty}
+                  🏔️ Difficoltà: {tour.difficulty || 'Facile'}
                 </p>
+                {tour.subtitle && (
+                  <p style={{ color: '#6c757d', fontSize: '14px' }}>
+                    {tour.subtitle}
+                  </p>
+                )}
               </div>
             </div>
           </div>
@@ -165,7 +193,7 @@ const CheckoutPage = () => {
 
             <div className="price-item">
               <span className="price-label">Prezzo per persona</span>
-              <span className="price-value">{tour.price}€</span>
+              <span className="price-value">{tourPrice}€</span>
             </div>
 
             <div className="price-item">

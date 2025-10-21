@@ -8,6 +8,8 @@ import Accordion from '../Accordion/Accordion';
 import ReviewsSection from '../ReviewsSection';
 import { getTourById, getTourBySlug } from '../../utils/tourUtils';
 import { useTranslatedTourDetails } from '../../hooks/useTranslatedContent';
+import { collectionTours } from '../../data/collectionTours';
+import { allTours } from '../../data/allTours';
 
 const TourPageDemo = () => {
   const { t } = useTranslation();
@@ -17,6 +19,22 @@ const TourPageDemo = () => {
   let tour = getTourBySlug(id);
   if (!tour) {
     tour = getTourById(id); // Fallback до пошуку за id
+  }
+  
+  // Якщо не знайдено в основних турах, шукаємо в колекційних
+  if (!tour) {
+    for (const collection of Object.values(collectionTours)) {
+      const foundTour = collection.find(t => t.id === id || t.slug === id);
+      if (foundTour) {
+        tour = foundTour;
+        break;
+      }
+    }
+  }
+  
+  // Якщо все ще не знайдено, шукаємо в об'єднаному списку
+  if (!tour) {
+    tour = allTours.find(t => t.id === id || t.slug === id);
   }
   
   // Get translated tour details if available (тільки для числових ID)
@@ -126,7 +144,7 @@ const TourPageDemo = () => {
       </div>
 
       {/* Sticky Sidebar with booking form */}
-      <BookingSidebar price={tour.price} />
+        <BookingSidebar price={typeof tour.price === 'string' ? parseInt(tour.price) : tour.price} />
     </div>
   );
 };

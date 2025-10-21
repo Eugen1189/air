@@ -21,8 +21,8 @@ const OptimizedImage = ({
     setHasError(true);
   };
 
-  // Fallback image for errors
-  const fallbackSrc = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkltYWdlIG5vdCBmb3VuZDwvdGV4dD48L3N2Zz4=';
+  // Fallback image for errors - красиве зображення з іконкою камери
+  const fallbackSrc = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNmOGY5ZmEiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlOWVjZWYiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2cpIi8+PGNpcmNsZSBjeD0iMTUwIiBjeT0iMTAwIiByPSIzMCIgZmlsbD0iI2NjYyIgb3BhY2l0eT0iMC4zIi8+PHBhdGggZD0iTTEzNSAxMDBhMTUgMTUgMCAxIDEgMzAgMCAxNSAxNSAwIDEgMSAtMzAgMHoiIGZpbGw9IiNjY2MiIG9wYWNpdHk9IjAuNSIvPjxwYXRoIGQ9Ik0xNDAgOTVsNS01aDEwdjEwaC0xMGwtNS01eiIgZmlsbD0iIzk5OSIvPjx0ZXh0IHg9IjE1MCIgeT0iMTUwIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiM2NjYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPk5vIGltYWdlPC90ZXh0Pjwvc3ZnPg==';
 
   return (
     <div 
@@ -62,14 +62,27 @@ const OptimizedImage = ({
             left: 0,
             width: '100%',
             height: '100%',
-            backgroundColor: '#f0f0f0',
+            background: 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            color: '#999'
+            color: '#666',
+            fontSize: '14px',
+            fontWeight: '500'
           }}
         >
-          Loading...
+          <div style={{ textAlign: 'center' }}>
+            <div style={{ 
+              width: '40px', 
+              height: '40px', 
+              border: '3px solid #ddd',
+              borderTop: '3px solid #666',
+              borderRadius: '50%',
+              animation: 'spin 1s linear infinite',
+              margin: '0 auto 10px'
+            }}></div>
+            Завантаження...
+          </div>
         </div>
       )}
     </div>

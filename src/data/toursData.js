@@ -1,7 +1,7 @@
 export const hitTours = [
   {
     id: 1,
-    imageUrl: 'https://images.unsplash.com/photo-1528181304800-259b08848526?q=80&w=2070',
+    imageUrl: 'https://images.unsplash.com/photo-1528181304800-259b08848526?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
     title: 'Costa Smeralda d\'Italia',
     details: '8 giorni, 7 notti',
     price: '950',
@@ -9,7 +9,7 @@ export const hitTours = [
   },
   {
     id: 2,
-    imageUrl: 'https://images.unsplash.com/photo-1531572753322-ad063cecc140?q=80&w=2076',
+    imageUrl: 'https://images.unsplash.com/photo-1531572753322-ad063cecc140?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2076&q=80',
     title: 'Magia dei Fiordi Norvegesi',
     details: '10 giorni, 9 notti',
     price: '1450',
@@ -17,7 +17,7 @@ export const hitTours = [
   },
   {
     id: 3,
-    imageUrl: 'https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?q=80&w=2070',
+    imageUrl: 'https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
     title: 'Fioritura del Sakura in Giappone',
     details: '12 giorni, 11 notti',
     price: '2800',
@@ -25,7 +25,7 @@ export const hitTours = [
   },
   {
     id: 5,
-    imageUrl: 'https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?q=80&w=2070',
+    imageUrl: 'https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
     title: 'Isole Greche da Sogno',
     details: '10 giorni, 9 notti',
     price: '1350',
@@ -33,7 +33,7 @@ export const hitTours = [
   },
   {
     id: 6,
-    imageUrl: 'https://images.unsplash.com/photo-1587595431973-160d0d94add1?q=80&w=2076',
+    imageUrl: 'https://images.unsplash.com/photo-1587595431973-160d0d94add1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2076&q=80',
     title: 'Misteri del Machu Picchu',
     details: '11 giorni, 10 notti',
     price: '2400',
@@ -41,7 +41,7 @@ export const hitTours = [
   },
   {
     id: 7,
-    imageUrl: 'https://images.unsplash.com/photo-1539768942893-daf53e448371?q=80&w=2070',
+    imageUrl: 'https://images.unsplash.com/photo-1539768942893-daf53e448371?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
     title: 'Magia del Marocco',
     details: '9 giorni, 8 notti',
     price: '1100',
@@ -49,7 +49,7 @@ export const hitTours = [
   },
   {
     id: 8,
-    imageUrl: 'https://images.unsplash.com/photo-1507699622108-4be3abd695ad?q=80&w=2070',
+    imageUrl: 'https://images.unsplash.com/photo-1507699622108-4be3abd695ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
     title: 'Avventura in Nuova Zelanda',
     details: '14 giorni, 13 notti',
     price: '3200',
@@ -57,7 +57,7 @@ export const hitTours = [
   },
   {
     id: 9,
-    imageUrl: 'https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?q=80&w=2070',
+    imageUrl: 'https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
     title: 'Tesori della Thailandia',
     details: '10 giorni, 9 notti',
     price: '1650',
@@ -70,7 +70,7 @@ export const collections = [
     id: 'gastro', 
     slug: 'gastro-tours', // Додаємо slug
     link: '/collection/gastro-tours', // Оновлюємо посилання
-    imageUrl: 'https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=1964', 
+    imageUrl: 'https://images.unsplash.com/photo-1551024601-bec78aea704b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80', 
     title: 'Tour Gastronomici',
     description: 'Immergiti nel mondo dei sapori autentici. Dalle strade animate dei mercati locali alle sale eleganti dei ristoranti stellati Michelin. Degusta vini pregiati, impara le ricette tradizionali dai maestri locali e scopri i segreti della cucina regionale in ogni angolo del mondo.' 
   },
@@ -78,7 +78,7 @@ export const collections = [
     id: 'relax', 
     slug: 'relax-trips', // Додаємо slug
     link: '/collection/relax-trips', // Оновлюємо посилання
-    imageUrl: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=2070', 
+    imageUrl: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80', 
     title: 'Viaggi per il Relax',
     description: 'Trova la pace interiore nelle migliori destinazioni benessere del mondo. Spa di lusso, resort sulle spiagge paradisiache, bagni termali naturali e centri yoga. Ricaricati con massaggi ayurvedici, meditazione al tramonto e trattamenti esclusivi in ambienti da sogno.'
   },
@@ -86,7 +86,7 @@ export const collections = [
     id: 'active', 
     slug: 'active-vacations', // Додаємо slug
     link: '/collection/active-vacations', // Оновлюємо посилання
-    imageUrl: 'https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=2070', 
+    imageUrl: 'https://images.unsplash.com/photo-1517649763962-0c623066013b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80', 
     title: 'Vacanze Attive',
     description: 'Per gli spiriti avventurosi che non stanno mai fermi. Trekking sulle vette delle Alpi, kayak tra i fiordi norvegesi, safari fotografici nella savana africana, immersioni nelle barriere coralline e rafting su fiumi impetuosi. L\'adrenalina e l\'emozione ti aspettano!'
   },
@@ -94,7 +94,7 @@ export const collections = [
     id: 'family', 
     slug: 'family-holidays', // Додаємо slug
     link: '/collection/family-holidays', // Оновлюємо посилання
-    imageUrl: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070', 
+    imageUrl: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80', 
     title: 'Vacanze Familiari',
     description: 'Crea ricordi indimenticabili con tutta la famiglia. Parchi tematici entusiasmanti, spiagge sicure per bambini, hotel con animazione e club per ragazzi. Attività coinvolgenti per tutte le età: dai laboratori creativi alle escursioni educative nella natura.'
   },
@@ -103,7 +103,7 @@ export const collections = [
     id: 'exotic', 
     slug: 'exotic-trips', // Додаємо slug
     link: '/collection/exotic-trips', // Оновлюємо посилання
-    imageUrl: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?q=80&w=2070', // Унікальне зображення для екзотичних подорожей
+    imageUrl: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80', // Унікальне зображення для екзотичних подорожей
     title: 'Viaggi Esotici',
     description: 'Scopri angoli remoti del pianeta e culture uniche. Dalle Maldive alle Seychelles, dalle Hawaii alle Fiji. Isole paradisiache, spiagge di sabbia bianca, acque cristalline e tramonti mozzafiato. Un\'esperienza di lusso in ambienti da sogno.'
   },
@@ -111,7 +111,7 @@ export const collections = [
     id: 'cultural', 
     slug: 'cultural-tours', // Додаємо slug
     link: '/collection/cultural-tours', // Оновлюємо посилання
-    imageUrl: 'https://images.unsplash.com/photo-1552832230-c0197dd311b5?q=80&w=2070', // Унікальне зображення для культурних турів
+    imageUrl: 'https://images.unsplash.com/photo-1552832230-c0197dd311b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80', // Унікальне зображення для культурних турів
     title: 'Tour Culturali',
     description: 'Immergiti nella storia e nell\'arte delle più grandi civiltà. Musei di fama mondiale, siti archeologici, monumenti storici e tradizioni secolari. Dalla Roma antica alla Parigi artistica, dall\'Egitto dei faraoni alla Grecia classica. Un viaggio nel tempo e nella cultura.'
   },
@@ -159,10 +159,10 @@ export const tourDetails = {
       'Visiterai antichi borghi arroccati sulle scogliere, gusterai vini locali e piatti tradizionali, nuoterai nelle acque cristalline del Mar Tirreno. Il nostro team professionale si prenderà cura di tutti i dettagli affinché tu possa concentrarti solo sul goderti il viaggio.'
     ],
     gallery: [
-      { src: 'https://images.unsplash.com/photo-1528181304800-259b08848526?q=80&w=2070' },
-      { src: 'https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=2070' },
-      { src: 'https://images.unsplash.com/photo-1498307833015-e7b400441eb8?q=80&w=2070' },
-      { src: 'https://images.unsplash.com/photo-1534445867742-43195f401b6c?q=80&w=2070' }
+      { src: 'https://images.unsplash.com/photo-1528181304800-259b08848526?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80' },
+      { src: 'https://images.unsplash.com/photo-1516483638261-f4dbaf036963?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80' },
+      { src: 'https://images.unsplash.com/photo-1498307833015-e7b400441eb8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80' },
+      { src: 'https://images.unsplash.com/photo-1534445867742-43195f401b6c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80' }
     ]
   },
   2: {
@@ -205,10 +205,10 @@ export const tourDetails = {
       'Durante il tour navigherai sui fiordi più belli, visiterai cascate impressionanti e gusterai la cucina tradizionale norvegese. Ogni giorno porterà nuove avventure e panorami indimenticabili.'
     ],
     gallery: [
-      { src: 'https://images.unsplash.com/photo-1531572753322-ad063cecc140?q=80&w=2076' },
-      { src: 'https://images.unsplash.com/photo-1504893524553-b855bce32c67?q=80&w=2070' },
-      { src: 'https://images.unsplash.com/photo-1513519245088-0e12902e35ca?q=80&w=2070' },
-      { src: 'https://images.unsplash.com/photo-1493780474015-ba834fd0ce2f?q=80&w=2070' }
+      { src: 'https://images.unsplash.com/photo-1531572753322-ad063cecc140?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2076' },
+      { src: 'https://images.unsplash.com/photo-1504893524553-b855bce32c67?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070' },
+      { src: 'https://images.unsplash.com/photo-1513519245088-0e12902e35ca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070' },
+      { src: 'https://images.unsplash.com/photo-1493780474015-ba834fd0ce2f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070' }
     ]
   },
   3: {
@@ -251,10 +251,10 @@ export const tourDetails = {
       'Visiterai antichi templi, gusterai sushi autentico, parteciperai alla cerimonia del tè e ammirerai la bellezza naturale del Monte Fuji. Ogni giorno sarà pieno di nuove esperienze e impressioni indimenticabili.'
     ],
     gallery: [
-      { src: 'https://images.unsplash.com/photo-1522383225653-ed111181a951?q=80&w=2070' },
-      { src: 'https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?q=80&w=2070' },
-      { src: 'https://images.unsplash.com/photo-1528360983277-13d401cdc186?q=80&w=2070' },
-      { src: 'https://images.unsplash.com/photo-1545569341-9eb8b30979d9?q=80&w=2070' }
+      { src: 'https://images.unsplash.com/photo-1522383225653-ed111181a951?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070' },
+      { src: 'https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070' },
+      { src: 'https://images.unsplash.com/photo-1528360983277-13d401cdc186?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070' },
+      { src: 'https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070' }
     ]
   },
   4: {
@@ -297,10 +297,10 @@ export const tourDetails = {
       'I nostri safari sono condotti da ranger esperti che conoscono ogni angolo dei parchi nazionali. Alloggerai in lodge confortevoli e gusterai la cucina africana. Questa sarà un\'avventura che ricorderai per tutta la vita.'
     ],
     gallery: [
-      { src: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?q=80&w=2070' },
-      { src: 'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?q=80&w=2071' },
-      { src: 'https://images.unsplash.com/photo-1534177616072-ef7dc120449d?q=80&w=2070' },
-      { src: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?q=80&w=2070' }
+      { src: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070' },
+      { src: 'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071' },
+      { src: 'https://images.unsplash.com/photo-1534177616072-ef7dc120449d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070' },
+      { src: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070' }
     ]
   },
   5: {
@@ -343,10 +343,10 @@ export const tourDetails = {
       'Nuoterai in acque turchesi, assaggerai mousaka e souvlaki autentici, esplorerai templi antichi e ti perderai nei vicoli bianchi dei villaggi cicladici. La Grecia è magia allo stato puro.'
     ],
     gallery: [
-      { src: 'https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?q=80&w=2070' },
-      { src: 'https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=2070' },
-      { src: 'https://images.unsplash.com/photo-1601581987809-a874a81309c9?q=80&w=2070' },
-      { src: 'https://images.unsplash.com/photo-1580674285054-bed31e145f59?q=80&w=2070' }
+      { src: 'https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070' },
+      { src: 'https://images.unsplash.com/photo-1533105079780-92b9be482077?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070' },
+      { src: 'https://images.unsplash.com/photo-1601581987809-a874a81309c9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070' },
+      { src: 'https://images.unsplash.com/photo-1580674285054-bed31e145f59?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070' }
     ]
   },
   6: {
@@ -389,10 +389,10 @@ export const tourDetails = {
       'Assaggerai ceviche fresco, quinoa andina e pisco sour. Imparerai la storia degli Inca, ammirerai paesaggi mozzafiato e ti immergerai in una cultura millenaria ancora viva oggi.'
     ],
     gallery: [
-      { src: 'https://images.unsplash.com/photo-1587595431973-160d0d94add1?q=80&w=2076' },
-      { src: 'https://images.unsplash.com/photo-1526392060635-9d6019884377?q=80&w=2070' },
-      { src: 'https://images.unsplash.com/photo-1531968455001-5c5272a41129?q=80&w=2070' },
-      { src: 'https://images.unsplash.com/photo-1523879235359-d524e6f94e9e?q=80&w=2070' }
+      { src: 'https://images.unsplash.com/photo-1587595431973-160d0d94add1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2076' },
+      { src: 'https://images.unsplash.com/photo-1526392060635-9d6019884377?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070' },
+      { src: 'https://images.unsplash.com/photo-1531968455001-5c5272a41129?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070' },
+      { src: 'https://images.unsplash.com/photo-1523879235359-d524e6f94e9e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070' }
     ]
   },
   7: {
@@ -435,10 +435,10 @@ export const tourDetails = {
       'Assaggerai tajine speziato, couscous tradizionale, tè alla menta. Dormirai in riad storici e sotto le stelle del Sahara. Il Marocco ti conquisterà con la sua ospitalità e diversità.'
     ],
     gallery: [
-      { src: 'https://images.unsplash.com/photo-1539768942893-daf53e448371?q=80&w=2070' },
-      { src: 'https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?q=80&w=2070' },
-      { src: 'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=2070' },
-      { src: 'https://images.unsplash.com/photo-1508283820529-8e9d47e2bfb8?q=80&w=2070' }
+      { src: 'https://images.unsplash.com/photo-1539768942893-daf53e448371?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070' },
+      { src: 'https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070' },
+      { src: 'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070' },
+      { src: 'https://images.unsplash.com/photo-1508283820529-8e9d47e2bfb8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070' }
     ]
   },
   8: {
@@ -481,10 +481,10 @@ export const tourDetails = {
       'Farai attività adrenaliniche, ammirerai cieli stellati patrimonio UNESCO, camminerai su ghiacciai, nuoterai con delfini. I neozelandesi sono tra le persone più accoglienti del mondo.'
     ],
     gallery: [
-      { src: 'https://images.unsplash.com/photo-1507699622108-4be3abd695ad?q=80&w=2070' },
-      { src: 'https://images.unsplash.com/photo-1469521669194-babb92d87921?q=80&w=2070' },
-      { src: 'https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?q=80&w=2070' },
-      { src: 'https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=2070' }
+      { src: 'https://images.unsplash.com/photo-1507699622108-4be3abd695ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070' },
+      { src: 'https://images.unsplash.com/photo-1469521669194-babb92d87921?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070' },
+      { src: 'https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070' },
+      { src: 'https://images.unsplash.com/photo-1528127269322-539801943592?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070' }
     ]
   },
   9: {
@@ -527,10 +527,10 @@ export const tourDetails = {
       'Assaggerai pad thai autentico, curry speziati, mango sticky rice. Imparerai la cultura buddhista, farai massaggi tradizionali, nuoterai in acque cristalline tra pesci tropicali.'
     ],
     gallery: [
-      { src: 'https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?q=80&w=2070' },
-      { src: 'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?q=80&w=2070' },
-      { src: 'https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?q=80&w=2070' },
-      { src: 'https://images.unsplash.com/photo-1528181304800-259b08848526?q=80&w=2070' }
+      { src: 'https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070' },
+      { src: 'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070' },
+      { src: 'https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070' },
+      { src: 'https://images.unsplash.com/photo-1528181304800-259b08848526?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070' }
     ]
   }
 };

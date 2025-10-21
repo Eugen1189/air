@@ -4,7 +4,7 @@ export const collectionTours = {
     {
       id: 'gastro-1',
       slug: 'tour-gastronomico-bologna',
-      imageUrl: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=2000',
+      imageUrl: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000',
       title: 'Tour Gastronomico di Bologna',
       subtitle: '5 giorni di sapori autentici emiliani',
       details: '5 giorni, 4 notti',
@@ -57,15 +57,15 @@ export const collectionTours = {
         }
       ],
       gallery: [
-        'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=2000',
-        'https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=2000',
-        'https://images.unsplash.com/photo-1516594915697-87eb3b1c14ea?q=80&w=2000'
+        'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000',
+        'https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000',
+        'https://images.unsplash.com/photo-1516594915697-87eb3b1c14ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000'
       ]
     },
     {
       id: 'gastro-2',
       slug: 'pintxos-tour-san-sebastian',
-      imageUrl: 'https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=2000',
+      imageUrl: 'https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000',
       title: 'Pintxos Tour a San Sebastián',
       subtitle: '4 giorni nella capitale mondiale dei pintxos',
       details: '4 giorni, 3 notti',
@@ -113,15 +113,15 @@ export const collectionTours = {
         }
       ],
       gallery: [
-        'https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=2000',
-        'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=2000',
-        'https://images.unsplash.com/photo-1516594915697-87eb3b1c14ea?q=80&w=2000'
+        'https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000',
+        'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000',
+        'https://images.unsplash.com/photo-1516594915697-87eb3b1c14ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000'
       ]
     },
     {
       id: 'gastro-3',
       slug: 'gastronomia-lione',
-      imageUrl: 'https://images.unsplash.com/photo-1516594915697-87eb3b1c14ea?q=80&w=2000',
+      imageUrl: 'https://images.unsplash.com/photo-1516594915697-87eb3b1c14ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000',
       title: 'Gastronomia di Lione',
       details: '6 giorni, 5 notti',
       price: '1100',
@@ -133,16 +133,67 @@ export const collectionTours = {
     {
       id: 'relax-1',
       slug: 'spa-retreat-bali',
-      imageUrl: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&w=2000',
+      imageUrl: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80',
       title: 'Spa Retreat a Bali',
+      subtitle: '8 giorni di benessere spirituale',
       details: '8 giorni, 7 notti',
       price: '1800',
       link: '/tour/relax-bali',
-      description: 'Rilassati nei resort spa di lusso con yoga quotidiano e massaggi balinesi tradizionali.'
+      description: 'Rilassati nei resort spa di lusso con yoga quotidiano e massaggi balinesi tradizionali.',
+      duration: '8 giorni / 7 notti',
+      groupSize: 'Fino a 8 persone',
+      difficulty: 'Facile',
+      meals: 'Pensione completa',
+      included: [
+        'Volo di andata e ritorno',
+        'Resort spa 5* (7 notti)',
+        'Pensione completa',
+        'Yoga quotidiano',
+        'Massaggi balinesi inclusi',
+        'Cerimonie di purificazione',
+        'Transfer privati'
+      ],
+      fullDescription: [
+        'Bali è l\'isola degli dei, dove la spiritualità incontra il benessere. Un\'esperienza di relax totale in resort spa di lusso immersi nella natura rigogliosa.',
+        'Ogni giorno inizierà con yoga al tramonto, seguito da massaggi balinesi tradizionali e trattamenti spa. Visiterai templi antichi e parteciperai a cerimonie di purificazione.',
+        'Le risaie terrazzate, le spiagge tranquille e l\'atmosfera spirituale di Ubud creeranno un\'esperienza di benessere indimenticabile.'
+      ],
+      itinerary: [
+        {
+          day: 'Giorno 1',
+          title: 'Arrivo a Bali',
+          description: 'Arrivo all\'aeroporto di Denpasar, transfer in resort spa a Ubud. Benvenuto con cerimonia di purificazione e massaggio di benvenuto.'
+        },
+        {
+          day: 'Giorno 2-3',
+          title: 'Yoga e Benessere',
+          description: 'Yoga quotidiano al tramonto, massaggi balinesi, trattamenti spa e relax nelle risaie terrazzate.'
+        },
+        {
+          day: 'Giorno 4-5',
+          title: 'Spiritualità e Natura',
+          description: 'Visita ai templi antichi, cerimonie di purificazione, meditazione guidata e trekking nelle risaie.'
+        },
+        {
+          day: 'Giorno 6-7',
+          title: 'Relax Finale',
+          description: 'Ultimi trattamenti spa, yoga finale e relax sulla spiaggia tranquilla di Sanur.'
+        },
+        {
+          day: 'Giorno 8',
+          title: 'Partenza',
+          description: 'Colazione in resort e transfer all\'aeroporto per il rientro.'
+        }
+      ],
+      gallery: [
+        'https://images.unsplash.com/photo-1537996194471-e657df975ab4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80',
+        'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80',
+        'https://images.unsplash.com/photo-1504870712357-65ea720d6078?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80'
+      ]
     },
     {
       id: 'relax-2',
-      imageUrl: 'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?q=80&w=2000',
+      imageUrl: 'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000',
       title: 'Terme di Saturnia',
       details: '3 giorni, 2 notti',
       price: '650',
@@ -151,7 +202,7 @@ export const collectionTours = {
     },
     {
       id: 'relax-3',
-      imageUrl: 'https://images.unsplash.com/photo-1504870712357-65ea720d6078?q=80&w=2000',
+      imageUrl: 'https://images.unsplash.com/photo-1504870712357-65ea720d6078?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000',
       title: 'Blue Lagoon Experience',
       details: '5 giorni, 4 notti',
       price: '2200',
@@ -162,7 +213,7 @@ export const collectionTours = {
   active: [
     {
       id: 'active-1',
-      imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2000',
+      imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000',
       title: 'Trekking nelle Dolomiti',
       details: '7 giorni, 6 notti',
       price: '1400',
@@ -171,7 +222,7 @@ export const collectionTours = {
     },
     {
       id: 'active-2',
-      imageUrl: 'https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?q=80&w=2000',
+      imageUrl: 'https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000',
       title: 'Sport Estremi a Queenstown',
       details: '10 giorni, 9 notti',
       price: '3200',
@@ -180,7 +231,7 @@ export const collectionTours = {
     },
     {
       id: 'active-3',
-      imageUrl: 'https://images.unsplash.com/photo-1520769945061-0a448c463865?q=80&w=2000',
+      imageUrl: 'https://images.unsplash.com/photo-1520769945061-0a448c463865?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000',
       title: 'Avventura in Islanda',
       details: '8 giorni, 7 notti',
       price: '2800',
@@ -191,7 +242,7 @@ export const collectionTours = {
   family: [
     {
       id: 'family-1',
-      imageUrl: 'https://images.unsplash.com/photo-1607969104459-f10fbd9a3dde?q=80&w=2000',
+      imageUrl: 'https://images.unsplash.com/photo-1607969104459-f10fbd9a3dde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000',
       title: 'Parchi Tematici di Orlando',
       details: '10 giorni, 9 notti',
       price: '2500',
@@ -200,7 +251,7 @@ export const collectionTours = {
     },
     {
       id: 'family-2',
-      imageUrl: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?q=80&w=2000',
+      imageUrl: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000',
       title: 'Costa del Sol Family',
       details: '7 giorni, 6 notti',
       price: '1200',
@@ -209,7 +260,7 @@ export const collectionTours = {
     },
     {
       id: 'family-3',
-      imageUrl: 'https://images.unsplash.com/photo-1513622470522-26c3c8a854bc?q=80&w=2000',
+      imageUrl: 'https://images.unsplash.com/photo-1513622470522-26c3c8a854bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000',
       title: 'Copenaghen per Famiglie',
       details: '5 giorni, 4 notti',
       price: '1500',
@@ -222,7 +273,7 @@ export const collectionTours = {
   exotic: [
     {
       id: 'exotic-1',
-      imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2000',
+      imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000',
       title: 'Maldive Paradise',
       subtitle: '7 giorni in paradiso tropicale',
       details: '7 giorni, 6 notti',
@@ -269,14 +320,14 @@ export const collectionTours = {
         }
       ],
       gallery: [
-        'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2000',
-        'https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=2000',
-        'https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=2000'
+        'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000',
+        'https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000',
+        'https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000'
       ]
     },
     {
       id: 'exotic-2',
-      imageUrl: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=2000',
+      imageUrl: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000',
       title: 'Hawaii Dream',
       subtitle: '10 giorni nelle isole del Pacifico',
       details: '10 giorni, 9 notti',
@@ -324,14 +375,14 @@ export const collectionTours = {
         }
       ],
       gallery: [
-        'https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=2000',
-        'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2000',
-        'https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=2000'
+        'https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000',
+        'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000',
+        'https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000'
       ]
     },
     {
       id: 'exotic-3',
-      imageUrl: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=2000',
+      imageUrl: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000',
       title: 'Seychelles Luxury',
       subtitle: '8 giorni nell\'arcipelago paradisiaco',
       details: '8 giorni, 7 notti',
@@ -379,9 +430,9 @@ export const collectionTours = {
         }
       ],
       gallery: [
-        'https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=2000',
-        'https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=2000',
-        'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2000'
+        'https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000',
+        'https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000',
+        'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000'
       ]
     }
   ],
@@ -389,7 +440,7 @@ export const collectionTours = {
   cultural: [
     {
       id: 'cultural-1',
-      imageUrl: 'https://images.unsplash.com/photo-1539650116574-75c0c6d73c6e?q=80&w=2000',
+      imageUrl: 'https://images.unsplash.com/photo-1539650116574-75c0c6d73c6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000',
       title: 'Roma Antica e Rinascimento',
       subtitle: '6 giorni nella Città Eterna',
       details: '6 giorni, 5 notti',
@@ -446,14 +497,14 @@ export const collectionTours = {
         }
       ],
       gallery: [
-        'https://images.unsplash.com/photo-1539650116574-75c0c6d73c6e?q=80&w=2000',
-        'https://images.unsplash.com/photo-1552832230-c0197dd311b5?q=80&w=2000',
-        'https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?q=80&w=2000'
+        'https://images.unsplash.com/photo-1539650116574-75c0c6d73c6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000',
+        'https://images.unsplash.com/photo-1552832230-c0197dd311b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000',
+        'https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000'
       ]
     },
     {
       id: 'cultural-2',
-      imageUrl: 'https://images.unsplash.com/photo-1552832230-c0197dd311b5?q=80&w=2000',
+      imageUrl: 'https://images.unsplash.com/photo-1552832230-c0197dd311b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000',
       title: 'Parigi Artistica',
       subtitle: '7 giorni nella capitale dell\'arte',
       details: '7 giorni, 6 notti',
@@ -516,14 +567,14 @@ export const collectionTours = {
         }
       ],
       gallery: [
-        'https://images.unsplash.com/photo-1552832230-c0197dd311b5?q=80&w=2000',
-        'https://images.unsplash.com/photo-1539650116574-75c0c6d73c6e?q=80&w=2000',
-        'https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?q=80&w=2000'
+        'https://images.unsplash.com/photo-1552832230-c0197dd311b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000',
+        'https://images.unsplash.com/photo-1539650116574-75c0c6d73c6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000',
+        'https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000'
       ]
     },
     {
       id: 'cultural-3',
-      imageUrl: 'https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?q=80&w=2000',
+      imageUrl: 'https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000',
       title: 'Egitto dei Faraoni',
       subtitle: '9 giorni tra piramidi e templi',
       details: '9 giorni, 8 notti',
@@ -576,9 +627,9 @@ export const collectionTours = {
         }
       ],
       gallery: [
-        'https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?q=80&w=2000',
-        'https://images.unsplash.com/photo-1552832230-c0197dd311b5?q=80&w=2000',
-        'https://images.unsplash.com/photo-1539650116574-75c0c6d73c6e?q=80&w=2000'
+        'https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000',
+        'https://images.unsplash.com/photo-1552832230-c0197dd311b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000',
+        'https://images.unsplash.com/photo-1539650116574-75c0c6d73c6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000'
       ]
     }
   ]

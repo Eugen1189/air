@@ -13,6 +13,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Анімація для спінера завантаження зображень */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 a {
   font-weight: 500;
   color: #646cff;
