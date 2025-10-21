@@ -242,12 +242,68 @@ export const collectionTours = {
   family: [
     {
       id: 'family-1',
-      imageUrl: 'https://images.unsplash.com/photo-1607969104459-f10fbd9a3dde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000',
+      slug: 'parchi-tematici-orlando',
+      imageUrl: 'https://images.unsplash.com/photo-1607969104459-f10fbd9a3dde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80',
       title: 'Parchi Tematici di Orlando',
+      subtitle: '10 giorni di magia per tutta la famiglia',
       details: '10 giorni, 9 notti',
       price: '2500',
       link: '/tour/family-orlando',
-      description: 'Walt Disney World, Universal Studios e SeaWorld per tutta la famiglia.'
+      description: 'Walt Disney World, Universal Studios e SeaWorld per tutta la famiglia.',
+      duration: '10 giorni / 9 notti',
+      groupSize: 'Fino a 6 persone',
+      difficulty: 'Facile',
+      meals: 'Colazione inclusa',
+      included: [
+        'Volo di andata e ritorno',
+        'Hotel 4* vicino ai parchi (9 notti)',
+        'Colazione quotidiana',
+        'Biglietti per tutti i parchi',
+        'Transfer aeroporto-hotel',
+        'Accompagnamento di guida italiana'
+      ],
+      fullDescription: [
+        'Orlando è la capitale mondiale dei parchi tematici, dove la magia diventa realtà per grandi e piccini. Un viaggio indimenticabile tra i parchi più famosi del mondo.',
+        'Visiterai Walt Disney World con i suoi 4 parchi tematici, Universal Studios con le attrazioni dei film, SeaWorld con gli spettacoli acquatici e molto altro.',
+        'Ogni giorno sarà pieno di avventure, incontri con i personaggi preferiti e attrazioni emozionanti per tutta la famiglia.'
+      ],
+      itinerary: [
+        {
+          day: 'Giorno 1',
+          title: 'Arrivo a Orlando',
+          description: 'Arrivo all\'aeroporto di Orlando, transfer in hotel. Prima serata libera per esplorare la zona.'
+        },
+        {
+          day: 'Giorno 2-3',
+          title: 'Walt Disney World',
+          description: 'Magic Kingdom e Epcot: incontri con i personaggi Disney, attrazioni iconiche e spettacoli mozzafiato.'
+        },
+        {
+          day: 'Giorno 4-5',
+          title: 'Universal Studios',
+          description: 'Universal Studios e Islands of Adventure: Harry Potter, Jurassic Park e le attrazioni più adrenaliniche.'
+        },
+        {
+          day: 'Giorno 6-7',
+          title: 'SeaWorld e Discovery Cove',
+          description: 'Spettacoli con delfini e orche, Discovery Cove per nuotare con i delfini e relax nelle spiagge artificiali.'
+        },
+        {
+          day: 'Giorno 8-9',
+          title: 'Altri Parchi',
+          description: 'Legoland, Busch Gardens e shopping nei centri commerciali più grandi del mondo.'
+        },
+        {
+          day: 'Giorno 10',
+          title: 'Partenza',
+          description: 'Ultimo shopping e transfer all\'aeroporto per il rientro.'
+        }
+      ],
+      gallery: [
+        'https://images.unsplash.com/photo-1607969104459-f10fbd9a3dde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80',
+        'https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80',
+        'https://images.unsplash.com/photo-1513622470522-26c3c8a854bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80'
+      ]
     },
     {
       id: 'family-2',
@@ -440,7 +496,7 @@ export const collectionTours = {
   cultural: [
     {
       id: 'cultural-1',
-      imageUrl: 'https://images.unsplash.com/photo-1539650116574-75c0c6d73c6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000',
+      imageUrl: 'https://images.unsplash.com/photo-1539650116574-75c0c6d73c6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80',
       title: 'Roma Antica e Rinascimento',
       subtitle: '6 giorni nella Città Eterna',
       details: '6 giorni, 5 notti',
