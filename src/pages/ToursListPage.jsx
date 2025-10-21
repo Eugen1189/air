@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { allTours } from '../data/allTours';
 import FilterSidebar from '../components/FilterSidebar';
 import TourCardDetailed from '../components/TourCardDetailed';
+import Pagination from '../components/Pagination/Pagination';
 import './ToursListPage.scss';
 
 const ToursListPage = () => {
@@ -22,6 +23,10 @@ const ToursListPage = () => {
   // Mobile filters overlay state
   const [filtersOpen, setFiltersOpen] = useState(false);
   
+  // Pagination state
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 6;
+  
   // Prevent body scroll when filters open
   useEffect(() => {
     if (filtersOpen) {
@@ -34,6 +39,11 @@ const ToursListPage = () => {
       document.body.classList.remove('filters-open');
     };
   }, [filtersOpen]);
+
+  // Reset pagination when filters change
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [filters]);
 
   // Filter logic - now works directly with Italian values stored in state
   const filteredTours = allTours.filter(tour => {
@@ -74,6 +84,18 @@ const ToursListPage = () => {
 
     return true;
   });
+
+  // Pagination logic
+  const totalPages = Math.ceil(filteredTours.length / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const currentTours = filteredTours.slice(startIndex, endIndex);
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+    // Scroll to top when page changes
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   const handleFilterChange = (filterName, value) => {
     setFilters(prev => ({
@@ -176,10 +198,21 @@ const ToursListPage = () => {
             </div>
           ) : (
             <div className="tours-grid">
-              {filteredTours.map((tour) => (
+              {currentTours.map((tour) => (
                 <TourCardDetailed key={tour.id} tour={tour} />
               ))}
             </div>
+          )}
+          
+          {/* Pagination */}
+          {filteredTours.length > 0 && (
+            <Pagination
+              currentPage={currentPage}
+              totalPages={totalPages}
+              onPageChange={handlePageChange}
+              itemsPerPage={itemsPerPage}
+              totalItems={filteredTours.length}
+            />
           )}
         </div>
       </div>
